@@ -1,26 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
 
 class App extends Component {
+
   render() {
+
+    const headerAttributes = {
+      id: "Header"
+    }
+    const navigation = [{
+      text: "example link 1",
+      href: "/",
+      classes: "custom-class",
+      attributes: {
+        id: "link",
+        title: "link"
+      }
+    },
+    {
+      text: "example link 1",
+      href: "/",
+      attributes: {
+        id: "differentlLink",
+        title: "differentLink"
+      }
+    }]
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="app">
+        <Header serviceName="Civil Service Learning" attributes={headerAttributes} navigation={navigation} />
+        <div className="wrapper">
+        </div>
       </div>
+
     );
   }
 }
