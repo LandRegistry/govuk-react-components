@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
+import Nav from './components/Nav';
+import Main from './components/Main';
+import 'govuk-frontend/all.js';
 
 class App extends Component {
 
@@ -8,7 +11,7 @@ class App extends Component {
     const headerAttributes = {
       id: "Header"
     }
-    const navigation = [{
+    const headerNavigation = [{
       text: "example link 1",
       href: "/",
       classes: "custom-class",
@@ -16,21 +19,27 @@ class App extends Component {
         id: "link",
         title: "link"
       }
-    },
-    {
-      text: "example link 1",
-      href: "/",
+    }, {
+      text: "example link 2",
+      to: "/",
       attributes: {
         id: "differentlLink",
         title: "differentLink"
       }
     }]
 
+    const navigation = [{
+      text: "Styles",
+      href: "/styles"
+    }, {
+      text: "Components",
+      href: "/components"
+    }]
+
     return (
       <div className="app">
-        <Header serviceName="Civil Service Learning" attributes={headerAttributes} navigation={navigation} />
-        <div className="wrapper">
-        </div>
+        <Header serviceName="Civil Service Learning" attributes={headerAttributes} navigation={headerNavigation} />
+        <Main />
       </div>
 
     );
