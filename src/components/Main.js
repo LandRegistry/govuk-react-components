@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
-import BackLink from './govukComponents/BackLink';
-import TextInput from './govukComponents/TextInput';
+import BackLink from '../demos/BackLink';
+import TextInput from '../demos/TextInput';
 
 import { Route, Switch } from "react-router-dom";
 
