@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TextInput from '../components/govukComponents/TextInput'
 
-class BackLinkDemo extends Component {
+class TextInputDemo extends Component {
   render() {
     return (
       <main>
@@ -11,4 +11,4 @@ class BackLinkDemo extends Component {
   }
 }
 
-export default BackLinkDemo
+export default TextInputDemo
