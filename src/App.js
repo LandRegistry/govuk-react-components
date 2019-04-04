@@ -29,7 +29,6 @@ class App extends Component {
         <Header serviceName="Civil Service Learning" attributes={{ id: "header" }} navigation={headerNavigation} />
         <Main />
       </div>
-
     );
   }
 }
