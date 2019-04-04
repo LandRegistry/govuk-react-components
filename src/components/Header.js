@@ -14,10 +14,6 @@ class Header extends Component {
     }
 
     render() {
-        var attributes
-        if (this.props.attributes) {
-            attributes = this.props.attributes
-        }
 
         var productName
         if (this.props.productName) {
@@ -55,7 +51,7 @@ class Header extends Component {
         }
 
         return (
-            <header className={`govuk-header${this.props.classes ? " " + this.props.classes : ''}`} role="banner" data-module="header" {...attributes} ref={this.headerRef}>
+            <header className={`govuk-header${this.props.classes ? " " + this.props.classes : ''}`} role="banner" data-module="header" {...this.props.attributes} ref={this.headerRef}>
                 <div className={`govuk-header__container ${this.props.containerClasses}`}>
                     <div className="govuk-header__logo">
                         <Link to={this.props.homepageUrl} className="govuk-header__link govuk-header__link--homepage">
