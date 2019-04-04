@@ -16,7 +16,7 @@ class Label extends Component {
       </label>
     }
 
-    if (this.props.isPageHeading === 'true') {
+    if (this.props.isPageHeading === true) {
       var pageheading = <h1 className="govuk-label-wrapper">{label}</h1>
     }
 

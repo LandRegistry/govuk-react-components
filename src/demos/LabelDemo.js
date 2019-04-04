@@ -6,9 +6,9 @@ class LabelDemo extends Component {
     return (
       <main>
         <Label text='Plain label' isPageHeading='false' />
-        <Label text='Label as page header' isPageHeading='true' />
-        <Label html='<p>Label for text input</p>' isPageHeading='false' for='input' />
-        <Label html='<span class="govuk-heading-s">Label with html set instead of text</p>' isPageHeading='false' for='input' />
+        <Label text='Label as page header' isPageHeading={true} />
+        <Label html='<p>Label for text input</p>' for='input' />
+        <Label html='<span class="govuk-heading-s">Label with html set instead of text</p>' for='input' />
       </main>
     )
   }
