@@ -10,7 +10,6 @@ class BackLink extends Component {
       attributes = this.props.attributes
     }
 
-
     return (
       <Link to={this.props.href} className={`govuk-back-link${this.props.classes ? ' ' + this.props.classes : ''}`} {...attributes}>Back</Link>
     )
