@@ -5,7 +5,7 @@ class BackLinkDemo extends Component {
   render() {
     return (
       <main>
-        <BackLink classes="my-customclass new-class" />
+        <BackLink classes="custom-class new-class" />
       </main>
     )
   }

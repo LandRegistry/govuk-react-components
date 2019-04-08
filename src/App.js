@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
+import Header from './components/govukComponents/Header';
 import Main from './components/Main';
 import 'govuk-frontend/all.js';
 
@@ -7,9 +7,6 @@ class App extends Component {
 
   render() {
 
-    const headerAttributes = {
-      id: "Header"
-    }
     const headerNavigation = [{
       text: "example link 1",
       href: "/",
@@ -27,20 +24,11 @@ class App extends Component {
       }
     }]
 
-    const navigation = [{
-      text: "Styles",
-      href: "/styles"
-    }, {
-      text: "Components",
-      href: "/components"
-    }]
-
     return (
       <div className="app">
-        <Header serviceName="Civil Service Learning" attributes={headerAttributes} navigation={headerNavigation} />
+        <Header serviceName="Civil Service Learning" attributes={{ id: "header" }} navigation={headerNavigation} />
         <Main />
       </div>
-
     );
   }
 }

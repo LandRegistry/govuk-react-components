@@ -4,14 +4,9 @@ import ReactHtmlParser from 'react-html-parser'
 class Label extends Component {
   render() {
 
-    var attributes
-    if (this.props.attributes) {
-      attributes = this.props.attributes
-    }
-
     if (this.props.html || this.props.text) {
       const html = this.props.html
-      var label = <label className={`govuk-label${this.props.classes ? ' ' + this.props.classes : ''}`} {...attributes} htmlFor={this.props.for}>
+      var label = <label className={`govuk-label${this.props.classes ? ' ' + this.props.classes : ''}`} {...this.props.attributes} htmlFor={this.props.for}>
         {html ? ReactHtmlParser(html) : this.props.text}
       </label>
     }
