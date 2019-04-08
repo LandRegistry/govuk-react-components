@@ -19,4 +19,8 @@ BackLink.defaultProps = {
   props: '/'
 }
 
+BackLink.defaultProps = {
+  to: "/"
+}
+
 export default BackLink
