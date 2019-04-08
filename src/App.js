@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
-import Nav from './components/Nav';
 import Main from './components/Main';
 import 'govuk-frontend/all.js';
 
