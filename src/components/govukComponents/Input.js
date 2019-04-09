@@ -19,7 +19,7 @@ class Input extends Component {
     }
 
     if (this.props.errorMessage) {
-      var errorId = this.props.id + '-error';
+      var errorId = this.props.id ? this.props.id + '-error' : '';
       var errorMessage = <ErrorMessage
         id={errorId}
         classes={this.props.errorMessage.classes}
