@@ -5,9 +5,8 @@ class Label extends Component {
   render() {
 
     if (this.props.html || this.props.text) {
-      const html = this.props.html
       var label = <label className={`govuk-label${this.props.classes ? ' ' + this.props.classes : ''}`} {...this.props.attributes} htmlFor={this.props.for}>
-        {html ? ReactHtmlParser(html) : this.props.text}
+        {this.props.html ? ReactHtmlParser(this.props.html) : this.props.text}
       </label>
     }
 

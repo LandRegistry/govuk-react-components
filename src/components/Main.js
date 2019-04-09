@@ -3,7 +3,7 @@ import Nav from './Nav';
 import BackLink from '../demos/BackLink';
 import HintDemo from '../demos/HintDemo';
 import LabelDemo from '../demos/LabelDemo';
-import TextInput from '../demos/TextInput';
+import InputDemo from '../demos/InputDemo';
 
 import { Route, Switch } from "react-router-dom";
 
@@ -22,8 +22,8 @@ class Main extends Component {
         text: "Label",
         href: "/label"
       }, {
-        text: "Text input",
-        href: "/text-input"
+        text: "Input",
+        href: "/input"
       }]
 
     return (
@@ -37,7 +37,7 @@ class Main extends Component {
               <Route exact path="/back-link" component={BackLink} />
               <Route exact path="/hint" component={HintDemo} />
               <Route exact path="/label" component={LabelDemo} />
-              <Route exact path="/text-input" component={TextInput} />
+              <Route exact path="/input" component={InputDemo} />
             </Switch>
           </div>
         </div>
