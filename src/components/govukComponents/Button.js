@@ -15,9 +15,9 @@ class Button extends Component {
       element = 'button'
     }
 
-    var commonAttributes = { className: 'govuk-button' + (this.props.classes ? ' ' + this.props.classes : '') + (this.props.disabled ? ' govuk-button--disabled' : ''), ...this.props.attributes }
+    const commonAttributes = { className: 'govuk-button' + (this.props.classes ? ' ' + this.props.classes : '') + (this.props.disabled ? ' govuk-button--disabled' : ''), ...this.props.attributes }
 
-    var buttonAttributes = { name: this.props.name, type: this.props.type }
+    const buttonAttributes = { name: this.props.name, type: this.props.type }
 
     if (element === 'a') {
       var button = <a href={this.props.href} role="button" draggable="false" {...commonAttributes}>
@@ -29,7 +29,7 @@ class Button extends Component {
       </button >
     }
 
-    return <>{button}</>
+    return button
   }
 }
 

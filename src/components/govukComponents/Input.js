@@ -22,23 +22,13 @@ class Input extends Component {
       var errorId = this.props.id ? this.props.id + '-error' : '';
       var errorMessage = <ErrorMessage
         id={errorId}
-        classes={this.props.errorMessage.classes}
-        attributes={this.props.errorMessage.attributes}
-        html={this.props.errorMessage.html}
-        text={this.props.errorMessage.text}
-        visuallyHiddenText={this.props.errorMessage.visuallyHiddenText}
+        {...this.props.errorMessage}
       />
     }
 
     return (
       <div className={`govuk-form-group${this.props.formGroup ? ' ' + this.props.formGroup.classes : ''} ${this.props.errorMessage ? 'govuk-form-group--error' : ''} `}>
-        <Label html={this.props.label.html}
-          text={this.props.label.text}
-          classes={this.props.label.classes}
-          isPageHeading={this.props.label.isPageHeading}
-          {...this.props.label.attributes}
-          for={this.props.id}
-        ></Label>
+        <Label {...this.props.label}></Label>
         {hint}
         {errorMessage}
         <input className={`govuk-input${this.props.classes ? ' ' + this.props.classes : ''} ${this.props.errorMessage ? ' govuk-input--error' : ''}`} id={this.props.id} name={this.props.id} type={this.props.type}

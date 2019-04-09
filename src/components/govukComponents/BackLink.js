@@ -10,9 +10,6 @@ class BackLink extends Component {
     )
   }
 }
-BackLink.defaultProps = {
-  props: '/'
-}
 
 BackLink.defaultProps = {
   to: "/"

@@ -14,9 +14,7 @@ class Label extends Component {
       var pageheading = <h1 className="govuk-label-wrapper">{label}</h1>
     }
 
-    return (
-      <>{pageheading ? pageheading : label}</>
-    )
+    return pageheading ? pageheading : label
   }
 }
 

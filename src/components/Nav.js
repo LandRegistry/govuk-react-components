@@ -17,7 +17,7 @@ class Nav extends Component {
 
   render() {
 
-    let links = this.state.navigation ? this.state.navigation.map((link, key) =>
+    const links = this.state.navigation ? this.state.navigation.map((link, key) =>
       <li key={key} className="govuk-header__navigation-item">
         <NavLink className={`govuk-link ${link.classes ? ' ' + link.classes : ''}`} to={link.href} >
           {link.text}
