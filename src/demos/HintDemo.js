@@ -6,6 +6,7 @@ class HintDemo extends Component {
     return (
       <main>
         <Hint text='Hint text' />
+        <Hint html='Hint text with <strong>html</strong>' />
       </main>
     )
   }
