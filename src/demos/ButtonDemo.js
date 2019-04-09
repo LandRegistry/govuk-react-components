@@ -6,6 +6,7 @@ class BackLinkDemo extends Component {
     return (
       <main>
         <Button classes="custom-class new-class" type="submit" value="Continue" />
+        <Button classes="custom-class new-class" type="submit" value="Disabled" disabled="disabled" />
       </main>
     )
   }
