@@ -78,7 +78,6 @@ function Header(props) {
   )
 }
 
-
 Header.defaultProps = {
   homepageUrl: '/',
   containerClasses: 'govuk-width-container',
