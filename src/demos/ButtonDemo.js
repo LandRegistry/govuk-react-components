@@ -7,6 +7,7 @@ class BackLinkDemo extends Component {
       <main>
         <Button classes="custom-class new-class" type="submit" value="Continue" />
         <Button classes="custom-class new-class" type="submit" value="Disabled" disabled="disabled" />
+        <Button element="a" classes="custom-class new-class" type="submit" html={<span>link as Button with HTML</span>} />
       </main>
     )
   }

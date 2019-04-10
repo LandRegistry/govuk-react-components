@@ -29,9 +29,9 @@ function Header(props) {
               link.text && (link.href || link.to) ?
                 <li key={'navigation' + index} className="govuk-header__navigation-item">
                   {link.to ?
-                    <Link className={`govuk-header__link ${link.classes ? ' ' + link.classes : ''}`} to={link.href} {...link.attributes} >
+                    <Link className={`govuk-header__link ${link.classes ? ' ' + link.classes : ''}`} to={link.to} {...link.attributes} >
                       {link.text}
-                    </Link> : <a className={`govuk-header__link ${link.classes ? ' ' + link.classes : ''}`} href={link.to} {...link.attributes} >
+                    </Link> : <a className={`govuk-header__link ${link.classes ? ' ' + link.classes : ''}`} href={link.href} {...link.attributes} >
                       {link.text}
                     </a>
                   }

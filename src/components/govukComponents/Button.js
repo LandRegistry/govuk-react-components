@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactHtmlParser from 'react-html-parser'
 
 class Button extends Component {
 
@@ -21,11 +20,11 @@ class Button extends Component {
 
     if (element === 'a') {
       var button = <a href={this.props.href} role="button" draggable="false" {...commonAttributes}>
-        {this.props.html ? ReactHtmlParser(this.props.html) : this.props.value}
+        {this.props.html ? this.props.html : this.props.text}
       </a>
     } else if (element === 'button') {
       var button = <button value={this.props.value} {...buttonAttributes} {...commonAttributes}>
-        {this.props.html ? ReactHtmlParser(this.props.html) : this.props.value}
+        {this.props.html ? this.props.html : this.props.value}
       </button >
     }
 
