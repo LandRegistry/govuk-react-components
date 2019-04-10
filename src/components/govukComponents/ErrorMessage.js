@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactHtmlParser from 'react-html-parser';
 
 class ErrorMessage extends Component {
   render() {
@@ -11,7 +10,7 @@ class ErrorMessage extends Component {
     return (
       <span id={this.props.id} className={`govuk-error-message${this.props.classes ? ' ' + this.props.classes : ''}`} {...this.props.attributes}>
         {visuallyHiddenText}
-        {this.props.html ? ReactHtmlParser(this.props.html) : this.props.text}
+        {this.props.html ? this.props.html : this.props.text}
       </span>
     )
   }
