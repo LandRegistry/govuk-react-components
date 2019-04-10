@@ -1,7 +1,7 @@
 {
-  "name": "hmlr-design-system",
+  "name": "govuk-react-components",
   "version": "0.1.0",
-  "description": "HMLR React design system",
+  "description": "GOV.UK React Components",
   "private": true,
   "dependencies": {
     "govuk-frontend": "2.9.0",
