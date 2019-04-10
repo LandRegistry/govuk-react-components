@@ -5,12 +5,10 @@ import ErrorMessage from './ErrorMessage'
 
 function Input(props) {
 
-  var describedBy = ''
-  props.describedBy ? describedBy = props.describedBy : ''
-
+  var describedBy = props.describedBy
   if (props.hint) {
     const hintId = props.id + '-hint'
-    props.describedBy ? describedBy = describedBy + ' ' + props.describedBy : describedBy = describedBy + ' ' + hintId;
+    describedBy += ' ' + hintId
     var hint = <Hint
       id={hintId}
       {...props.hint}
@@ -19,7 +17,7 @@ function Input(props) {
 
   if (props.errorMessage) {
     const errorId = props.id ? props.id + '-error' : '';
-    props.describedBy ? describedBy = describedBy + ' ' + props.describedBy : describedBy = describedBy + ' ' + errorId;
+    describedBy += ' ' + errorId
     var errorMessage = <ErrorMessage
       id={errorId}
       {...props.errorMessage}
@@ -43,7 +41,8 @@ function Input(props) {
 }
 
 Input.defaultProps = {
-  type: 'text'
+  type: 'text',
+  describedBy: ''
 }
 
 export default Input

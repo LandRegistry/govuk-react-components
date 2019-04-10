@@ -14,7 +14,7 @@ function Nav(props) {
   return (
     <div className="app-pane__nav">
       <nav className="app-navigation govuk-clearfix">
-        <ul className="app-navigation__list govuk-width-container">
+        <ul className="govuk-list">
           {links}
         </ul>
       </nav>
