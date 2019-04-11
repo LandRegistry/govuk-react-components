@@ -31,7 +31,7 @@ function Checkboxes(props) {
   }
 
   const innerHtml = props.items.map((checkbox, index) =>
-    <div key={props.name + index} className="govuk-checkboxes__item">
+    <><div key={props.name + index} className="govuk-checkboxes__item">
       <input
         id={checkbox.conditional ? props.name + '-conditional-' + (index + 1) : props.name + (index + 1)}
         className="govuk-checkboxes__input"
@@ -41,13 +41,13 @@ function Checkboxes(props) {
       />
       <Label text={checkbox.text} classes="govuk-checkboxes__label" for={props.name + (index + 1)} />
       {checkbox.hint ? <Hint classes="govuk-checkboxes__hint" {...checkbox.hint} /> : ''}
+    </div>
       {checkbox.conditional ? <div
         className="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
         id={`conditional-${props.name}-conditional-${index + 1}`}
       >
         {checkbox.conditional.html}
-      </div> : ''}
-    </div>
+      </div> : ''}</>
   )
   return (
     <div className={`govuk-checkboxes${props.classes ? ' ' + props.classes : ''}`}
