@@ -14,8 +14,6 @@ function Checkboxes(props) {
 
   var idPrefix = props.idPrefix ? props.idPrefix : props.name
   var describedBy = props.describedBy
-
-  var isConditional = false
   var hint
   var errorMessage
 
