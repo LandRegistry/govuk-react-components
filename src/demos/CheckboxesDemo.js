@@ -63,7 +63,7 @@ function CheckboxesDemo() {
     },
     {
       value: "text message",
-      text: "Mobile phone number",
+      text: "Text message",
       conditional: {
         html: textHtml
       }
