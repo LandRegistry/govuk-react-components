@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Hint from '../components/govukComponents/Hint'
 
 function HintDemo() {
+
+  useEffect(() => {
+    document.title = 'Hint demo'
+  })
+
   return (
     <main>
+      <h1 className="govuk-heading-l">Hint</h1>
       <Hint text='Hint text' />
       <Hint html={<>This is <strong>now</strong> working</>} />
     </main>

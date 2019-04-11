@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from './Nav';
 import BackLink from '../demos/BackLink';
 import ButtonDemo from '../demos/ButtonDemo';
+import CheckboxesDemo from '../demos/CheckboxesDemo';
 import HintDemo from '../demos/HintDemo';
 import LabelDemo from '../demos/LabelDemo';
 import InputDemo from '../demos/InputDemo';
@@ -17,6 +18,9 @@ function Main() {
     }, {
       text: "Button",
       href: "/button"
+    }, {
+      text: "Checkboxes",
+      href: "/checkboxes"
     }, {
       text: "Hint",
       href: "/hint"
@@ -38,6 +42,7 @@ function Main() {
           <Switch>
             <Route exact path="/back-link" component={BackLink} />
             <Route exact path="/button" component={ButtonDemo} />
+            <Route exact path="/checkboxes" component={CheckboxesDemo} />
             <Route exact path="/hint" component={HintDemo} />
             <Route exact path="/label" component={LabelDemo} />
             <Route exact path="/input" component={InputDemo} />
