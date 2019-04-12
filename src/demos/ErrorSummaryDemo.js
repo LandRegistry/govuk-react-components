@@ -21,7 +21,7 @@ function ErrorSummaryDemo() {
   return (
 
     <main id="content">
-      <h1 className="govuk-heading-l">Button</h1>
+      <h1 className="govuk-heading-l">Error Summary</h1>
       <ErrorSummary
         titleText="There is a problem"
         errorList={errorList}
