@@ -3,6 +3,7 @@ import Nav from './Nav';
 import BackLink from '../demos/BackLink';
 import ButtonDemo from '../demos/ButtonDemo';
 import CheckboxesDemo from '../demos/CheckboxesDemo';
+import ErrorSummaryDemo from '../demos/ErrorSummaryDemo';
 import HintDemo from '../demos/HintDemo';
 import LabelDemo from '../demos/LabelDemo';
 import InputDemo from '../demos/InputDemo';
@@ -21,6 +22,9 @@ function Main() {
     }, {
       text: "Checkboxes",
       href: "/checkboxes"
+    }, {
+      text: "ErrorSummary",
+      href: "/error-summary"
     }, {
       text: "Hint",
       href: "/hint"
@@ -43,6 +47,7 @@ function Main() {
             <Route exact path="/back-link" component={BackLink} />
             <Route exact path="/button" component={ButtonDemo} />
             <Route exact path="/checkboxes" component={CheckboxesDemo} />
+            <Route exact path="/error-summary" component={ErrorSummaryDemo} />
             <Route exact path="/hint" component={HintDemo} />
             <Route exact path="/label" component={LabelDemo} />
             <Route exact path="/input" component={InputDemo} />
