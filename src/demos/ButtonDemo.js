@@ -9,7 +9,7 @@ function BackLinkDemo() {
 
   return (
     <main>
-      <h1 className="govuk-heading-l">Button</h1>
+      <h1 className="govuk-heading-l">Error Summary</h1>
       <Button classes="custom-class new-class" type="submit" value="Continue" />
       <Button classes="custom-class new-class" type="submit" value="Disabled" disabled="disabled" />
       <Button element="a" classes="custom-class new-class" type="submit" html={<span>link as Button with HTML</span>} />
