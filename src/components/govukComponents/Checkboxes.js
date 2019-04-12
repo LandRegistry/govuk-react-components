@@ -54,14 +54,15 @@ function Checkboxes(props) {
       {...props.attributes}
       ref={checkboxRef}
     >
-
       <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''} ${props.formGroup ? params.formGroup.classes : ''}`} >
         {props.fieldset ? <Fieldset
           describedBy={describedBy}
           {...props.fieldset}
 
-        > {hint}{errorMessage}{innerHtml}</Fieldset> : <>{hint}{errorMessage}{innerHtml}</>}
-
+        >
+          {hint}
+          {errorMessage}
+          {innerHtml}</Fieldset> : <>{hint}{errorMessage}{innerHtml}</>}
       </div>
     </div>
   )

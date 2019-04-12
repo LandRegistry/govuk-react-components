@@ -8,7 +8,7 @@ function BackLinkDemo() {
   })
 
   return (
-    <main>
+    <main id="#content">
       <h1 className="govuk-heading-l">Button</h1>
       <Button classes="custom-class new-class" type="submit" value="Continue" />
       <Button classes="custom-class new-class" type="submit" value="Disabled" disabled="disabled" />

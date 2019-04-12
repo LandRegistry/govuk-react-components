@@ -6,6 +6,7 @@ import CheckboxesDemo from '../demos/CheckboxesDemo';
 import HintDemo from '../demos/HintDemo';
 import LabelDemo from '../demos/LabelDemo';
 import InputDemo from '../demos/InputDemo';
+import SkipLinkDemo from '../demos/SkipLinkDemo';
 
 import { Route, Switch } from "react-router-dom";
 
@@ -30,6 +31,9 @@ function Main() {
     }, {
       text: "Input",
       href: "/input"
+    }, {
+      text: "Skip link",
+      href: "/skip-link"
     }]
 
   return (
@@ -46,6 +50,7 @@ function Main() {
             <Route exact path="/hint" component={HintDemo} />
             <Route exact path="/label" component={LabelDemo} />
             <Route exact path="/input" component={InputDemo} />
+            <Route exact path="/skip-link" component={SkipLinkDemo} />
           </Switch>
         </div>
       </div>

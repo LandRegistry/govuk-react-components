@@ -4,11 +4,11 @@ import Label from '../components/govukComponents/Label'
 function LabelDemo() {
 
   useEffect(() => {
-    document.title = 'Label link demo'
+    document.title = 'Label demo'
   })
 
   return (
-    <main>
+    <main id="#content">
       <h1 className="govuk-heading-l">Label</h1>
       <Label text='Plain label' isPageHeading='false' />
       <Label text='Label as page header' isPageHeading={true} />
