@@ -1,23 +1,18 @@
 import React, { Component } from 'react'
-import ReactHtmlParser from 'react-html-parser'
 
-class Label extends Component {
-  render() {
+function Label(props) {
 
-    if (this.props.html || this.props.text) {
-      var label = <label className={`govuk-label${this.props.classes ? ' ' + this.props.classes : ''}`} {...this.props.attributes} htmlFor={this.props.for}>
-        {this.props.html ? ReactHtmlParser(this.props.html) : this.props.text}
-      </label>
-    }
-
-    if (this.props.isPageHeading === true) {
-      var pageheading = <h1 className="govuk-label-wrapper">{label}</h1>
-    }
-
-    return (
-      <>{pageheading ? pageheading : label}</>
-    )
+  if (props.html || props.text) {
+    var label = <label className={`govuk-label${props.classes ? ' ' + props.classes : ''}`} {...props.attributes} htmlFor={props.for}>
+      {props.html ? props.html : props.text}
+    </label>
   }
+
+  if (props.isPageHeading === true) {
+    var pageheading = <h1 className="govuk-label-wrapper">{label}</h1>
+  }
+
+  return pageheading ? pageheading : label
 }
 
 export default Label

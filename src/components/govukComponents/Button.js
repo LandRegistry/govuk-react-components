@@ -1,36 +1,32 @@
-import React, { Component } from 'react'
-import ReactHtmlParser from 'react-html-parser'
+import React from 'react'
 
-class Button extends Component {
+function Button(props) {
 
-  render() {
+  var element = '';
 
-    var element = '';
-
-    if (this.props.element) {
-      element = this.props.element
-    } else if (this.props.href) {
-      element = 'a'
-    } else {
-      element = 'button'
-    }
-
-    var commonAttributes = { className: 'govuk-button' + (this.props.classes ? ' ' + this.props.classes : '') + (this.props.disabled ? ' govuk-button--disabled' : ''), ...this.props.attributes }
-
-    var buttonAttributes = { name: this.props.name, type: this.props.type }
-
-    if (element === 'a') {
-      var button = <a href={this.props.href} role="button" draggable="false" {...commonAttributes}>
-        {this.props.html ? ReactHtmlParser(this.props.html) : this.props.value}
-      </a>
-    } else if (element === 'button') {
-      var button = <button value={this.props.value} {...buttonAttributes} {...commonAttributes}>
-        {this.props.html ? ReactHtmlParser(this.props.html) : this.props.value}
-      </button >
-    }
-
-    return <>{button}</>
+  if (props.element) {
+    element = props.element
+  } else if (props.href) {
+    element = 'a'
+  } else {
+    element = 'button'
   }
+
+  const commonAttributes = { className: 'govuk-button' + (props.classes ? ' ' + props.classes : '') + (props.disabled ? ' govuk-button--disabled' : ''), ...props.attributes }
+
+  const buttonAttributes = { name: props.name, type: props.type }
+
+  if (element === 'a') {
+    var button = <a href={props.href} role="button" draggable="false" {...commonAttributes}>
+      {props.html ? props.html : props.text}
+    </a>
+  } else if (element === 'button') {
+    var button = <button value={props.value} {...buttonAttributes} {...commonAttributes}>
+      {props.html ? props.html : props.value}
+    </button >
+  }
+
+  return button
 }
 
 Button.defaultProps = {

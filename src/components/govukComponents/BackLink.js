@@ -1,17 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
-class BackLink extends Component {
+function BackLink(props) {
 
-  render() {
-
-    return (
-      <Link to={this.props.href} className={`govuk-back-link${this.props.classes ? ' ' + this.props.classes : ''}`} {...this.props.attributes}>Back</Link>
-    )
-  }
-}
-BackLink.defaultProps = {
-  props: '/'
+  return (
+    <Link to={props.href} className={`govuk-back-link${props.classes ? ' ' + props.classes : ''}`} {...props.attributes}>Back</Link>
+  )
 }
 
 BackLink.defaultProps = {

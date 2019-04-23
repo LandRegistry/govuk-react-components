@@ -1,22 +1,17 @@
-import React, { Component } from 'react'
-import ReactHtmlParser from 'react-html-parser';
+import React from 'react'
 
-class ErrorMessage extends Component {
-  render() {
+function ErrorMessage(props) {
 
-    if (this.props.visuallyHiddenText) {
-      var visuallyHiddenText = <span className="govuk-visually-hidden">{this.props.visuallyHiddenText}</span>
-    }
-
-    return (
-
-      <span id={this.props.id} className={`govuk-error-message${this.props.classes ? ' ' + this.props.classes : ''}`} {...this.props.attributes}>
-        {visuallyHiddenText}
-        {this.props.html ? ReactHtmlParser(this.props.html) : this.props.text}
-      </span>
-
-    )
+  if (props.visuallyHiddenText) {
+    var visuallyHiddenText = <span className="govuk-visually-hidden">{props.visuallyHiddenText}</span>
   }
+
+  return (
+    <span id={props.id} className={`govuk-error-message${props.classes ? ' ' + props.classes : ''}`} {...props.attributes}>
+      {visuallyHiddenText}
+      {props.html ? props.html : props.text}
+    </span>
+  )
 }
 
 ErrorMessage.defaultProps = {
