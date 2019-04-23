@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header serviceName="Civil Service Learning" attributes={{ id: "header" }} navigation={headerNavigation} />
+      <Header serviceName="Application Processing" attributes={{ id: "header" }} navigation={headerNavigation} />
       <Main />
     </div>
   );
