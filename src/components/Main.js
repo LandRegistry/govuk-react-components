@@ -8,6 +8,7 @@ import HintDemo from '../demos/HintDemo';
 import InputDemo from '../demos/InputDemo';
 import LabelDemo from '../demos/LabelDemo';
 import TextareaDemo from '../demos/TextareaDemo';
+import SkipLinkDemo from '../demos/SkipLinkDemo';
 
 import { Route, Switch } from "react-router-dom";
 
@@ -38,6 +39,12 @@ function Main() {
     }, {
       text: "Textarea",
       href: "/textarea"
+    }, {
+      text: "Input",
+      href: "/input"
+    }, {
+      text: "Skip link",
+      href: "/skip-link"
     }]
 
   return (
@@ -56,7 +63,7 @@ function Main() {
             <Route exact path="/input" component={InputDemo} />
             <Route exact path="/label" component={LabelDemo} />
             <Route exact path="/textarea" component={TextareaDemo} />
-
+            <Route exact path="/skip-link" component={SkipLinkDemo} />
           </Switch>
         </div>
       </div>
