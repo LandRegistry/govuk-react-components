@@ -7,7 +7,6 @@ function BackLinkDemo() {
     document.title = 'Back link demo'
   })
 
-
   return (
     <main id="#content">
       <h1 className="govuk-heading-l">Back link</h1>
