@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 function Nav(props) {
 
   const links = props.navigation.map((link, key) =>
-    <li key={key} className="govuk-header__navigation-item">
+    <li key={key}>
       <NavLink className={`govuk-link ${link.classes ? ' ' + link.classes : ''}`} to={link.href} >
         {link.text}
       </NavLink>

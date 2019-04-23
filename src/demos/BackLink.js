@@ -1,10 +1,16 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import BackLink from '../components/govukComponents/BackLink'
 
 function BackLinkDemo() {
+
+  useEffect(() => {
+    document.title = 'Back link demo'
+  })
+
   return (
-    <main>
-      <BackLink classes="custom-class new-class" />
+    <main id="#content">
+      <h1 className="govuk-heading-l">Back link</h1>
+      <BackLink classes="custom-class new-class" href="/" />
     </main>
   )
 }

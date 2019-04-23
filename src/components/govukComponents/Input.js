@@ -29,7 +29,7 @@ function Input(props) {
       <Label {...props.label}></Label>
       {hint}
       {errorMessage}
-      <input className={`govuk-input${props.classes ? ' ' + props.classes : ''} ${props.errorMessage ? ' govuk-input--error' : ''}`} id={props.id} name={props.id} type={props.type}
+      <input className={`govuk-input${props.classes ? ' ' + props.classes : ''} ${props.errorMessage ? ' govuk-input--error' : ''}`} id={props.id} name={props.name ? props.name : props.id} type={props.type}
         value={props.value}
         aria-describedby={describedBy}
         autoComplete={props.autocomplete}
