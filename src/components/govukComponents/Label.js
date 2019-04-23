@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 function Label(props) {
 
   if (props.html || props.text) {
