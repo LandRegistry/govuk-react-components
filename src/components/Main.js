@@ -5,8 +5,9 @@ import ButtonDemo from '../demos/ButtonDemo';
 import CheckboxesDemo from '../demos/CheckboxesDemo';
 import ErrorSummaryDemo from '../demos/ErrorSummaryDemo';
 import HintDemo from '../demos/HintDemo';
-import LabelDemo from '../demos/LabelDemo';
 import InputDemo from '../demos/InputDemo';
+import LabelDemo from '../demos/LabelDemo';
+import TextareaDemo from '../demos/TextareaDemo';
 
 import { Route, Switch } from "react-router-dom";
 
@@ -29,11 +30,14 @@ function Main() {
       text: "Hint",
       href: "/hint"
     }, {
+      text: "Input",
+      href: "/input"
+    }, {
       text: "Label",
       href: "/label"
     }, {
-      text: "Input",
-      href: "/input"
+      text: "Textarea",
+      href: "/textarea"
     }]
 
   return (
@@ -49,8 +53,10 @@ function Main() {
             <Route exact path="/checkboxes" component={CheckboxesDemo} />
             <Route exact path="/error-summary" component={ErrorSummaryDemo} />
             <Route exact path="/hint" component={HintDemo} />
-            <Route exact path="/label" component={LabelDemo} />
             <Route exact path="/input" component={InputDemo} />
+            <Route exact path="/label" component={LabelDemo} />
+            <Route exact path="/textarea" component={TextareaDemo} />
+
           </Switch>
         </div>
       </div>
