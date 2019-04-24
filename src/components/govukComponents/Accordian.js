@@ -7,13 +7,13 @@ function Accordian(props) {
 
   useEffect(() => {
     new AccordionJS(accordionRef.current).init()
-  })
+  }, [])
 
   const id = props.id
   var HeadingLevel = props.headingLevel ? 'h' + props.headingLevel : 'h2'
 
   const innerHtml = props.items.map((item, index) =>
-    <div className={`govuk-accordion__section${item.expanded ? ' ' + 'govuk-accordion__section--expanded' : ''}`}>
+    <div key={`accordion${index}`} className={`govuk-accordion__section${item.expanded ? ' ' + 'govuk-accordion__section--expanded' : ''}`}>
       <div className="govuk-accordion__section-header">
         <HeadingLevel className="govuk-accordion__section-heading">
           <span className="govuk-accordion__section-button" id={`${id}-heading-${index}`}>
