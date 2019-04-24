@@ -7,9 +7,10 @@ import ErrorSummaryDemo from '../demos/ErrorSummaryDemo';
 import HintDemo from '../demos/HintDemo';
 import InputDemo from '../demos/InputDemo';
 import LabelDemo from '../demos/LabelDemo';
-import TextareaDemo from '../demos/TextareaDemo';
-import SkipLinkDemo from '../demos/SkipLinkDemo';
 import RadiosDemo from '../demos/RadiosDemo';
+import SkipLinkDemo from '../demos/SkipLinkDemo';
+import TagDemo from '../demos/TagDemo';
+import TextareaDemo from '../demos/TextareaDemo';
 
 import { Route, Switch } from "react-router-dom";
 
@@ -38,17 +39,17 @@ function Main() {
       text: "Label",
       href: "/label"
     }, {
-      text: "Textarea",
-      href: "/textarea"
-    }, {
-      text: "Input",
-      href: "/input"
+      text: "Radios",
+      href: "/radios"
     }, {
       text: "Skip link",
       href: "/skip-link"
     }, {
-      text: "Radios",
-      href: "/radios"
+      text: "Textarea",
+      href: "/textarea"
+    }, {
+      text: "Tag",
+      href: "/tag"
     }]
 
   return (
@@ -66,9 +67,10 @@ function Main() {
             <Route exact path="/hint" component={HintDemo} />
             <Route exact path="/input" component={InputDemo} />
             <Route exact path="/label" component={LabelDemo} />
-            <Route exact path="/textarea" component={TextareaDemo} />
             <Route exact path="/skip-link" component={SkipLinkDemo} />
             <Route exact path="/radios" component={RadiosDemo} />
+            <Route exact path="/tag" component={TagDemo} />
+            <Route exact path="/textarea" component={TextareaDemo} />
           </Switch>
         </div>
       </div>
