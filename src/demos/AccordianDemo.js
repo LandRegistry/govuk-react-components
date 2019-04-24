@@ -42,7 +42,7 @@ function AccordianDemo() {
       text: 'Writing well for the web'
     },
     content: {
-      html: <a href="#">This is the content for Writing well for the web.</a>
+      html: <a className="govuk-link" href="#">This is the content for Writing well for the web.</a>
     }
   },
   {
