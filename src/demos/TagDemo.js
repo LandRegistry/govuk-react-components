@@ -4,8 +4,8 @@ import Tag from '../components/govukComponents/Tag'
 function TagDemo() {
 
   useEffect(() => {
-    document.title = 'Skip link demo'
-  })
+    document.title = 'Tag demo'
+  }, [])
 
   return (
     <main id="#content">
