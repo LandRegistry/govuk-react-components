@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './Nav';
+import AccordianDemo from '../demos/AccordianDemo';
 import BackLink from '../demos/BackLink';
 import ButtonDemo from '../demos/ButtonDemo';
 import CheckboxesDemo from '../demos/CheckboxesDemo';
@@ -15,6 +16,10 @@ import { Route, Switch } from "react-router-dom";
 function Main() {
 
   const navigation = [
+    {
+      text: "Accordian",
+      href: "/accordian"
+    },
     {
       text: "Back link",
       href: "/back-link"
@@ -55,6 +60,7 @@ function Main() {
         </div>
         <div className="govuk-grid-column-three-quarters">
           <Switch>
+            <Route exact path="/accordian" component={AccordianDemo} />
             <Route exact path="/back-link" component={BackLink} />
             <Route exact path="/button" component={ButtonDemo} />
             <Route exact path="/checkboxes" component={CheckboxesDemo} />
