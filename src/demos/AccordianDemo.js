@@ -5,7 +5,7 @@ function AccordianDemo() {
 
   useEffect(() => {
     document.title = 'Accordian demo'
-  })
+  }, [])
 
   var items = [{
     heading: {

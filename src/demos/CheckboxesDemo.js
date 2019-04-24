@@ -6,7 +6,7 @@ function CheckboxesDemo() {
 
   useEffect(() => {
     document.title = 'Checkboxes demo'
-  })
+  }, [])
 
   var items = [{
     value: "carcasses",

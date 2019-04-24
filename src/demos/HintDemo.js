@@ -5,7 +5,7 @@ function HintDemo() {
 
   useEffect(() => {
     document.title = 'Hint demo'
-  })
+  }, [])
 
   return (
     <main id="#content">

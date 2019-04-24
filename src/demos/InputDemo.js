@@ -5,10 +5,10 @@ function InputDemo() {
 
   useEffect(() => {
     document.title = 'Input demo'
-  })
+  }, [])
 
   return (
-   
+
     <main id="#content">
       <h1 className="govuk-heading-l">Input</h1>
       <Input id="plainInput" classes="classes" label={{ text: "Input with label", attributes: { id: "LabelCheck", title: "Label Check" } }} formGroup={{ classes: "custom-class" }} />
