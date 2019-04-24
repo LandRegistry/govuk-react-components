@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import AccordionJS from 'govuk-frontend/components/accordion/accordion'
 
-function Accordian(props) {
+function Accordion(props) {
 
   const accordionRef = React.createRef();
 
@@ -39,4 +39,4 @@ function Accordian(props) {
   )
 }
 
-export default Accordian
+export default Accordion

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
-import Accordian from '../components/govukComponents/Accordian'
+import Accordion from '../components/govukComponents/Accordion'
 
-function AccordianDemo() {
+function AccordionDemo() {
 
   useEffect(() => {
-    document.title = 'Accordian demo'
+    document.title = 'Accordion demo'
   }, [])
 
   var items = [{
@@ -56,13 +56,13 @@ function AccordianDemo() {
 
   return (
     <main id="#content">
-      <h1 className="govuk-heading-l">Accordian</h1>
+      <h1 className="govuk-heading-l">Accordion</h1>
       <h2 className="govuk-heading-m">With summary</h2>
-      <Accordian id="accordian-demo" items={items} headingLevel="2" />
+      <Accordion id="accordion-demo" items={items} headingLevel="2" />
       <h2 className="govuk-heading-m">Without summary</h2>
-      <Accordian id="accordian-demo" items={items2} headingLevel="3" />
+      <Accordion id="accordion-demo" items={items2} headingLevel="3" />
     </main>
   )
 }
 
-export default AccordianDemo
+export default AccordionDemo
