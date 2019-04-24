@@ -45,9 +45,6 @@ function Main() {
       text: "Textarea",
       href: "/textarea"
     }, {
-      text: "Input",
-      href: "/input"
-    }, {
       text: "Skip link",
       href: "/skip-link"
     }]
