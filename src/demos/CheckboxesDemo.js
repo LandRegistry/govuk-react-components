@@ -70,7 +70,7 @@ function CheckboxesDemo() {
   ]
 
   return (
-    <main id="#content">
+    <main id="main-content">
       <h1 className="govuk-heading-l">Checkboxes</h1>
       <Checkboxes hint={{ text: 'Select all that apply.' }} items={items} name="waste" />
       <Checkboxes hint={{ text: 'Select all that apply.' }} items={items} fieldset={{ legend: { isPageHeading: true, text: 'Which types of waste do you transport?', classes: 'govuk-fieldset__legend--l' } }} name="waste2" />

@@ -7,6 +7,7 @@ import ErrorSummaryDemo from '../demos/ErrorSummaryDemo';
 import HintDemo from '../demos/HintDemo';
 import InputDemo from '../demos/InputDemo';
 import LabelDemo from '../demos/LabelDemo';
+import PanelDemo from '../demos/PanelDemo';
 import TextareaDemo from '../demos/TextareaDemo';
 import SkipLinkDemo from '../demos/SkipLinkDemo';
 import RadiosDemo from '../demos/RadiosDemo';
@@ -38,11 +39,11 @@ function Main() {
       text: "Label",
       href: "/label"
     }, {
+      text: "Panel",
+      href: "/panel"
+    }, {
       text: "Textarea",
       href: "/textarea"
-    }, {
-      text: "Input",
-      href: "/input"
     }, {
       text: "Skip link",
       href: "/skip-link"
@@ -66,6 +67,7 @@ function Main() {
             <Route exact path="/hint" component={HintDemo} />
             <Route exact path="/input" component={InputDemo} />
             <Route exact path="/label" component={LabelDemo} />
+            <Route exact path="/panel" component={PanelDemo} />
             <Route exact path="/textarea" component={TextareaDemo} />
             <Route exact path="/skip-link" component={SkipLinkDemo} />
             <Route exact path="/radios" component={RadiosDemo} />
