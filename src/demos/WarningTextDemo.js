@@ -4,7 +4,7 @@ import WarningText from '../components/govukComponents/WarningText'
 function WarningTextDemo() {
 
   useEffect(() => {
-    document.title = 'Skip link demo'
+    document.title = 'Warning text demo'
   })
 
   return (
