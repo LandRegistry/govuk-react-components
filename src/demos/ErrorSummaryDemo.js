@@ -5,7 +5,7 @@ function ErrorSummaryDemo() {
 
   useEffect(() => {
     document.title = 'Error summary demo'
-  })
+  }, [])
 
   var errorList = [
     {

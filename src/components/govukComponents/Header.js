@@ -8,7 +8,7 @@ function Header(props) {
 
   useEffect(() => {
     new HeaderJS(headerRef.current).init()
-  })
+  }, [])
 
   var productName
   if (props.productName) {

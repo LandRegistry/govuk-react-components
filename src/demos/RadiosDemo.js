@@ -79,7 +79,7 @@ function RadiosDemo() {
   }]
 
   return (
-    <main id="#content">
+    <main id="main-content">
       <h1 className="govuk-heading-l">Radios</h1>
       <Radios
         hint={{
