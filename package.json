@@ -7,10 +7,8 @@
     "govuk-frontend": "2.9.0"
   },
   "scripts": {
-    "start:dev": "webpack-dev-server --mode development --config config/webpack.base.config.js --open --hot --history-api-fallback",
-    "build": "webpack --config ./config/webpack.base.config.js --mode production",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --config ./config/webpack.base.config.js --mode production"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,7 +41,6 @@
     "webpack-dev-server": "3.2.1",
     "react": "16.8.5",
     "react-dom": "16.8.5",
-    "react-router-dom": "5.0.0",
-    "react-scripts": "2.1.8"
+    "react-router-dom": "5.0.0"
   }
 }
