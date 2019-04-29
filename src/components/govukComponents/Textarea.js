@@ -37,13 +37,17 @@ function Textarea(props) {
         name={props.name}
         rows={props.rows}
         aria-describedby={describedBy}
-        autocomplete={props.autocomplete}
+        autoComplete={props.autocomplete}
         {...props.attributes}
       >
       </textarea>
     </div >
 
   )
+}
+
+Textarea.defaultProps = {
+  describedBy: ''
 }
 
 export default Textarea
