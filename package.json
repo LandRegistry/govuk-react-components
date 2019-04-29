@@ -7,11 +7,8 @@
     "govuk-frontend": "2.9.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "start": "webpack-dev-server --mode development --open --hot --history-api-fallback",
     "build": "webpack --config ./config/webpack.base.config.js --mode production"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "repository": {
     "type": "git",
