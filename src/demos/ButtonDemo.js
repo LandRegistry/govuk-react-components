@@ -5,7 +5,7 @@ function BackLinkDemo() {
 
   useEffect(() => {
     document.title = 'Button link demo'
-  })
+  }, [])
 
   return (
     <main>

@@ -11,7 +11,7 @@ function ErrorSummary(props) {
     <div class={`govuk-error-summary${props.classes ? ' ' + props.classes : ''}`}
       aria-labelledby="error-summary-title"
       role="alert"
-      tabindex="-1"
+      tabIndex="-1"
       {...props.attributes}
       data-module="error-summary"
     >

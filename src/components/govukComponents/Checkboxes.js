@@ -10,7 +10,7 @@ function Checkboxes(props) {
 
   useEffect(() => {
     new CheckboxesJS(checkboxRef.current).init()
-  })
+  }, [])
 
   var idPrefix = props.idPrefix ? props.idPrefix : props.name
   var describedBy = props.describedBy
