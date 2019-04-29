@@ -8,7 +8,7 @@ function LabelDemo() {
   }, [])
 
   return (
-    <main id="#content">
+    <main id="main-content">
       <h1 className="govuk-heading-l">Label</h1>
       <Label text='Plain label' isPageHeading='false' />
       <Label text='Label as page header' isPageHeading={true} />

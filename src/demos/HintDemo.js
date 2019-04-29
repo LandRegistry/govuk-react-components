@@ -8,7 +8,7 @@ function HintDemo() {
   }, [])
 
   return (
-    <main id="#content">
+    <main id="main-content">
       <h1 className="govuk-heading-l">Hint</h1>
       <Hint text='Hint text' />
       <Hint html={<>This is <strong>now</strong> working</>} />
