@@ -10,7 +10,7 @@ function FileUploadDemo() {
   return (
     <main id="main-content">
       <h1 className="govuk-heading-l">File upload</h1>
-      <FileUpload />
+      <FileUpload label={{ text: 'Upload a file' }} formGroup={{ classes: 'example-class' }} />
     </main>
   )
 }
