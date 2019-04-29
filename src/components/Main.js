@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './Nav';
+import AccordionDemo from '../demos/AccordionDemo';
 import BackLink from '../demos/BackLink';
 import ButtonDemo from '../demos/ButtonDemo';
 import CheckboxesDemo from '../demos/CheckboxesDemo';
@@ -16,6 +17,10 @@ import { Route, Switch } from "react-router-dom";
 function Main() {
 
   const navigation = [
+    {
+      text: "Accordion",
+      href: "/accordion"
+    },
     {
       text: "Back link",
       href: "/back-link"
@@ -41,9 +46,6 @@ function Main() {
       text: "Textarea",
       href: "/textarea"
     }, {
-      text: "Input",
-      href: "/input"
-    }, {
       text: "Skip link",
       href: "/skip-link"
     }, {
@@ -59,6 +61,7 @@ function Main() {
         </div>
         <div className="govuk-grid-column-three-quarters">
           <Switch>
+            <Route exact path="/accordion" component={AccordionDemo} />
             <Route exact path="/back-link" component={BackLink} />
             <Route exact path="/button" component={ButtonDemo} />
             <Route exact path="/checkboxes" component={CheckboxesDemo} />

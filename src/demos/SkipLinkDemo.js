@@ -5,7 +5,7 @@ function SkipLinkDemo() {
 
   useEffect(() => {
     document.title = 'Skip link demo'
-  })
+  }, [])
 
   return (
     <main id="#content">
