@@ -5,7 +5,7 @@ function TextareaDemo() {
 
   useEffect(() => {
     document.title = 'Teaxtarea demo'
-  })
+  }, [])
 
   return (
     <main>

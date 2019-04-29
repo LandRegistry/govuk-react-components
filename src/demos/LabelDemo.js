@@ -5,7 +5,7 @@ function LabelDemo() {
 
   useEffect(() => {
     document.title = 'Label demo'
-  })
+  }, [])
 
   return (
     <main id="main-content">

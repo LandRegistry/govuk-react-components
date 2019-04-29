@@ -5,7 +5,7 @@ function BackLinkDemo() {
 
   useEffect(() => {
     document.title = 'Back link demo'
-  })
+  }, [])
 
   return (
     <main id="main-content">

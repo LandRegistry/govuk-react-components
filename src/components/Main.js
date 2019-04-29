@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './Nav';
+import AccordionDemo from '../demos/AccordionDemo';
 import BackLink from '../demos/BackLink';
 import ButtonDemo from '../demos/ButtonDemo';
 import CheckboxesDemo from '../demos/CheckboxesDemo';
@@ -10,6 +11,7 @@ import LabelDemo from '../demos/LabelDemo';
 import PanelDemo from '../demos/PanelDemo';
 import TextareaDemo from '../demos/TextareaDemo';
 import SkipLinkDemo from '../demos/SkipLinkDemo';
+import WarningTextDemo from '../demos/WarningTextDemo';
 import RadiosDemo from '../demos/RadiosDemo';
 
 import { Route, Switch } from "react-router-dom";
@@ -17,6 +19,10 @@ import { Route, Switch } from "react-router-dom";
 function Main() {
 
   const navigation = [
+    {
+      text: "Accordion",
+      href: "/accordion"
+    },
     {
       text: "Back link",
       href: "/back-link"
@@ -48,8 +54,12 @@ function Main() {
       text: "Skip link",
       href: "/skip-link"
     }, {
+      text: "Warning text",
+      href: "/warning-text"
+    }, {
       text: "Radios",
       href: "/radios"
+
     }]
 
   return (
@@ -60,6 +70,7 @@ function Main() {
         </div>
         <div className="govuk-grid-column-three-quarters">
           <Switch>
+            <Route exact path="/accordion" component={AccordionDemo} />
             <Route exact path="/back-link" component={BackLink} />
             <Route exact path="/button" component={ButtonDemo} />
             <Route exact path="/checkboxes" component={CheckboxesDemo} />
@@ -68,9 +79,10 @@ function Main() {
             <Route exact path="/input" component={InputDemo} />
             <Route exact path="/label" component={LabelDemo} />
             <Route exact path="/panel" component={PanelDemo} />
-            <Route exact path="/textarea" component={TextareaDemo} />
-            <Route exact path="/skip-link" component={SkipLinkDemo} />
             <Route exact path="/radios" component={RadiosDemo} />
+            <Route exact path="/skip-link" component={SkipLinkDemo} />
+            <Route exact path="/textarea" component={TextareaDemo} />
+            <Route exact path="/warning-text" component={WarningTextDemo} />
           </Switch>
         </div>
       </div>
