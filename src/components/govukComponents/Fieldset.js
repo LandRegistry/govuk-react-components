@@ -20,7 +20,6 @@ function Fieldset(props) {
       {props.children}
     </fieldset>
   )
-
 }
 
 Fieldset.defaultProps = {
