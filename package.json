@@ -37,6 +37,7 @@
     "nunjucks": "^3.2.0",
     "react": "16.8.5",
     "react-dom": "16.8.5",
+    "react-html-parser": "^2.0.2",
     "react-router-dom": "5.0.0",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",

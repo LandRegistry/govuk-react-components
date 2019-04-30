@@ -9,6 +9,7 @@ import yaml from 'js-yaml';
 import fs from 'fs';
 import request from 'sync-request';
 import {HtmlDiffer} from 'html-differ';
+import ReactHtmlParser from 'react-html-parser';
 
 const components = [
   {
@@ -37,13 +38,19 @@ components.forEach(component => {
 
   describe(component.name, () => {
     data.examples.forEach(example => {
+      // Process the data for handing to React so that the html params get passed as JSX
+      const reactData = Object.assign({}, example.data)
+      if (reactData.html) {
+        reactData.html = ReactHtmlParser(reactData.html)
+      }
+
       describe(`${example.name}`, () => {
         it('React output matches Nunjucks output', () => {
           const expected = nunjucks.render(path.join(govukFrontendPath, 'components', component.name ,'template.njk'), {
             params: example.data
           })
 
-          const actual = ReactDOM.renderToStaticMarkup(React.createElement(component.reactComponent, example.data))
+          const actual = ReactDOM.renderToStaticMarkup(React.createElement(component.reactComponent, reactData))
 
           const comparison = htmlDiffer.isEqual(actual, expected)
 
