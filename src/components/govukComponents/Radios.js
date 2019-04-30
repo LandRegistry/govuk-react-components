@@ -32,7 +32,7 @@ function Radios(props) {
   }
 
   const innerHtml = props.items.map((radio, index) =>
-    radio.divider ? <div key={radio.divider + index} className="govuk-radios__divider">{radio.divider}</div> : <><div key={props.name + index} className="govuk-radios__item">
+    radio.divider ? <div key={radio.divider + index} className="govuk-radios__divider">{radio.divider}</div> : <React.Fragment key={props.name + index}><div className="govuk-radios__item">
       <input
         id={radio.conditional ? props.name + '-conditional-' + (index + 1) : props.name + (index + 1)}
         className="govuk-radios__input"
@@ -48,7 +48,7 @@ function Radios(props) {
         id={`conditional-${props.name}-conditional-${index + 1}`}
       >
         {radio.conditional.html}
-      </div> : ''}</>
+      </div> : ''}</React.Fragment>
   )
   return (
     <div className={`govuk-radios${props.classes ? ' ' + props.classes : ''}`}
