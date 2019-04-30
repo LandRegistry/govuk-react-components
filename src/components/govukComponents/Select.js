@@ -24,11 +24,14 @@ function Select(props) {
     />
   }
 
+  if (props.items.selected) {
+    var defaultValue = props.items.selected
+  }
+
   var options = props.items.map((option, index) =>
     <option
       key={option.value + index}
       value={option.value}
-      selected={option.selected}
       disabled={option.disabled}
     >{option.text}</option>
   )
@@ -45,6 +48,7 @@ function Select(props) {
         className={`govuk-select${props.classes ? ' ' + props.classes : ''}${props.errorMessage ? ' govuk-select--error' : ''}`}
         id={props.id}
         name={props.name}
+        defaultValue={defaultValue}
         aria-describedby={describedBy}
         {...props.attributes}
       >
