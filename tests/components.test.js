@@ -26,7 +26,11 @@ const components = [
   }
 ]
 
-const htmlDiffer = new HtmlDiffer();
+const htmlDiffer = new HtmlDiffer({
+  ignoreAttributes: [
+    'disabled'  // Because React sets disabled as an empty attribute but the nunjucks does not
+  ]
+});
 
 const govukFrontendPath = path.dirname(require.resolve('govuk-frontend/README.md'))
 const govukPackage = require(path.join(govukFrontendPath, 'package.json'))
