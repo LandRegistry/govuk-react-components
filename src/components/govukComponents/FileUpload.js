@@ -1,10 +1,12 @@
 import React from 'react'
-import Label from './Label'
-import Hint from './Hint'
 import ErrorMessage from './ErrorMessage'
+import Hint from './Hint'
+import Label from './Label'
 
-function Textarea(props) {
+function FileUpload(props) {
+
   var describedBy = props.describedBy
+
   if (props.hint) {
     const hintId = props.id + '-hint'
     describedBy += ' ' + hintId
@@ -22,32 +24,27 @@ function Textarea(props) {
       {...props.errorMessage}
     />
   }
-
   return (
 
-    <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''} ${props.formGroup ? props.formGroup.classes : ''}`}>
-      <Label
-        {...props.label}
-      />
+    <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''}${props.formGroup ? ' ' + props.formGroup.classes : ''}`}>
+      <Label {...props.label} />
       {hint}
       {errorMessage}
-      <textarea
-        className={`govuk-textarea${props.errorMessage ? ' govuk-textarea--error' : ''}${props.classes ? ' ' + props.classes : ''}`}
+      <input
+        className={`govuk-file-upload${props.classes ? ' ' + props.classes : ''}${props.errorMessage ? ' govuk-file-upload--error' : ''}`}
         id={props.id}
         name={props.name}
-        rows={props.rows}
+        type="file"
+        value={props.value}
         aria-describedby={describedBy}
-        autoComplete={props.autocomplete}
         {...props.attributes}
-      >
-      </textarea>
-    </div >
-
+      />
+    </div>
   )
 }
 
-Textarea.defaultProps = {
+FileUpload.defaultProps = {
   describedBy: ''
 }
 
-export default Textarea
+export default FileUpload
