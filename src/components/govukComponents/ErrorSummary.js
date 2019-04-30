@@ -8,19 +8,19 @@ function ErrorSummary(props) {
     </p>
   }
   return (
-    <div class={`govuk-error-summary${props.classes ? ' ' + props.classes : ''}`}
+    <div className={`govuk-error-summary${props.classes ? ' ' + props.classes : ''}`}
       aria-labelledby="error-summary-title"
       role="alert"
       tabIndex="-1"
       {...props.attributes}
       data-module="error-summary"
     >
-      <h2 class="govuk-error-summary__title" id="error-summary-title">
+      <h2 className="govuk-error-summary__title" id="error-summary-title">
         {props.titleHtml ? props.titleHtml : props.titleText}
       </h2>
-      <div class="govuk-error-summary__body">
+      <div className="govuk-error-summary__body">
         {description}
-        <ul class="govuk-list govuk-error-summary__list">
+        <ul className="govuk-list govuk-error-summary__list">
           {props.errorList.map((error, index) =>
             <li key={error.href + index}>
               {
