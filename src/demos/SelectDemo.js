@@ -10,21 +10,22 @@ function SelectDemo() {
   var items = [
     {
       value: "published",
-      text: "Recently published",
-      disabled: true
+      text: "Recently published"
+
     },
     {
       value: "updated",
       text: "Recently updated",
-      selected: false
+      disabled: true
     },
     {
       value: "views",
-      text: "Most views",
+      text: "Most views"
     },
     {
       value: "comments",
-      text: "Most comments"
+      text: "Most comments",
+      selected: true
     }
   ]
 

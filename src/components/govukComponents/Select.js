@@ -24,9 +24,8 @@ function Select(props) {
     />
   }
 
-  if (props.items.selected) {
-    var defaultValue = props.items.selected
-  }
+  const selectedItem = props.items.find(item => item.selected === true)
+  const defaultValue = selectedItem.value
 
   var options = props.items.map((option, index) =>
     <option
