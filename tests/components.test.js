@@ -8,6 +8,7 @@ import path from 'path';
 import yaml from 'js-yaml';
 import fs from 'fs';
 import request from 'sync-request';
+import {HtmlDiffer} from 'html-differ';
 
 const components = [
   {
@@ -24,6 +25,7 @@ const components = [
   }
 ]
 
+const htmlDiffer = new HtmlDiffer();
 
 const govukFrontendPath = path.dirname(require.resolve('govuk-frontend/README.md'))
 const govukPackage = require(path.join(govukFrontendPath, 'package.json'))
@@ -39,9 +41,18 @@ components.forEach(component => {
         it('React output matches Nunjucks output', () => {
           const expected = nunjucks.render(path.join(govukFrontendPath, 'components', component.name ,'template.njk'), {
             params: example.data
-          }).trim()
+          })
+
           const actual = ReactDOM.renderToStaticMarkup(React.createElement(component.reactComponent, example.data))
-          expect(actual).toBe(expected)
+
+          const comparison = htmlDiffer.isEqual(actual, expected)
+
+          // If the comparison is false, then compare the strings so that the person can eyeball the diff
+          if (!comparison) {
+            expect(actual).toBe(expected)
+          }
+
+          expect(comparison).toBe(true)
         })
       })
     })
