@@ -36,6 +36,8 @@ function Button(props) {
     var button = <button {...buttonAttributes} {...commonAttributes}>
       {props.html ? props.html : props.text}
     </button >
+  } else if (element === 'input') {
+    var button = <input value={props.text} {...buttonAttributes} {...commonAttributes} />
   }
 
   return button
