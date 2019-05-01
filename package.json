@@ -4,6 +4,7 @@
   "description": "GOV.UK React Components",
   "private": true,
   "dependencies": {
+    "ent": "^2.2.0",
     "glob": "^7.1.3",
     "govuk-frontend": "2.9.0"
   },

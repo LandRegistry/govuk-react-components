@@ -35,9 +35,10 @@ function Textarea(props) {
       <textarea
         className={`govuk-textarea${props.errorMessage ? ' govuk-textarea--error' : ''}${props.classes ? ' ' + props.classes : ''}`}
         id={props.id}
+        defaultValue={props.value}
         name={props.name}
         rows={props.rows}
-        aria-describedby={describedBy || null}
+        aria-describedby={describedBy.trim() || null}
         autoComplete={props.autocomplete}
         {...props.attributes}
       >

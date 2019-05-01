@@ -30,7 +30,7 @@ function Input(props) {
       {hint}
       {errorMessage}
       <input className={`govuk-input${props.classes ? ' ' + props.classes : ''} ${props.errorMessage ? ' govuk-input--error' : ''}`} id={props.id} name={props.name ? props.name : props.id} type={props.type}
-        value={props.value}
+        defaultValue={props.value}
         aria-describedby={describedBy}
         autoComplete={props.autocomplete}
         pattern={props.pattern}

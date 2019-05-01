@@ -7,6 +7,7 @@ import yaml from 'js-yaml';
 import fs from 'fs';
 import request from 'sync-request';
 import glob from 'glob';
+import ent from 'ent';
 import {HtmlDiffer} from '@markedjs/html-differ';
 import ReactHtmlParser from 'react-html-parser';
 import Accordion from '../src/components/govukComponents/Accordion.js';
@@ -144,11 +145,11 @@ components.forEach(component => {
 
       describe(`${example.name}`, () => {
         it('React output matches Nunjucks output', () => {
-          const expected = nunjucks.render(path.join(govukFrontendPath, 'components', component.name ,'template.njk'), {
+          const expected = ent.decode(nunjucks.render(path.join(govukFrontendPath, 'components', component.name ,'template.njk'), {
             params: example.data
-          })
+          }))
 
-          var actual = ReactDOM.renderToStaticMarkup(React.createElement(withRouter(component.reactComponent), reactData))
+          var actual = ent.decode(ReactDOM.renderToStaticMarkup(React.createElement(withRouter(component.reactComponent), reactData)))
 
           // Post-process the React output to smooth over differences
           actual = actual.replace('autoComplete', 'autocomplete')       // React camel cases certain attributes. They're still valid and don't constitute failures relative to the nunjucks
