@@ -31,22 +31,23 @@ function Checkboxes(props) {
   }
 
   const innerHtml = props.items.map((checkbox, index) =>
-    <React.Fragment key={props.name + index}>
+    <React.Fragment key={idPrefix + index}>
       <div className="govuk-checkboxes__item">
         <input
-          id={checkbox.conditional ? props.name + '-conditional-' + (index + 1) : props.name + (index + 1)}
+          id={checkbox.conditional ? idPrefix + (index + 1) : idPrefix + (index + 1)}
           className="govuk-checkboxes__input"
           type="checkbox" name={props.name}
           value={checkbox.value}
-          aria-controls={checkbox.conditional ? `conditional-${props.name}-conditional-${index + 1}` : ''}
+          defaultChecked={checkbox.checked}
+          data-aria-controls={checkbox.conditional ? `conditional-${idPrefix}-${index + 1}` : ''}
         />
-        <Label text={checkbox.text} classes="govuk-checkboxes__label" for={props.name + (index + 1)} />
+        <Label text={checkbox.text} classes="govuk-checkboxes__label" for={idPrefix + (index + 1)} />
         {checkbox.hint ? <Hint classes="govuk-checkboxes__hint" {...checkbox.hint} /> : ''}
       </div>
 
       {checkbox.conditional ? <div
         className="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
-        id={`conditional-${props.name}-conditional-${index + 1}`}
+        id={`conditional-${idPrefix}-${index + 1}`}
       >
         {checkbox.conditional.html}
       </div> : ''}

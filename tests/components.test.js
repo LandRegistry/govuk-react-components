@@ -8,6 +8,7 @@ import fs from 'fs';
 import request from 'sync-request';
 import glob from 'glob';
 import ent from 'ent';
+import prettyhtml from '@starptech/prettyhtml';
 import {HtmlDiffer} from '@markedjs/html-differ';
 import ReactHtmlParser from 'react-html-parser';
 import Accordion from '../src/components/govukComponents/Accordion.js';
@@ -145,14 +146,21 @@ components.forEach(component => {
 
       describe(`${example.name}`, () => {
         it('React output matches Nunjucks output', () => {
-          const expected = ent.decode(nunjucks.render(path.join(govukFrontendPath, 'components', component.name ,'template.njk'), {
+          const expected = cleanHtml(nunjucks.render(path.join(govukFrontendPath, 'components', component.name ,'template.njk'), {
             params: example.data
           }))
 
-          var actual = ent.decode(ReactDOM.renderToStaticMarkup(React.createElement(withRouter(component.reactComponent), reactData)))
+          var actual = cleanHtml(ReactDOM.renderToStaticMarkup(React.createElement(withRouter(component.reactComponent), reactData)))
+          // console.log(actual)
 
           // Post-process the React output to smooth over differences
-          actual = actual.replace('autoComplete', 'autocomplete')       // React camel cases certain attributes. They're still valid and don't constitute failures relative to the nunjucks
+          // const irritations = [
+          //   ['autoComplete', 'autocomplete'],   // React camel cases certain attributes. They're still valid and don't constitute failures relative to the nunjucks
+          //   ['checked=""', 'checked ']          // React outputs empty checked attributes
+          // ]
+          // irritations.forEach(irritation => {
+          //   actual = actual.replace(irritation[0], irritation[1])
+          // })
 
           // Make the actual comparison
           const comparison = htmlDiffer.isEqual(actual, expected)
@@ -160,7 +168,11 @@ components.forEach(component => {
           // If the comparison is false, then compare the strings so
           // that the person can eyeball the diff
           if (!comparison) {
+            // console.log('------------------------------------------')
             // console.log(htmlDiffer.diffHtml(expected, actual))
+
+            // console.log(actual)
+            // console.log(expected)
             expect(actual).toBe(expected)
           }
 
@@ -170,3 +182,10 @@ components.forEach(component => {
     })
   })
 })
+
+
+function cleanHtml(dirtyHtml) {
+  return prettyhtml(ent.decode(dirtyHtml), {
+    sortAttributes: true
+  }).contents;
+}

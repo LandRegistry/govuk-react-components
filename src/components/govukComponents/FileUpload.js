@@ -35,7 +35,7 @@ function FileUpload(props) {
         id={props.id}
         name={props.name}
         type="file"
-        value={props.value}
+        defaultValue={props.value}
         aria-describedby={describedBy}
         {...props.attributes}
       />
