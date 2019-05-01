@@ -53,7 +53,7 @@ function Radios(props) {
             value={radio.value}
             defaultChecked={radio.checked}
             data-aria-controls={radio.conditional ? `conditional-${idPrefix}-${index + 1}` : null}
-            aria-describedBy={radio.hint ? `${idPrefix}-${index + 1}-item-hint` : null}
+            aria-describedby={radio.hint ? `${idPrefix}-${index + 1}-item-hint` : null}
             disabled={radio.disabled}
           />
           <Label text={radio.text} classes="govuk-radios__label" for={idPrefix + '-' + (index + 1)} />

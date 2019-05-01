@@ -132,9 +132,8 @@ const govukPackage = require(path.join(govukFrontendPath, 'package.json'))
 
 
 components.forEach(component => {
-  // TODO: Cache this?
-  const response = request('GET', `https://raw.githubusercontent.com/alphagov/govuk-frontend/v${govukPackage.version}/src/components/${component.name}/${component.name}.yaml`)
-  const data = yaml.safeLoad(response.getBody('utf8'))
+
+  const data = getExamples(govukPackage.version, component.name)
 
   describe(component.name, () => {
     data.examples.forEach(example => {
@@ -188,4 +187,10 @@ function cleanHtml(dirtyHtml) {
   return prettyhtml(ent.decode(dirtyHtml), {
     sortAttributes: true
   }).contents;
+}
+
+function getExamples(version, name) {
+  // TODO: Cache this
+  const response = request('GET', `https://raw.githubusercontent.com/alphagov/govuk-frontend/v${version}/src/components/${name}/${name}.yaml`)
+  return yaml.safeLoad(response.getBody('utf8'))
 }
