@@ -44,7 +44,7 @@ function Checkboxes(props) {
       data-module={conditional ? 'checkboxes' : null}
     >
       {props.items.map((checkbox, index) =>
-        checkbox.divider ? <div key={checkbox.divider + index} className="govuk-checkboxes__divider">{checkbox.divider}</div> : <React.Fragment key={props.name + index}><div className="govuk-checkboxes__item">
+        <React.Fragment key={props.name + index}><div className="govuk-checkboxes__item">
           <input
             className="govuk-checkboxes__input"
             id={idPrefix + '-' + (index + 1)}
