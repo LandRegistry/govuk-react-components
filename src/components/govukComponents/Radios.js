@@ -11,7 +11,7 @@ function Radios(props) {
 
   useEffect(() => {
     new RadiosJS(radioRef.current).init()
-  })
+  }, [])
 
   var idPrefix = props.idPrefix ? props.idPrefix : props.name
   var describedBy = props.describedBy

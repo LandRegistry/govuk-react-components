@@ -191,6 +191,7 @@ function cleanHtml(dirtyHtml) {
 
 function getExamples(version, name) {
   // TODO: Cache this
-  const response = request('GET', `https://raw.githubusercontent.com/alphagov/govuk-frontend/v${version}/src/components/${name}/${name}.yaml`)
+  // const response = request('GET', `https://raw.githubusercontent.com/alphagov/govuk-frontend/v${version}/src/components/${name}/${name}.yaml`)
+  const response = request('GET', `https://raw.githubusercontent.com/andymantell/govuk-frontend/patch-1/src/components/${name}/${name}.yaml`)
   return yaml.safeLoad(response.getBody('utf8'))
 }
