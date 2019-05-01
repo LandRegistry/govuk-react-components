@@ -6,12 +6,107 @@ import path from 'path';
 import yaml from 'js-yaml';
 import fs from 'fs';
 import request from 'sync-request';
+import glob from 'glob';
 import {HtmlDiffer} from '@markedjs/html-differ';
 import ReactHtmlParser from 'react-html-parser';
-import Button from '../src/components/govukComponents/Button.js';
-import Hint from '../src/components/govukComponents/Hint.js';
-import Tag from '../src/components/govukComponents/Tag.js';
+import Accordion from '../src/components/govukComponents/Accordion.js';
 import BackLink from '../src/components/govukComponents/BackLink.js';
+import Button from '../src/components/govukComponents/Button.js';
+import Checkboxes from '../src/components/govukComponents/Checkboxes.js';
+import Details from '../src/components/govukComponents/Details.js';
+import ErrorMessage from '../src/components/govukComponents/ErrorMessage';
+import ErrorSummary from '../src/components/govukComponents/ErrorSummary.js';
+import Fieldset from '../src/components/govukComponents/Fieldset.js';
+import FileUpload from '../src/components/govukComponents/FileUpload.js';
+// import Header from '../src/components/govukComponents/Header.js';
+import Hint from '../src/components/govukComponents/Hint.js';
+import Input from '../src/components/govukComponents/Input.js';
+import Label from '../src/components/govukComponents/Label.js';
+import Panel from '../src/components/govukComponents/Panel.js';
+import Radios from '../src/components/govukComponents/Radios.js';
+import SkipLink from '../src/components/govukComponents/SkipLink.js';
+import Tag from '../src/components/govukComponents/Tag.js';
+import Textarea from '../src/components/govukComponents/Textarea.js';
+import WarningText from '../src/components/govukComponents/WarningText.js';
+
+const components = [
+  {
+    name: 'accordion',
+    reactComponent: Accordion
+  },
+  {
+    name: 'back-link',
+    reactComponent: BackLink
+  },
+  {
+    name: 'button',
+    reactComponent: Button
+  },
+  {
+    name: 'checkboxes',
+    reactComponent: Checkboxes
+  },
+  {
+    name: 'details',
+    reactComponent: Details
+  },
+  {
+    name: 'error-message',
+    reactComponent: ErrorMessage
+  },
+  {
+    name: 'error-summary',
+    reactComponent: ErrorSummary
+  },
+  {
+    name: 'fieldset',
+    reactComponent: Fieldset
+  },
+  {
+    name: 'file-upload',
+    reactComponent: FileUpload
+  },
+  // {
+  //   name: 'header',
+  //   reactComponent: Header
+  // },
+  {
+    name: 'hint',
+    reactComponent: Hint
+  },
+  {
+    name: 'input',
+    reactComponent: Input
+  },
+  {
+    name: 'label',
+    reactComponent: Label
+  },
+  {
+    name: 'panel',
+    reactComponent: Panel
+  },
+  {
+    name: 'radios',
+    reactComponent: Radios
+  },
+  {
+    name: 'skip-link',
+    reactComponent: SkipLink
+  },
+  {
+    name: 'tag',
+    reactComponent: Tag
+  },
+  {
+    name: 'textarea',
+    reactComponent: Textarea
+  },
+  {
+    name: 'warning-text',
+    reactComponent: WarningText
+  }
+]
 
 const withRouter = function(WrappedComponent) {
   return class extends React.Component {
@@ -21,27 +116,7 @@ const withRouter = function(WrappedComponent) {
       </BrowserRouter>
     }
   }
-
 }
-
-const components = [
-  {
-    name: 'button',
-    reactComponent: Button
-  },
-  {
-    name: 'hint',
-    reactComponent: Hint
-  },
-  {
-    name: 'tag',
-    reactComponent: Tag
-  },
-  {
-    name: 'back-link',
-    reactComponent: BackLink
-  }
-]
 
 const htmlDiffer = new HtmlDiffer({
   ignoreAttributes: [
@@ -76,12 +151,12 @@ components.forEach(component => {
 
           const comparison = htmlDiffer.isEqual(actual, expected)
 
-          // If the comparison is false, then compare the strings so that the person can eyeball the diff
+          // If the comparison is false, then compare the strings so
+          // that the person can eyeball the diff
           if (!comparison) {
-            console.log(htmlDiffer.diffHtml(expected, actual))
+            // console.log(htmlDiffer.diffHtml(expected, actual))
             expect(actual).toBe(expected)
           }
-
 
           expect(comparison).toBe(true)
         })
