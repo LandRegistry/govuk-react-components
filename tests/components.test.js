@@ -130,6 +130,7 @@ const govukPackage = require(path.join(govukFrontendPath, 'package.json'))
 
 
 components.forEach(component => {
+  // TODO: Cache this?
   const response = request('GET', `https://raw.githubusercontent.com/alphagov/govuk-frontend/v${govukPackage.version}/src/components/${component.name}/${component.name}.yaml`)
   const data = yaml.safeLoad(response.getBody('utf8'))
 
@@ -147,8 +148,12 @@ components.forEach(component => {
             params: example.data
           })
 
-          const actual = ReactDOM.renderToStaticMarkup(React.createElement(withRouter(component.reactComponent), reactData))
+          var actual = ReactDOM.renderToStaticMarkup(React.createElement(withRouter(component.reactComponent), reactData))
 
+          // Post-process the React output to smooth over differences
+          actual = actual.replace('autoComplete', 'autocomplete')       // React camel cases certain attributes. They're still valid and don't constitute failures relative to the nunjucks
+
+          // Make the actual comparison
           const comparison = htmlDiffer.isEqual(actual, expected)
 
           // If the comparison is false, then compare the strings so

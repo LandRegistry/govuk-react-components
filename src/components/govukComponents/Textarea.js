@@ -28,6 +28,7 @@ function Textarea(props) {
     <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''} ${props.formGroup ? props.formGroup.classes : ''}`}>
       <Label
         {...props.label}
+        for={props.id}
       />
       {hint}
       {errorMessage}
@@ -36,7 +37,7 @@ function Textarea(props) {
         id={props.id}
         name={props.name}
         rows={props.rows}
-        aria-describedby={describedBy}
+        aria-describedby={describedBy || null}
         autoComplete={props.autocomplete}
         {...props.attributes}
       >
@@ -47,7 +48,8 @@ function Textarea(props) {
 }
 
 Textarea.defaultProps = {
-  describedBy: ''
+  describedBy: '',
+  rows: 5
 }
 
 export default Textarea
