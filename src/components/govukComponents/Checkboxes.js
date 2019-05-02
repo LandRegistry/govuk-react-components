@@ -13,8 +13,8 @@ function Checkboxes(props) {
     new CheckboxesJS(checkboxRef.current).init()
   }, [])
 
-  var idPrefix = props.idPrefix ? props.idPrefix : props.name
-  var describedBy = props.describedBy
+  const idPrefix = props.idPrefix ? props.idPrefix : props.name
+  var describedBy = ''
   var hint
   var errorMessage
 
@@ -26,7 +26,8 @@ function Checkboxes(props) {
   }
 
   // Find out if we have any conditional items
-  const conditional = !!props.items.find(item => item.conditional)
+  const isConditional = !!props.items.find(item => item.conditional)
+  const hasFieldset = !!props.fieldset
 
   if (props.errorMessage) {
     var errorId = idPrefix + '-error';
@@ -41,45 +42,60 @@ function Checkboxes(props) {
     <div className={`govuk-checkboxes${props.classes ? ' ' + props.classes : ''}`}
       {...props.attributes}
       ref={checkboxRef}
-      data-module={conditional ? 'checkboxes' : null}
+      data-module={isConditional ? 'checkboxes' : null}
     >
-      {props.items.map((checkbox, index) =>
-        <React.Fragment key={props.name + index}><div className="govuk-checkboxes__item">
-          <input
-            className="govuk-checkboxes__input"
-            id={idPrefix + '-' + (index + 1)}
-            name={props.name}
-            type="checkbox"
-            value={checkbox.value}
-            defaultChecked={checkbox.checked}
-            data-aria-controls={checkbox.conditional ? `conditional-${idPrefix}-${index + 1}` : null}
-            aria-describedby={checkbox.hint ? `${idPrefix}-${index + 1}-item-hint` : null}
-            disabled={checkbox.disabled}
-          />
-          <Label text={checkbox.text} classes="govuk-checkboxes__label" for={idPrefix + '-' + (index + 1)} />
-          {checkbox.hint ? <Hint classes="govuk-checkboxes__hint" {...checkbox.hint} id={`${idPrefix}-${index + 1}-item-hint`} /> : ''}
-        </div>
-          {checkbox.conditional ? <div
-            className={`govuk-checkboxes__conditional ${checkbox.checked ? '' : 'govuk-checkboxes__conditional--hidden'}`}
-            id={`conditional-${idPrefix}-${index + 1}`}
+      {props.items.map((item, index) => {
+        const id = item.id ? item.id : `${idPrefix}-${index + 1}`
+        const name = item.name ? item.name : props.name
+        const conditionalId = item.conditional ? 'conditional-' + id : null
+        const hasHint = item.hint && (item.hint.text || item.hint.html)
+        const itemHintId = id + '-item-hint'
+
+        var itemDescribedBy = ''
+
+        if (!hasFieldset) {
+          itemDescribedBy = describedBy
+        }
+
+        if (item.hint) {
+          itemDescribedBy += ' ' + itemHintId
+        }
+
+        return <React.Fragment key={props.name + index}>
+          <div className="govuk-checkboxes__item">
+            <input
+              className="govuk-checkboxes__input"
+              id={id}
+              name={name}
+              type="checkbox"
+              value={item.value}
+              defaultChecked={item.checked}
+              data-aria-controls={conditionalId}
+              aria-describedby={itemDescribedBy ? itemDescribedBy : null}
+              disabled={item.disabled}
+            />
+            <Label text={item.text} classes="govuk-checkboxes__label" for={id} />
+            {item.hint ? <Hint classes="govuk-checkboxes__hint" {...item.hint} id={itemHintId} /> : ''}
+          </div>
+
+          {item.conditional ? <div
+            className={`govuk-checkboxes__conditional ${item.checked ? '' : 'govuk-checkboxes__conditional--hidden'}`}
+            id={conditionalId}
           >
-            {checkbox.conditional.html}
-          </div> : ''}</React.Fragment>
-      )}
+            {item.conditional.html}
+          </div> : ''}
+        </React.Fragment>
+      })}
     </div>
   </>
 
   return (
     <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''} ${props.formGroup ? props.formGroup.classes : ''}`} >
-      {props.fieldset ? <Fieldset describedBy={describedBy} {...props.fieldset}>
+      {hasFieldset ? <Fieldset describedBy={describedBy} {...props.fieldset}>
         {innerHtml}
       </Fieldset> : innerHtml}
     </div>
   )
-}
-
-Checkboxes.defaultProps = {
-  describedBy: ''
 }
 
 export default Checkboxes

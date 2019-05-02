@@ -6,7 +6,7 @@
   "dependencies": {
     "ent": "^2.2.0",
     "glob": "^7.1.3",
-    "govuk-frontend": "2.9.0"
+    "govuk-frontend": "2.11.0"
   },
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot --history-api-fallback",
