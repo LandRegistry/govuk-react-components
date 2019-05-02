@@ -13,6 +13,11 @@
     "build": "webpack --mode production",
     "test": "jest tests --notify --verbose"
   },
+  "jest": {
+    "moduleNameMapper": {
+      "/assets/images/govuk-logotype-crown.png": "<rootDir>/tests/mocks/govukHeaderCrown.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/LandRegistry/govuk-react-components"

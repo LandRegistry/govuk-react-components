@@ -20,7 +20,7 @@ import ErrorMessage from '../src/components/govukComponents/ErrorMessage';
 import ErrorSummary from '../src/components/govukComponents/ErrorSummary.js';
 import Fieldset from '../src/components/govukComponents/Fieldset.js';
 import FileUpload from '../src/components/govukComponents/FileUpload.js';
-// import Header from '../src/components/govukComponents/Header.js';
+import Header from '../src/components/govukComponents/Header.js';
 import Hint from '../src/components/govukComponents/Hint.js';
 import Input from '../src/components/govukComponents/Input.js';
 import Label from '../src/components/govukComponents/Label.js';
@@ -68,10 +68,10 @@ const components = [
     name: 'file-upload',
     reactComponent: FileUpload
   },
-  // {
-  //   name: 'header',
-  //   reactComponent: Header
-  // },
+  {
+    name: 'header',
+    reactComponent: Header
+  },
   {
     name: 'hint',
     reactComponent: Hint
@@ -150,16 +150,6 @@ components.forEach(component => {
           }))
 
           var actual = cleanHtml(ReactDOM.renderToStaticMarkup(React.createElement(withRouter(component.reactComponent), reactData)))
-          // console.log(actual)
-
-          // Post-process the React output to smooth over differences
-          // const irritations = [
-          //   ['autoComplete', 'autocomplete'],   // React camel cases certain attributes. They're still valid and don't constitute failures relative to the nunjucks
-          //   ['checked=""', 'checked ']          // React outputs empty checked attributes
-          // ]
-          // irritations.forEach(irritation => {
-          //   actual = actual.replace(irritation[0], irritation[1])
-          // })
 
           // Make the actual comparison
           const comparison = htmlDiffer.isEqual(actual, expected)
@@ -169,9 +159,6 @@ components.forEach(component => {
           if (!comparison) {
             // console.log('------------------------------------------')
             // console.log(htmlDiffer.diffHtml(expected, actual))
-
-            // console.log(actual)
-            // console.log(expected)
             expect(actual).toBe(expected)
           }
 
