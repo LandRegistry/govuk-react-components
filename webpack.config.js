@@ -33,11 +33,11 @@ module.exports = {
     },
     output: {
         path: path.resolve('dist'),
-        publicPath: '/public',
+        publicPath: '/',
         filename: 'bundle.js'
     },
     devServer: {
-        contentBase: '/dist',
+        contentBase: '/public',
     },
     plugins: [
         new HtmlWebpackPlugin({
