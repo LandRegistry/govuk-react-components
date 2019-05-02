@@ -130,7 +130,6 @@ const htmlDiffer = new HtmlDiffer({
 const govukFrontendPath = path.dirname(require.resolve('govuk-frontend/README.md'))
 const govukPackage = require(path.join(govukFrontendPath, 'package.json'))
 
-
 components.forEach(component => {
 
   const data = getExamples(govukPackage.version, component.name)
