@@ -177,8 +177,11 @@ function cleanHtml(dirtyHtml) {
 }
 
 function getExamples(version, name) {
-  // TODO: Cache this
+  // Switch these lines over once this:
+  // https://github.com/alphagov/govuk-frontend/pull/1313
+  // has been released. Currently pointing at master but really needs to point
+  // at specific version
   // const response = request('GET', `https://raw.githubusercontent.com/alphagov/govuk-frontend/v${version}/src/components/${name}/${name}.yaml`)
-  const response = request('GET', `https://raw.githubusercontent.com/andymantell/govuk-frontend/patch-1/src/components/${name}/${name}.yaml`)
+  const response = request('GET', `https://raw.githubusercontent.com/alphagov/govuk-frontend/master/src/components/${name}/${name}.yaml`)
   return yaml.safeLoad(response.getBody('utf8'))
 }
