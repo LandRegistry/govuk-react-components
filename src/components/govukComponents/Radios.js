@@ -47,6 +47,7 @@ function Radios(props) {
       {props.items.map((item, index) => {
         const id = item.id ? item.id : `${idPrefix}-${index + 1}`
         const name = item.name ? item.name : props.name
+        const key = name + index
         const conditionalId = item.conditional ? 'conditional-' + id : null
         const hasHint = item.hint && (item.hint.text || item.hint.html)
         const itemHintId = id + '-item-hint'
@@ -61,10 +62,11 @@ function Radios(props) {
           itemDescribedBy += ' ' + itemHintId
         }
 
-        return <React.Fragment key={props.name + index}>
+        if (item.divider) {
+          return <div key={key} className="govuk-radios__divider">{item.divider}</div>
+        }
 
-          {item.divider && <div className="govuk-radios__divider">{item.divider}</div>}
-
+        return <React.Fragment key={key}>
           <div className="govuk-radios__item">
             <input
               className="govuk-radios__input"
@@ -77,7 +79,7 @@ function Radios(props) {
               aria-describedby={itemDescribedBy ? itemDescribedBy : null}
               disabled={item.disabled}
             />
-            <Label text={item.text} classes="govuk-radios__label" for={id} />
+            <Label text={item.text || item.html} classes="govuk-radios__label" for={id} />
             {item.hint ? <Hint classes="govuk-radios__hint" {...item.hint} id={itemHintId} /> : ''}
           </div>
 
