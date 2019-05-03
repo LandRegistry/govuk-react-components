@@ -4,11 +4,24 @@
   "description": "GOV.UK React Components",
   "private": true,
   "dependencies": {
-    "govuk-frontend": "2.9.0"
+    "mkdirp": "^0.5.1"
+  },
+  "peerDependencies": {
+    "govuk-frontend": "2.11.0"
   },
   "scripts": {
+    "installGovukFrontend": "node install-govuk-frontend.js",
+    "prestart": "npm run installGovukFrontend",
+    "prebuild": "npm run installGovukFrontend",
+    "pretest": "npm run installGovukFrontend",
     "start": "webpack-dev-server --mode development --open --hot --history-api-fallback",
-    "build": "webpack --config ./config/webpack.base.config.js --mode production"
+    "build": "webpack --mode production",
+    "test": "jest tests --notify --verbose"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "/assets/images/govuk-logotype-crown.png": "<rootDir>/tests/mocks/govukHeaderCrown.js"
+    }
   },
   "repository": {
     "type": "git",
@@ -21,23 +34,33 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@babel/core": "7.4.0",
-    "@babel/preset-env": "7.4.2",
+    "@babel/core": "7.4.4",
+    "@babel/preset-env": "7.4.4",
     "@babel/preset-react": "7.0.0",
+    "@markedjs/html-differ": "2.0.1",
+    "@starptech/prettyhtml": "0.9.0",
     "babel-loader": "8.0.5",
     "css-loader": "2.1.1",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
+    "ent": "2.2.0",
     "file-loader": "3.0.1",
+    "glob": "7.1.3",
     "html-webpack-plugin": "3.2.0",
-    "node-sass": "4.11.0",
+    "jest": "24.7.1",
+    "js-yaml": "3.13.1",
+    "node-sass": "4.12.0",
+    "nunjucks": "3.2.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-html-parser": "2.0.2",
+    "react-router-dom": "5.0.0",
+    "regenerator-runtime": "0.13.2",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
-    "url-loader": "^1.1.2",
-    "webpack": "4.28.3",
-    "webpack-cli": "3.3.0",
-    "webpack-dev-server": "3.2.1",
-    "react": "16.8.5",
-    "react-dom": "16.8.5",
-    "react-router-dom": "5.0.0"
+    "sync-request": "6.1.0",
+    "url-loader": "1.1.2",
+    "webpack": "4.30.0",
+    "webpack-cli": "3.3.1",
+    "webpack-dev-server": "3.3.1"
   }
 }

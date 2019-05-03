@@ -26,14 +26,14 @@ function Header(props) {
         <button type="button" role="button" className="govuk-header__menu-button js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
         <nav>
           <ul id="navigation" className={`govuk-header__navigation${props.navigationClasses ? ' ' + props.navigationClasses : ''}`} aria-label="Top Level Navigation">
-            {props.navigation.map((link, index) =>
-              link.text && (link.href || link.to) ?
-                <li key={'navigation' + index} className="govuk-header__navigation-item">
-                  {link.to ?
-                    <Link className={`govuk-header__link ${link.classes ? ' ' + link.classes : ''}`} to={link.to} {...link.attributes} >
-                      {link.text}
-                    </Link> : <a className={`govuk-header__link ${link.classes ? ' ' + link.classes : ''}`} href={link.href} {...link.attributes} >
-                      {link.text}
+            {props.navigation.map((item, index) =>
+              item.text && (item.href || item.to) ?
+                <li key={'navigation' + index} className={`govuk-header__navigation-item${item.active ? ' govuk-header__navigation-item--active' : ''}`}>
+                  {item.to ?
+                    <Link className={`govuk-header__link ${item.classes ? ' ' + item.classes : ''}`} to={link.to} {...item.attributes} >
+                      {item.text}
+                    </Link> : <a className={`govuk-header__link ${item.classes ? ' ' + item.classes : ''}`} href={item.href} {...item.attributes} >
+                      {item.text}
                     </a>
                   }
                 </li>

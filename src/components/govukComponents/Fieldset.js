@@ -13,7 +13,7 @@ function Fieldset(props) {
 
   return (
     <fieldset className={`govuk-fieldset${props.classes ? ' ' + props.classes : ''}`}
-      aria-describedby={props.describedBy ? props.describedBy : ''}
+      aria-describedby={props.describedBy ? props.describedBy : null}
       {...props.attributes}
     >
       {legend}
@@ -23,7 +23,7 @@ function Fieldset(props) {
 }
 
 Fieldset.defaultProps = {
-  describedBy: ' '
+  describedBy: ''
 }
 
 export default Fieldset

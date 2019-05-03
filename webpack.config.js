@@ -1,5 +1,6 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path')
 
 module.exports = {
     entry: './src/index.js',
@@ -31,12 +32,12 @@ module.exports = {
         ],
     },
     output: {
-        path: __dirname + '/../dist',
+        path: path.resolve('dist'),
         publicPath: '/',
         filename: 'bundle.js'
     },
     devServer: {
-        contentBase: '/dist',
+        contentBase: '/public',
     },
     plugins: [
         new HtmlWebpackPlugin({
