@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import TabsJS from 'govuk-frontend/components/tabs/Tabs'
+import TabsJS from 'govuk-frontend/components/tabs/tabs'
 
 function Tabs(props) {
   const tabsRef = React.createRef()
