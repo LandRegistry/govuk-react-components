@@ -1,7 +1,6 @@
 const exec = require('child_process').execSync
 
 const packageJson = require('./package.json')
-
 // Check if we've got govuk-frontend installed and install it if not
 try {
   require.resolve('govuk-frontend/package.json')

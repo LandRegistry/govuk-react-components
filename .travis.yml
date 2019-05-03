@@ -2,3 +2,6 @@ language: node_js
 cache: npm
 node_js:
   - "lts/*"
+
+before_script:
+  - node install-govuk-frontend.js
