@@ -75,7 +75,7 @@ function Main() {
     }]
 
   return (
-    <div class="govuk-main-wrapper">
+    <div className="govuk-main-wrapper">
       <div className="govuk-width-container">
         <div className="govuk-grid-row">
           <div className="govuk-grid-column-one-quarter">
