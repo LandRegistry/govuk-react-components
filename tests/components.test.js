@@ -24,6 +24,7 @@ import FileUpload from '../src/components/govukComponents/FileUpload.js';
 import Header from '../src/components/govukComponents/Header.js';
 import Hint from '../src/components/govukComponents/Hint.js';
 import Input from '../src/components/govukComponents/Input.js';
+import InsetText from '../src/components/govukComponents/InsetText.js';
 import Label from '../src/components/govukComponents/Label.js';
 import Panel from '../src/components/govukComponents/Panel.js';
 import Radios from '../src/components/govukComponents/Radios.js';
@@ -80,6 +81,10 @@ const components = [
   {
     name: 'input',
     reactComponent: Input
+  },
+  {
+    name: 'inset-text',
+    reactComponent: InsetText
   },
   {
     name: 'label',
