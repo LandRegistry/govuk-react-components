@@ -44,7 +44,6 @@ function Button(props) {
 }
 
 Button.defaultProps = {
-  value: 'Submit',
   type: 'submit'
 }
 
