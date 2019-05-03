@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "GOV.UK React Components",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "mkdirp": "^0.5.1"
+  },
   "peerDependencies": {
     "govuk-frontend": "2.11.0"
   },

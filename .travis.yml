@@ -1,7 +1,6 @@
 language: node_js
-cache: npm
+directories:
+  - "$HOME/.npm"
+  - "tests/.cache"
 node_js:
   - "lts/*"
-
-before_script:
-  - npm install govuk-frontend@2.11.0 --no-save

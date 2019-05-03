@@ -11,6 +11,7 @@ import ent from 'ent';
 import prettyhtml from '@starptech/prettyhtml';
 import {HtmlDiffer} from '@markedjs/html-differ';
 import ReactHtmlParser from 'react-html-parser';
+import mkdirp from 'mkdirp';
 import Accordion from '../src/components/govukComponents/Accordion.js';
 import BackLink from '../src/components/govukComponents/BackLink.js';
 import Button from '../src/components/govukComponents/Button.js';
@@ -176,11 +177,24 @@ function cleanHtml(dirtyHtml) {
 }
 
 function getExamples(version, name) {
-  // Switch these lines over once this:
+  // Delete this hardcoded version once this:
   // https://github.com/alphagov/govuk-frontend/pull/1313
   // has been released. Currently pointing at master but really needs to point
   // at specific version
-  // const response = request('GET', `https://raw.githubusercontent.com/alphagov/govuk-frontend/v${version}/src/components/${name}/${name}.yaml`)
-  const response = request('GET', `https://raw.githubusercontent.com/alphagov/govuk-frontend/master/src/components/${name}/${name}.yaml`)
-  return yaml.safeLoad(response.getBody('utf8'))
+  // Don't forget to put a v prefix back in the url when switching back to version numbers
+  version = '8d3e41fb2fafb1d16704fdb2389515b44c4cc470'
+
+  const cachePath = `tests/.cache/govuk-frontend@${version}/src/components/${name}/${name}.yaml`
+  if (fs.existsSync(cachePath)) {
+    return yaml.safeLoad(fs.readFileSync(cachePath, { encoding: 'utf8'}))
+  } else {
+    console.info(`Cached examples not found for govuk-frontend@${version}/${name} - Downloading...`)
+    const response = request('GET', `https://raw.githubusercontent.com/alphagov/govuk-frontend/${version}/src/components/${name}/${name}.yaml`)
+    const data = response.getBody('utf8')
+
+    mkdirp.sync(path.dirname(cachePath))
+    fs.writeFileSync(cachePath, data)
+
+    return yaml.safeLoad(data)
+  }
 }
