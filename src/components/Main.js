@@ -6,6 +6,7 @@ import ButtonDemo from '../demos/ButtonDemo';
 import CheckboxesDemo from '../demos/CheckboxesDemo';
 import DetailsDemo from '../demos/DetailsDemo';
 import ErrorSummaryDemo from '../demos/ErrorSummaryDemo';
+import FileUploadDemo from '../demos/FileUploadDemo';
 import HintDemo from '../demos/HintDemo';
 import InputDemo from '../demos/InputDemo';
 import LabelDemo from '../demos/LabelDemo';
@@ -42,6 +43,9 @@ function Main() {
       text: "ErrorSummary",
       href: "/error-summary"
     }, {
+      text: "FileUpload",
+      href: "/file-upload"
+    }, {
       text: "Hint",
       href: "/hint"
     }, {
@@ -57,6 +61,7 @@ function Main() {
       text: "Radios",
       href: "/radios"
     }, {
+
       text: "Skip link",
       href: "/skip-link"
     }, {
@@ -88,6 +93,7 @@ function Main() {
               <Route exact path="/checkboxes" component={CheckboxesDemo} />
               <Route exact path="/details" component={DetailsDemo} />
               <Route exact path="/error-summary" component={ErrorSummaryDemo} />
+              <Route exact path="/file-upload" component={FileUploadDemo} />
               <Route exact path="/hint" component={HintDemo} />
               <Route exact path="/input" component={InputDemo} />
               <Route exact path="/label" component={LabelDemo} />

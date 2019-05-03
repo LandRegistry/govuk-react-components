@@ -26,12 +26,15 @@ function Input(props) {
 
   return (
     <div className={`govuk-form-group${props.formGroup ? ' ' + props.formGroup.classes : ''} ${props.errorMessage ? 'govuk-form-group--error' : ''} `}>
-      <Label {...props.label}></Label>
+      <Label
+        {...props.label}
+        for={props.id}
+      ></Label>
       {hint}
       {errorMessage}
       <input className={`govuk-input${props.classes ? ' ' + props.classes : ''} ${props.errorMessage ? ' govuk-input--error' : ''}`} id={props.id} name={props.name ? props.name : props.id} type={props.type}
-        value={props.value}
-        aria-describedby={describedBy}
+        defaultValue={props.value}
+        aria-describedby={describedBy ? describedBy : null}
         autoComplete={props.autocomplete}
         pattern={props.pattern}
         {...props.attributes}

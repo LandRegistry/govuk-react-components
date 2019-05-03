@@ -15,7 +15,7 @@ function ErrorMessage(props) {
 }
 
 ErrorMessage.defaultProps = {
-  visuallyHiddenText: "Error "
+  visuallyHiddenText: "Error:"
 }
 
 export default ErrorMessage

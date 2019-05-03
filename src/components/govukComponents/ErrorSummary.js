@@ -4,7 +4,7 @@ function ErrorSummary(props) {
 
   if (props.descriptionHtml || props.descriptionText) {
     var description = <p>
-      {props.descriptionHtml ? props.descriptionHtml : props.descriptionText}}
+      {props.descriptionHtml ? props.descriptionHtml : props.descriptionText}
     </p>
   }
   return (
