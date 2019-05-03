@@ -13,12 +13,12 @@ function BackLinkDemo() {
       <Button
         classes="custom-class new-class"
         type="submit"
-        value="Continue"
+        text="Continue"
       />
       <Button
         classes="custom-class new-class"
         type="submit"
-        value="Disabled"
+        text="Disabled"
         disabled="disabled"
       />
       <Button

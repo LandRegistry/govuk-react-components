@@ -27,7 +27,10 @@ function FileUpload(props) {
   return (
 
     <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''}${props.formGroup ? ' ' + props.formGroup.classes : ''}`}>
-      <Label {...props.label} />
+      <Label
+        {...props.label}
+        for={props.id}
+      />
       {hint}
       {errorMessage}
       <input
@@ -35,8 +38,8 @@ function FileUpload(props) {
         id={props.id}
         name={props.name}
         type="file"
-        value={props.value}
-        aria-describedby={describedBy}
+        defaultValue={props.value}
+        aria-describedby={describedBy ? describedBy : null}
         {...props.attributes}
       />
     </div>
