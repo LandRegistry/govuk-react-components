@@ -4,4 +4,4 @@ node_js:
   - "lts/*"
 
 before_script:
-  - node install-govuk-frontend.js
+  - npm install govuk-frontend@2.11.0 --no-save
