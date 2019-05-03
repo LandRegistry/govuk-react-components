@@ -27,6 +27,7 @@ import Input from '../src/components/govukComponents/Input.js';
 import Label from '../src/components/govukComponents/Label.js';
 import Panel from '../src/components/govukComponents/Panel.js';
 import Radios from '../src/components/govukComponents/Radios.js';
+import Select from '../src/components/govukComponents/Select.js';
 import SkipLink from '../src/components/govukComponents/SkipLink.js';
 import Tag from '../src/components/govukComponents/Tag.js';
 import Textarea from '../src/components/govukComponents/Textarea.js';
@@ -92,6 +93,10 @@ const components = [
   {
     name: 'radios',
     reactComponent: Radios
+  },
+  {
+    name: 'select',
+    reactComponent: Select
   },
   {
     name: 'skip-link',
