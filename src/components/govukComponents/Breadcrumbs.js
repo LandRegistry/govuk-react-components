@@ -21,8 +21,4 @@ function Breadcrumbs(props) {
   )
 }
 
-Breadcrumbs.defaultProps = {
-
-}
-
 export default Breadcrumbs
