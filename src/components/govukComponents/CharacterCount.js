@@ -34,8 +34,6 @@ function CharacterCount(props) {
         You can enter up to {props.maxlength || props.maxwords} {props.maxwords ? 'words' : 'characters'}
       </span>
     </div>
-
-
   )
 }
 
