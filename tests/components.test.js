@@ -9,13 +9,14 @@ import request from 'sync-request';
 import glob from 'glob';
 import ent from 'ent';
 import prettyhtml from '@starptech/prettyhtml';
-import {HtmlDiffer} from '@markedjs/html-differ';
+import { HtmlDiffer } from '@markedjs/html-differ';
 import ReactHtmlParser from 'react-html-parser';
 import mkdirp from 'mkdirp';
 import Accordion from '../src/components/govukComponents/Accordion.js';
 import BackLink from '../src/components/govukComponents/BackLink.js';
 import Button from '../src/components/govukComponents/Button.js';
 import Checkboxes from '../src/components/govukComponents/Checkboxes.js';
+import DateInput from '../src/components/govukComponents/DateInput.js';
 import Details from '../src/components/govukComponents/Details.js';
 import ErrorMessage from '../src/components/govukComponents/ErrorMessage';
 import ErrorSummary from '../src/components/govukComponents/ErrorSummary.js';
@@ -49,6 +50,10 @@ const components = [
   {
     name: 'checkboxes',
     reactComponent: Checkboxes
+  },
+  {
+    name: 'date-input',
+    reactComponent: DateInput
   },
   {
     name: 'details',
@@ -116,7 +121,7 @@ const components = [
   }
 ]
 
-const withRouter = function(WrappedComponent) {
+const withRouter = function (WrappedComponent) {
   return class extends React.Component {
     render() {
       return <BrowserRouter>
@@ -150,7 +155,7 @@ components.forEach(component => {
 
       describe(`${example.name}`, () => {
         it('React output matches Nunjucks output', () => {
-          const expected = cleanHtml(nunjucks.render(path.join(govukFrontendPath, 'components', component.name ,'template.njk'), {
+          const expected = cleanHtml(nunjucks.render(path.join(govukFrontendPath, 'components', component.name, 'template.njk'), {
             params: example.data
           }))
 
@@ -191,7 +196,7 @@ function getExamples(version, name) {
 
   const cachePath = `tests/.cache/govuk-frontend@${version}/src/components/${name}/${name}.yaml`
   if (fs.existsSync(cachePath)) {
-    return yaml.safeLoad(fs.readFileSync(cachePath, { encoding: 'utf8'}))
+    return yaml.safeLoad(fs.readFileSync(cachePath, { encoding: 'utf8' }))
   } else {
     console.info(`Cached examples not found for govuk-frontend@${version}/${name} - Downloading...`)
     const response = request('GET', `https://raw.githubusercontent.com/alphagov/govuk-frontend/${version}/src/components/${name}/${name}.yaml`)
