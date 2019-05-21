@@ -16,7 +16,9 @@ import Accordion from '../src/components/govukComponents/Accordion.js';
 import BackLink from '../src/components/govukComponents/BackLink.js';
 import Breadcrumbs from '../src/components/govukComponents/Breadcrumbs.js';
 import Button from '../src/components/govukComponents/Button.js';
+import CharacterCount from '../src/components/govukComponents/CharacterCount.js';
 import Checkboxes from '../src/components/govukComponents/Checkboxes.js';
+import DateInput from '../src/components/govukComponents/DateInput.js';
 import Details from '../src/components/govukComponents/Details.js';
 import ErrorMessage from '../src/components/govukComponents/ErrorMessage';
 import ErrorSummary from '../src/components/govukComponents/ErrorSummary.js';
@@ -51,8 +53,16 @@ const components = [
     reactComponent: Button
   },
   {
+    name: 'character-count',
+    reactComponent: CharacterCount
+  },
+  {
     name: 'checkboxes',
     reactComponent: Checkboxes
+  },
+  {
+    name: 'date-input',
+    reactComponent: DateInput
   },
   {
     name: 'details',
