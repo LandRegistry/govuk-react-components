@@ -8,7 +8,7 @@ function TextareaDemo() {
   }, [])
 
   return (
-    <main>
+    <main id="main-content">
       <h1 className="govuk-heading-l">Textarea</h1>
       <Textarea
         id="plaintextarea"

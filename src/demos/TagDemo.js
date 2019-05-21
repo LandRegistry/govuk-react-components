@@ -8,7 +8,7 @@ function TagDemo() {
   }, [])
 
   return (
-    <main id="#content">
+    <main id="main-content">
       <h1 className="govuk-heading-l">Tag</h1>
       <Tag text="Completed" />
     </main>
