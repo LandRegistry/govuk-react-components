@@ -15,6 +15,7 @@ import mkdirp from 'mkdirp';
 import Accordion from '../src/components/govukComponents/Accordion.js';
 import BackLink from '../src/components/govukComponents/BackLink.js';
 import Button from '../src/components/govukComponents/Button.js';
+import CharacterCount from '../src/components/govukComponents/CharacterCount.js';
 import Checkboxes from '../src/components/govukComponents/Checkboxes.js';
 import DateInput from '../src/components/govukComponents/DateInput.js';
 import Details from '../src/components/govukComponents/Details.js';
@@ -46,6 +47,10 @@ const components = [
   {
     name: 'button',
     reactComponent: Button
+  },
+  {
+    name: 'character-count',
+    reactComponent: CharacterCount
   },
   {
     name: 'checkboxes',
