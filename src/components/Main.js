@@ -2,8 +2,11 @@ import React from 'react';
 import Nav from './Nav';
 import AccordionDemo from '../demos/AccordionDemo';
 import BackLink from '../demos/BackLink';
+import BreadcrumbsDemo from '../demos/BreadcrumbsDemo';
 import ButtonDemo from '../demos/ButtonDemo';
+import CharacterCountDemo from '../demos/CharacterCountDemo';
 import CheckboxesDemo from '../demos/CheckboxesDemo';
+import DateInputDemo from '../demos/DateInputDemo';
 import DetailsDemo from '../demos/DetailsDemo';
 import ErrorSummaryDemo from '../demos/ErrorSummaryDemo';
 import FileUploadDemo from '../demos/FileUploadDemo';
@@ -27,16 +30,24 @@ function Main() {
     {
       text: "Accordion",
       href: "/accordion"
-    },
-    {
+    }, {
       text: "Back link",
       href: "/back-link"
+    }, {
+      text: "Breadcrumbs",
+      href: "/breadcrumbs"
     }, {
       text: "Button",
       href: "/button"
     }, {
+      text: "Character count",
+      href: "/character-count"
+    }, {
       text: "Checkboxes",
       href: "/checkboxes"
+    }, {
+      text: "DateInput",
+      href: "/date-input"
     }, {
       text: "Details",
       href: "/details"
@@ -92,8 +103,11 @@ function Main() {
             <Switch>
               <Route exact path="/accordion" component={AccordionDemo} />
               <Route exact path="/back-link" component={BackLink} />
+              <Route exact path="/breadcrumbs" component={BreadcrumbsDemo} />
               <Route exact path="/button" component={ButtonDemo} />
+              <Route exact path="/character-count" component={CharacterCountDemo} />
               <Route exact path="/checkboxes" component={CheckboxesDemo} />
+              <Route exact path="/date-input" component={DateInputDemo} />
               <Route exact path="/details" component={DetailsDemo} />
               <Route exact path="/error-summary" component={ErrorSummaryDemo} />
               <Route exact path="/file-upload" component={FileUploadDemo} />
