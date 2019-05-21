@@ -14,6 +14,7 @@ import ReactHtmlParser from 'react-html-parser';
 import mkdirp from 'mkdirp';
 import Accordion from '../src/components/govukComponents/Accordion.js';
 import BackLink from '../src/components/govukComponents/BackLink.js';
+import Breadcrumbs from '../src/components/govukComponents/Breadcrumbs.js';
 import Button from '../src/components/govukComponents/Button.js';
 import CharacterCount from '../src/components/govukComponents/CharacterCount.js';
 import Checkboxes from '../src/components/govukComponents/Checkboxes.js';
@@ -43,6 +44,9 @@ const components = [
   {
     name: 'back-link',
     reactComponent: BackLink
+  }, {
+    name: 'breadcrumbs',
+    reactComponent: Breadcrumbs
   },
   {
     name: 'button',
@@ -183,7 +187,6 @@ components.forEach(component => {
     })
   })
 })
-
 
 function cleanHtml(dirtyHtml) {
   return prettyhtml(ent.decode(dirtyHtml), {

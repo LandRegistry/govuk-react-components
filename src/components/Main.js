@@ -2,6 +2,7 @@ import React from 'react';
 import Nav from './Nav';
 import AccordionDemo from '../demos/AccordionDemo';
 import BackLink from '../demos/BackLink';
+import BreadcrumbsDemo from '../demos/BreadcrumbsDemo';
 import ButtonDemo from '../demos/ButtonDemo';
 import CharacterCountDemo from '../demos/CharacterCountDemo';
 import CheckboxesDemo from '../demos/CheckboxesDemo';
@@ -28,10 +29,12 @@ function Main() {
     {
       text: "Accordion",
       href: "/accordion"
-    },
-    {
+    }, {
       text: "Back link",
       href: "/back-link"
+    }, {
+      text: "Breadcrumbs",
+      href: "/breadcrumbs"
     }, {
       text: "Button",
       href: "/button"
@@ -97,6 +100,7 @@ function Main() {
             <Switch>
               <Route exact path="/accordion" component={AccordionDemo} />
               <Route exact path="/back-link" component={BackLink} />
+              <Route exact path="/breadcrumbs" component={BreadcrumbsDemo} />
               <Route exact path="/button" component={ButtonDemo} />
               <Route exact path="/character-count" component={CharacterCountDemo} />
               <Route exact path="/checkboxes" component={CheckboxesDemo} />
