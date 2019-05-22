@@ -25,7 +25,7 @@ function Select(props) {
   }
 
   const selectedItem = props.items.find(item => item.selected === true)
-  const defaultValue = selectedItem.value
+  const defaultValue = selectedItem ? selectedItem.value : null
 
   var options = props.items.map((option, index) =>
     <option
@@ -40,6 +40,7 @@ function Select(props) {
     <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''}${props.formGroup ? ' ' + props.formGroup.classes : ''}`} >
       <Label
         {...props.label}
+        for={props.id}
       />
       {hint}
       {errorMessage}
@@ -48,7 +49,7 @@ function Select(props) {
         id={props.id}
         name={props.name}
         defaultValue={defaultValue}
-        aria-describedby={describedBy}
+        aria-describedby={describedBy.trim() || null}
         {...props.attributes}
       >
         {options}
