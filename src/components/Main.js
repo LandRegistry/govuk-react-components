@@ -16,6 +16,7 @@ import InsetTextDemo from '../demos/InsetTextDemo';
 import LabelDemo from '../demos/LabelDemo';
 import PanelDemo from '../demos/PanelDemo';
 import RadiosDemo from '../demos/RadiosDemo';
+import SelectDemo from '../demos/SelectDemo';
 import SkipLinkDemo from '../demos/SkipLinkDemo';
 import TabsDemo from '../demos/TabsDemo';
 import TagDemo from '../demos/TagDemo';
@@ -76,7 +77,9 @@ function Main() {
       text: "Radios",
       href: "/radios"
     }, {
-
+      text: "Select",
+      href: "/select"
+    }, {
       text: "Skip link",
       href: "/skip-link"
     }, {
@@ -118,6 +121,7 @@ function Main() {
               <Route exact path="/label" component={LabelDemo} />
               <Route exact path="/panel" component={PanelDemo} />
               <Route exact path="/radios" component={RadiosDemo} />
+              <Route exact path="/select" component={SelectDemo} />
               <Route exact path="/skip-link" component={SkipLinkDemo} />
               <Route exact path="/tabs" component={TabsDemo} />
               <Route exact path="/tag" component={TagDemo} />

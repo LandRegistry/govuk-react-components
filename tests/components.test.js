@@ -31,6 +31,7 @@ import InsetText from '../src/components/govukComponents/InsetText.js';
 import Label from '../src/components/govukComponents/Label.js';
 import Panel from '../src/components/govukComponents/Panel.js';
 import Radios from '../src/components/govukComponents/Radios.js';
+import Select from '../src/components/govukComponents/Select.js';
 import SkipLink from '../src/components/govukComponents/SkipLink.js';
 import Tabs from '../src/components/govukComponents/Tabs.js';
 import Tag from '../src/components/govukComponents/Tag.js';
@@ -112,6 +113,10 @@ const components = [
   {
     name: 'radios',
     reactComponent: Radios
+  },
+  {
+    name: 'select',
+    reactComponent: Select
   },
   {
     name: 'skip-link',
