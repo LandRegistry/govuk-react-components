@@ -18,6 +18,7 @@ import PanelDemo from '../demos/PanelDemo';
 import RadiosDemo from '../demos/RadiosDemo';
 import SelectDemo from '../demos/SelectDemo';
 import SkipLinkDemo from '../demos/SkipLinkDemo';
+import TabsDemo from '../demos/TabsDemo';
 import TagDemo from '../demos/TagDemo';
 import TextareaDemo from '../demos/TextareaDemo';
 import WarningTextDemo from '../demos/WarningTextDemo';
@@ -85,6 +86,9 @@ function Main() {
       text: "Textarea",
       href: "/textarea"
     }, {
+      text: "Tabs",
+      href: "/tabs"
+    }, {
       text: "Tag",
       href: "/tag"
     }, {
@@ -119,6 +123,7 @@ function Main() {
               <Route exact path="/radios" component={RadiosDemo} />
               <Route exact path="/select" component={SelectDemo} />
               <Route exact path="/skip-link" component={SkipLinkDemo} />
+              <Route exact path="/tabs" component={TabsDemo} />
               <Route exact path="/tag" component={TagDemo} />
               <Route exact path="/textarea" component={TextareaDemo} />
               <Route exact path="/warning-text" component={WarningTextDemo} />

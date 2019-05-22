@@ -33,6 +33,7 @@ import Panel from '../src/components/govukComponents/Panel.js';
 import Radios from '../src/components/govukComponents/Radios.js';
 import Select from '../src/components/govukComponents/Select.js';
 import SkipLink from '../src/components/govukComponents/SkipLink.js';
+import Tabs from '../src/components/govukComponents/Tabs.js';
 import Tag from '../src/components/govukComponents/Tag.js';
 import Textarea from '../src/components/govukComponents/Textarea.js';
 import WarningText from '../src/components/govukComponents/WarningText.js';
@@ -124,6 +125,10 @@ const components = [
   {
     name: 'tag',
     reactComponent: Tag
+  },
+  {
+    name: 'tabs',
+    reactComponent: Tabs
   },
   {
     name: 'textarea',
