@@ -78,6 +78,7 @@ function Radios(props) {
               data-aria-controls={conditionalId}
               aria-describedby={itemDescribedBy ? itemDescribedBy : null}
               disabled={item.disabled}
+              {...item.attributes}
             />
             <Label text={item.text || item.html} classes="govuk-radios__label" for={id} />
             {item.hint ? <Hint classes="govuk-radios__hint" {...item.hint} id={itemHintId} /> : ''}
