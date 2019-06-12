@@ -5,10 +5,12 @@ import CharacterCountJS from 'govuk-frontend/components/character-count/characte
 function CharacterCount(props) {
 
   const characterCountRef = React.createRef();
+  const characterCountInfoClass = `${props.id}-info`
 
   useEffect(() => {
     new CharacterCountJS(characterCountRef.current).init()
   }, [])
+
   return (
 
     <div
@@ -29,8 +31,9 @@ function CharacterCount(props) {
         hint={props.hint}
         errorMessage={props.errorMessage}
         attributes={props.attributes}
+        describedBy={characterCountInfoClass}
       />
-      <span id={`${props.id}-info`} className="govuk-hint govuk-character-count__message" aria-live="polite">
+      <span id={characterCountInfoClass} className="govuk-hint govuk-character-count__message" aria-live="polite">
         You can enter up to {props.maxlength || props.maxwords} {props.maxwords ? 'words' : 'characters'}
       </span>
     </div>
