@@ -5,6 +5,7 @@ import ErrorMessage from './ErrorMessage'
 
 function Textarea(props) {
   var describedBy = props.describedBy
+
   if (props.hint) {
     const hintId = props.id + '-hint'
     describedBy += ' ' + hintId

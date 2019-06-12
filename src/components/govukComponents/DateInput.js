@@ -6,7 +6,8 @@ import Input from './Input'
 
 function DateInput(props) {
 
-  var describedBy = ''
+  var describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
+
   if (props.hint) {
     const hintId = props.id + '-hint'
     describedBy += ' ' + hintId
