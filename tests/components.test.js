@@ -24,19 +24,24 @@ import ErrorMessage from '../src/components/govukComponents/ErrorMessage';
 import ErrorSummary from '../src/components/govukComponents/ErrorSummary.js';
 import Fieldset from '../src/components/govukComponents/Fieldset.js';
 import FileUpload from '../src/components/govukComponents/FileUpload.js';
+import Footer from '../src/components/govukComponents/Footer.js';
 import Header from '../src/components/govukComponents/Header.js';
 import Hint from '../src/components/govukComponents/Hint.js';
 import Input from '../src/components/govukComponents/Input.js';
 import InsetText from '../src/components/govukComponents/InsetText.js';
 import Label from '../src/components/govukComponents/Label.js';
 import Panel from '../src/components/govukComponents/Panel.js';
+import PhaseBanner from '../src/components/govukComponents/PhaseBanner.js';
 import Radios from '../src/components/govukComponents/Radios.js';
 import Select from '../src/components/govukComponents/Select.js';
 import SkipLink from '../src/components/govukComponents/SkipLink.js';
+import SummaryList from '../src/components/govukComponents/SummaryList.js';
+import Table from '../src/components/govukComponents/Table.js';
 import Tabs from '../src/components/govukComponents/Tabs.js';
 import Tag from '../src/components/govukComponents/Tag.js';
 import Textarea from '../src/components/govukComponents/Textarea.js';
 import WarningText from '../src/components/govukComponents/WarningText.js';
+
 
 const components = [
   {
@@ -87,6 +92,10 @@ const components = [
     reactComponent: FileUpload
   },
   {
+    name: 'footer',
+    reactComponent: Footer
+  },
+  {
     name: 'header',
     reactComponent: Header
   },
@@ -111,6 +120,10 @@ const components = [
     reactComponent: Panel
   },
   {
+    name: 'phase-banner',
+    reactComponent: PhaseBanner
+  },
+  {
     name: 'radios',
     reactComponent: Radios
   },
@@ -121,6 +134,14 @@ const components = [
   {
     name: 'skip-link',
     reactComponent: SkipLink
+  },
+  {
+    name: 'summary-list',
+    reactComponent: SummaryList
+  },
+  {
+    name: 'table',
+    reactComponent: Table
   },
   {
     name: 'tag',
@@ -216,7 +237,7 @@ function getExamples(version, name) {
   if (fs.existsSync(cachePath)) {
     return yaml.safeLoad(fs.readFileSync(cachePath, { encoding: 'utf8' }))
   } else {
-    console.info(`Cached examples not found for govuk-frontend@${version}/${name} - Downloading...`)
+    // console.info(`Cached examples not found for govuk-frontend@${version}/${name} - Downloading...`)
     const response = request('GET', `https://raw.githubusercontent.com/alphagov/govuk-frontend/${version}/src/components/${name}/${name}.yaml`)
     const data = response.getBody('utf8')
 
