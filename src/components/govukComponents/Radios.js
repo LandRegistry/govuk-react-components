@@ -14,7 +14,7 @@ function Radios(props) {
   }, [])
 
   const idPrefix = props.idPrefix ? props.idPrefix : props.name
-  var describedBy = ''
+  var describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
   var hint
   var errorMessage
 
