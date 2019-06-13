@@ -8,6 +8,22 @@ This repository contains govuk-frontend compatible React components. It takes a 
 
 If these decisions don't sound like your cup of tea, it may be worth giving https://github.com/govuk-react/govuk-react a look as it takes the opposite stance on some of the above points.
 
+## Assumptions
+
+These components assume you:
+
+- Have compiled the govuk-frontend scss and have included it in your page
+- Are using react-router
+
+## Exceptions
+
+Exceptions to the above conformance are:
+
+- Links - Anywhere that accepts an `href` / `text` combo of params, will also accept a `to` prop, which will be used in a react-router `<Link>` element.
+- Anywhere that accepts an `html` param in Nunjucks will expect the equivalent prop in React to be a piece of JSX - _not_ a string of html, because we want to avoid dangerouslySetInnerHtml if at all possible. If you absolutely have to deal with strings of html it is up to you to convert them safely to JSX using something like a combination of https://github.com/cure53/DOMPurify and https://github.com/remarkablemark/html-react-parser  
+  Text is treated in exactly the same way - it essentially is JSX.
+  
+
 ## Versioning
 
 This repository will be tagged with the same tag as the govuk-frontend version which it is compatible with. For example `v2.12.0`. If additional versions need to be released in order to fix bugs, the tag may be suffixed, such as `v2.12.0-1`, `v2.12.0-2`, `v2.12.0-3`

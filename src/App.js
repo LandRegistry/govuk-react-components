@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './components/govukComponents/Header';
+import Footer from './components/govukComponents/Footer';
 import Main from './components/Main';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
     <div className="app">
       <Header serviceName="Application Processing" attributes={{ id: "header" }} navigation={headerNavigation} />
       <Main />
+      <Footer />
     </div>
   );
 }

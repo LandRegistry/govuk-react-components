@@ -10,7 +10,7 @@ function FooterDemo() {
   return (
     <main id="#content">
       <h1 className="govuk-heading-l">Footer</h1>
-      <p class="govuk-body">See Footer&hellip;</p>
+      <p className="govuk-body">See Footer&hellip;</p>
     </main>
   )
 }
