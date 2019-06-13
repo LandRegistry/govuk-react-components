@@ -10,14 +10,18 @@ import DateInputDemo from '../demos/DateInputDemo';
 import DetailsDemo from '../demos/DetailsDemo';
 import ErrorSummaryDemo from '../demos/ErrorSummaryDemo';
 import FileUploadDemo from '../demos/FileUploadDemo';
+import FooterDemo from '../demos/FooterDemo';
 import HintDemo from '../demos/HintDemo';
 import InputDemo from '../demos/InputDemo';
 import InsetTextDemo from '../demos/InsetTextDemo';
 import LabelDemo from '../demos/LabelDemo';
 import PanelDemo from '../demos/PanelDemo';
+import PhaseBannerDemo from '../demos/PhaseBannerDemo';
 import RadiosDemo from '../demos/RadiosDemo';
 import SelectDemo from '../demos/SelectDemo';
 import SkipLinkDemo from '../demos/SkipLinkDemo';
+import SummaryListDemo from '../demos/SummaryListDemo';
+import TableDemo from '../demos/TableDemo';
 import TabsDemo from '../demos/TabsDemo';
 import TagDemo from '../demos/TagDemo';
 import TextareaDemo from '../demos/TextareaDemo';
@@ -59,6 +63,9 @@ function Main() {
       text: "FileUpload",
       href: "/file-upload"
     }, {
+      text: "Footer",
+      href: "/footer"
+    }, {
       text: "Hint",
       href: "/hint"
     }, {
@@ -74,6 +81,9 @@ function Main() {
       text: "Panel",
       href: "/panel"
     }, {
+      text: "PhaseBanner",
+      href: "/phase-banner"
+    }, {
       text: "Radios",
       href: "/radios"
     }, {
@@ -83,8 +93,14 @@ function Main() {
       text: "Skip link",
       href: "/skip-link"
     }, {
+      text: "SummaryList",
+      href: "/summary-list"
+    }, {
       text: "Textarea",
       href: "/textarea"
+    }, {
+      text: "Table",
+      href: "/table"
     }, {
       text: "Tabs",
       href: "/tabs"
@@ -127,6 +143,10 @@ function Main() {
               <Route exact path="/tag" component={TagDemo} />
               <Route exact path="/textarea" component={TextareaDemo} />
               <Route exact path="/warning-text" component={WarningTextDemo} />
+              <Route exact path="/summary-list" component={SummaryListDemo} />
+              <Route exact path="/footer" component={FooterDemo} />
+              <Route exact path="/phase-banner" component={PhaseBannerDemo} />
+              <Route exact path="/table" component={TableDemo} />
             </Switch>
           </div>
         </div>
