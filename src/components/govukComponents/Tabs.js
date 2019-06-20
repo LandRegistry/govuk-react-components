@@ -7,12 +7,12 @@ function Tabs(props) {
   useEffect(() => {
     new TabsJS(tabsRef.current).init()
   }, [])
-  // {#- If an id 'prefix' is not passed, fall back to using the name attribute
-  // instead. We need this for error messages and hints as well -#}
-  var idPrefix = props.idPrefix ? params.idPrefix : false
+
+  // If an id 'prefix' is not passed, fall back to using the name attribute
+  // instead. We need this for error messages and hints as well
+  var idPrefix = props.idPrefix ? props.idPrefix : false
 
   if (props.items) {
-
     var tabContent = props.items.map((item, index) =>
       <li key={item.id + index} className="govuk-tabs__list-item">
         <a className={`govuk-tabs__tab${index === 0 ? ' govuk-tabs__tab--selected' : ''}`} href={`#${item.id ? item.id : idPrefix + "-" + index}`}
@@ -39,7 +39,6 @@ function Tabs(props) {
   }
 
   return (
-
     <div
       id={props.id}
       className={`govuk-tabs ${props.classes}`}
