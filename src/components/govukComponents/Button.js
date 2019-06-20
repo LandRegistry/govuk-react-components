@@ -13,7 +13,7 @@ function Button(props) {
     element = 'button'
   }
 
-  const commonAttributes = { className: 'govuk-button' + (props.classes ? ' ' + props.classes : '') + (props.disabled ? ' govuk-button--disabled' : ''), ...props.attributes }
+  const commonAttributes = { className: 'govuk-button ' + props.classes + (props.disabled ? ' govuk-button--disabled' : ''), ...props.attributes }
 
   var buttonAttributes = { name: props.name, type: props.type }
 
@@ -53,7 +53,8 @@ function Button(props) {
 }
 
 Button.defaultProps = {
-  type: 'submit'
+  type: 'submit',
+  classes: ''
 }
 
 export default Button

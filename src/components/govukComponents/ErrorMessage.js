@@ -7,7 +7,7 @@ function ErrorMessage(props) {
   }
 
   return (
-    <span id={props.id} className={`govuk-error-message${props.classes ? ' ' + props.classes : ''}`} {...props.attributes}>
+    <span id={props.id} className={`govuk-error-message ${props.classes}`} {...props.attributes}>
       {visuallyHiddenText}
       {props.html ? props.html : props.text}
     </span>
@@ -15,7 +15,8 @@ function ErrorMessage(props) {
 }
 
 ErrorMessage.defaultProps = {
-  visuallyHiddenText: "Error:"
+  visuallyHiddenText: "Error:",
+  classes: ''
 }
 
 export default ErrorMessage

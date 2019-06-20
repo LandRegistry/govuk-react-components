@@ -39,7 +39,7 @@ function Checkboxes(props) {
     {hint}
     {errorMessage}
 
-    <div className={`govuk-checkboxes${props.classes ? ' ' + props.classes : ''}`}
+    <div className={`govuk-checkboxes ${props.classes}`}
       {...props.attributes}
       ref={checkboxRef}
       data-module={isConditional ? 'checkboxes' : null}
@@ -90,12 +90,16 @@ function Checkboxes(props) {
   </>
 
   return (
-    <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''} ${props.formGroup ? props.formGroup.classes : ''}`} >
+    <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''} ${(props.formGroup && props.formGroup.classes) || ''}`} >
       {hasFieldset ? <Fieldset describedBy={describedBy} {...props.fieldset}>
         {innerHtml}
       </Fieldset> : innerHtml}
     </div>
   )
+}
+
+Checkboxes.defaultProps = {
+  classes: ''
 }
 
 export default Checkboxes

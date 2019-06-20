@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function BackLink(props) {
-  const classes = `govuk-back-link${props.classes ? ' ' + props.classes : ''}`
+  const classes = `govuk-back-link ${props.classes}`
   const contents = props.html ? props.html : props.text
 
   if (props.to) {
@@ -14,7 +14,8 @@ function BackLink(props) {
 
 BackLink.defaultProps = {
   href: "/",
-  text: 'Back'
+  text: 'Back',
+  classes: ''
 }
 
 export default BackLink

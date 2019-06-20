@@ -11,14 +11,17 @@ function Panel(props) {
   }
   return (
 
-    <div className={`govuk-panel govuk-panel--confirmation${props.classes ? ' ' + props.classes : ''}`} {...props.attributes}>
+    <div className={`govuk-panel govuk-panel--confirmation ${props.classes}`} {...props.attributes}>
       <HeadingLevel className="govuk-panel__title">
         {props.titleHtml ? props.titleHtml : props.titleText}
       </HeadingLevel>
       {innerHtml}
     </div >
-
   )
+}
+
+Panel.defaultProps = {
+  classes: ''
 }
 
 

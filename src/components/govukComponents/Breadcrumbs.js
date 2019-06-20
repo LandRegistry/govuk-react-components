@@ -13,12 +13,16 @@ function Breadcrumbs(props) {
   )
 
   return (
-    <div className={`govuk-breadcrumbs${props.classes ? ' ' + props.classes : ''}`} {...props.attributes}>
+    <div className={`govuk-breadcrumbs ${props.classes}`} {...props.attributes}>
       <ol className="govuk-breadcrumbs__list">
         {breadcrumbs}
       </ol>
     </div>
   )
+}
+
+Breadcrumbs.defaultProps = {
+  classes: ''
 }
 
 export default Breadcrumbs

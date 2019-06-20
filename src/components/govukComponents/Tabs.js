@@ -42,7 +42,7 @@ function Tabs(props) {
 
     <div
       id={props.id}
-      className={`govuk-tabs${props.classes ? ' ' + props.classes : ''}`}
+      className={`govuk-tabs ${props.classes}`}
       {...props.attributes}
       data-module="tabs"
       ref={tabsRef}
@@ -58,7 +58,8 @@ function Tabs(props) {
 }
 
 Tabs.defaultProps = {
-  title: 'Contents'
+  title: 'Contents',
+  classes: ''
 }
 
 export default Tabs;

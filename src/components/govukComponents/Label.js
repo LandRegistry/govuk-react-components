@@ -3,7 +3,7 @@ import React from 'react'
 function Label(props) {
 
   if (props.html || props.text) {
-    var label = <label className={`govuk-label${props.classes ? ' ' + props.classes : ''}`} {...props.attributes} htmlFor={props.for}>
+    var label = <label className={`govuk-label ${props.classes}`} {...props.attributes} htmlFor={props.for}>
       {props.html ? props.html : props.text}
     </label>
   }
@@ -13,6 +13,10 @@ function Label(props) {
   }
 
   return pageheading ? pageheading : label
+}
+
+Label.defaultProps = {
+  classes: ''
 }
 
 export default Label

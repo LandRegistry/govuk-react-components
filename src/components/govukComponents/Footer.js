@@ -15,9 +15,9 @@ function Footer(props) {
                     { item.href && item.text && (
                       <li className='govuk-footer__list-item' >
                         {item.to ?
-                          <Link className={`govuk-footer__link ${item.classes ? ' ' + item.classes : ''}`} to={item.to} {...item.attributes} >
+                          <Link className={`govuk-footer__link ${item.classes || ''}`} to={item.to} {...item.attributes} >
                             {item.text}
-                          </Link> : <a className={`govuk-footer__link ${item.classes ? ' ' + item.classes : ''}`} href={item.href} {...item.attributes} >
+                          </Link> : <a className={`govuk-footer__link ${item.classes || ''}`} href={item.href} {...item.attributes} >
                             {item.text}
                           </a>
                         }
@@ -44,9 +44,9 @@ function Footer(props) {
             {props.meta.items.map((item, index) => {
               return <li className='govuk-footer__inline-list-item' key={index}>
                 {item.to ?
-                  <Link className={`govuk-footer__link ${item.classes ? ' ' + item.classes : ''}`} to={item.to} {...item.attributes}>
+                  <Link className={`govuk-footer__link ${item.classes || ''}`} to={item.to} {...item.attributes}>
                     {item.text}
-                  </Link> : <a className={`govuk-footer__link ${item.classes ? ' ' + item.classes : ''}`} href={item.href} {...item.attributes}>
+                  </Link> : <a className={`govuk-footer__link ${item.classes || ''}`} href={item.href} {...item.attributes}>
                     {item.text}
                   </a>
                 }
@@ -64,7 +64,7 @@ function Footer(props) {
     </>
   }
 
-  return <footer className={`govuk-footer ${ props.classes ? props.classes : ''}`} role='contentinfo' {...props.attributes}>
+  return <footer className={`govuk-footer ${ props.classes }`} role='contentinfo' {...props.attributes}>
     <div className={`govuk-width-container ${ props.containerClasses ? props.containerClasses : ''}`}>
       {navigation}
       <div className='govuk-footer__meta'>
@@ -107,6 +107,8 @@ function Footer(props) {
   </footer>
 }
 
-Footer.defaultProps = {}
+Footer.defaultProps = {
+  classes: ''
+}
 
 export default Footer;

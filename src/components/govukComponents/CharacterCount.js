@@ -26,7 +26,7 @@ function CharacterCount(props) {
         name={props.name}
         rows={props.rows}
         value={props.value}
-        classes={`js-character-count${props.classes ? ' ' + props.classes : ''}${props.errorMessage ? ' govuk-textarea--error' : ''}`}
+        classes={`js-character-count ${props.classes}${props.errorMessage ? ' govuk-textarea--error' : ''}`}
         label={props.label}
         hint={props.hint}
         errorMessage={props.errorMessage}
@@ -38,6 +38,10 @@ function CharacterCount(props) {
       </span>
     </div>
   )
+}
+
+CharacterCount.defaultProps = {
+  classes: ''
 }
 
 export default CharacterCount

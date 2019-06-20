@@ -8,14 +8,18 @@ function ActionLink(props) {
   </>
 
   if (props.to) {
-    return <Link className={`govuk-link${props.classes ? ' ' + props.classes : ''}`} to={ props.to } {...props.attributes}>
+    return <Link className={`govuk-link${props.classes || ''}`} to={ props.to } {...props.attributes}>
       {contents}
     </Link>
   } else {
-    return <a className={`govuk-link${props.classes ? ' ' + props.classes : ''}`} href={ props.href } {...props.attributes}>
+    return <a className={`govuk-link${props.classes || ''}`} href={ props.href } {...props.attributes}>
       {contents}
     </a>
   }
+}
+
+ActionLink.defaultProps = {
+  classes: ''
 }
 
 function actions(row, anyRowHasActions) {
@@ -41,7 +45,7 @@ function SummaryList(props) {
 
   const anyRowHasActions = props.rows.some(item => (item.actions && 'items' in item.actions) === true)
 
-  return <dl className={`govuk-summary-list ${props.classes || '' }`} {...props.attributes}>
+  return <dl className={`govuk-summary-list ${props.classes}`} {...props.attributes}>
     {props.rows.map((row, index) =>
       <div key={index} className={`govuk-summary-list__row ${row.classes || ''}`}>
         <dt className={`govuk-summary-list__key ${row.key.classes || ''}`}>
@@ -57,6 +61,8 @@ function SummaryList(props) {
   </dl>
 }
 
-SummaryList.defaultProps = {}
+SummaryList.defaultProps = {
+  classes: ''
+}
 
 export default SummaryList;
