@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Button(props) {
 
@@ -29,9 +30,17 @@ function Button(props) {
   }
 
   if (element === 'a') {
-    var button = <a href={props.href} role="button" draggable="false" {...commonAttributes}>
-      {props.html ? props.html : props.text}
-    </a>
+    var button
+
+    if(props.to) {
+      button = <Link to={props.to} role="button" draggable="false" {...commonAttributes}>
+        {props.html ? props.html : props.text}
+      </Link>
+    } else {
+      button = <a href={props.href} role="button" draggable="false" {...commonAttributes}>
+        {props.html ? props.html : props.text}
+      </a>
+    }
   } else if (element === 'button') {
     var button = <button {...buttonAttributes} {...commonAttributes}>
       {props.html ? props.html : props.text}

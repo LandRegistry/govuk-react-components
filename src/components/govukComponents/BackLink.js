@@ -5,15 +5,15 @@ function BackLink(props) {
   const classes = `govuk-back-link${props.classes ? ' ' + props.classes : ''}`
   const contents = props.html ? props.html : props.text
 
-  if (props.href === '#') {
-    return <a href={props.href} className={classes} {...props.attributes}>{contents}</a>
+  if (props.to) {
+    return <Link to={props.to} className={classes} {...props.attributes}>{contents}</Link>
   } else {
-    return <Link to={props.href} className={classes} {...props.attributes}>{contents}</Link>
+    return <a href={props.href} className={classes} {...props.attributes}>{contents}</a>
   }
 }
 
 BackLink.defaultProps = {
-  to: "/",
+  href: "/",
   text: 'Back'
 }
 
