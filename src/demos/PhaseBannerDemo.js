@@ -10,7 +10,7 @@ function PhaseBannerDemo() {
   return (
     <main id="#content">
       <h1 className="govuk-heading-l">Phase banner</h1>
-      <PhaseBanner />
+      <PhaseBanner tag={{text: 'Beta'}} />
     </main>
   )
 }

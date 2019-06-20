@@ -135,14 +135,14 @@ const components = [
     name: 'skip-link',
     reactComponent: SkipLink
   },
-  {
-    name: 'summary-list',
-    reactComponent: SummaryList
-  },
-  {
-    name: 'table',
-    reactComponent: Table
-  },
+  // {
+  //   name: 'summary-list',
+  //   reactComponent: SummaryList
+  // },
+  // {
+  //   name: 'table',
+  //   reactComponent: Table
+  // },
   {
     name: 'tag',
     reactComponent: Tag
