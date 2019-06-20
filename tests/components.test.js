@@ -135,10 +135,10 @@ const components = [
     name: 'skip-link',
     reactComponent: SkipLink
   },
-  // {
-  //   name: 'summary-list',
-  //   reactComponent: SummaryList
-  // },
+  {
+    name: 'summary-list',
+    reactComponent: SummaryList
+  },
   // {
   //   name: 'table',
   //   reactComponent: Table

@@ -19,7 +19,7 @@ These components assume you:
 
 Exceptions to the above conformance are:
 
-- Links - Anywhere that accepts an `href` / `text` combo of params, will also accept a `to` prop, which will be used in a react-router `<Link>` element.
+- Links - Anywhere that accepts an `href` / `text` combo of params to create a hyperlink, will also accept a `to` prop instead of `href`, which will be used in a react-router `<Link>` element.
 - Anywhere that accepts an `html` param in Nunjucks will expect the equivalent prop in React to be a piece of JSX - _not_ a string of html, because we want to avoid dangerouslySetInnerHtml if at all possible. If you absolutely have to deal with strings of html it is up to you to convert them safely to JSX using something like a combination of https://github.com/cure53/DOMPurify and https://github.com/remarkablemark/html-react-parser  
   Text is treated in exactly the same way - it essentially is JSX.
   
