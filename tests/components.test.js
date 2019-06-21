@@ -139,10 +139,10 @@ const components = [
     name: 'summary-list',
     reactComponent: SummaryList
   },
-  // {
-  //   name: 'table',
-  //   reactComponent: Table
-  // },
+  {
+    name: 'table',
+    reactComponent: Table
+  },
   {
     name: 'tag',
     reactComponent: Tag
