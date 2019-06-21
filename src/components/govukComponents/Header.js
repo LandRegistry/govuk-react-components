@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import Link from '../utils/Link.js'
 import HeaderJS from 'govuk-frontend/components/header/header'
 import logo from 'govuk-frontend/assets/images/govuk-logotype-crown.png'
 
@@ -29,13 +29,9 @@ function Header(props) {
             {props.navigation.map((item, index) =>
               item.text && (item.href || item.to) ?
                 <li key={'navigation' + index} className={`govuk-header__navigation-item${item.active ? ' govuk-header__navigation-item--active' : ''}`}>
-                  {item.to ?
-                    <Link className={`govuk-header__link ${item.classes || ''}`} to={item.to} {...item.attributes} >
-                      {item.text}
-                    </Link> : <a className={`govuk-header__link ${item.classes || ''}`} href={item.href} {...item.attributes} >
-                      {item.text}
-                    </a>
-                  }
+                  <Link classes={`govuk-header__link ${item.classes || ''}`} to={item.to} href={item.href} {...item.attributes} >
+                    {item.text}
+                  </Link>
                 </li>
                 : null)
             }
@@ -49,7 +45,7 @@ function Header(props) {
     <header className={`govuk-header ${props.classes || ''}`} role="banner" data-module="header" {...props.attributes} ref={headerRef}>
       <div className={`govuk-header__container ${props.containerClasses || ''}`}>
         <div className="govuk-header__logo">
-          <Link to={props.homepageUrl} className="govuk-header__link govuk-header__link--homepage">
+          <Link to={props.homepageUrl} classes="govuk-header__link govuk-header__link--homepage">
             <span className="govuk-header__logotype">
               <svg
                 role="presentation"

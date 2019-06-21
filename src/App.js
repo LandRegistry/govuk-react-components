@@ -5,17 +5,17 @@ import Main from './components/Main';
 
 function App() {
 
-  const headerNavigation = [{
-    text: "example link 1",
-    href: "/",
+  const navigationItems = [{
+    text: "External link",
+    href: "http://gov.uk",
     classes: "custom-class",
     attributes: {
       id: "link",
       title: "link"
     }
   }, {
-    text: "example link 2",
-    to: "/",
+    text: "Internal link",
+    to: "/accordion",
     attributes: {
       id: "differentlLink",
       title: "differentLink"
@@ -24,9 +24,9 @@ function App() {
 
   return (
     <div className="app">
-      <Header serviceName="Application Processing" attributes={{ id: "header" }} navigation={headerNavigation} />
+      <Header serviceName="Application Processing" attributes={{ id: "header" }} navigation={navigationItems} />
       <Main />
-      <Footer />
+      <Footer meta={{items: navigationItems}} />
     </div>
   );
 }

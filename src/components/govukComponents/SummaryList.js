@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Link from '../utils/Link.js'
 
 function ActionLink(props) {
   const contents = <>
@@ -7,15 +7,9 @@ function ActionLink(props) {
     {props.visuallyHiddenText && <span className="govuk-visually-hidden"> { props.visuallyHiddenText }</span>}
   </>
 
-  if (props.to) {
-    return <Link className={`govuk-link${props.classes || ''}`} to={ props.to } {...props.attributes}>
-      {contents}
-    </Link>
-  } else {
-    return <a className={`govuk-link${props.classes || ''}`} href={ props.href } {...props.attributes}>
-      {contents}
-    </a>
-  }
+  return <Link classes={`govuk-link${props.classes || ''}`} to={ props.to } href={ props.href } {...props.attributes}>
+    {contents}
+  </Link>
 }
 
 ActionLink.defaultProps = {

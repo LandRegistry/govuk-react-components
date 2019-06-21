@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from '../utils/Link.js'
 
 function Footer(props) {
   var navigation
@@ -12,15 +13,11 @@ function Footer(props) {
               <ul className={`govuk-footer__list ${ nav.columns ? `govuk-footer__list--columns-${ nav.columns }` : '' }`}>
                 {nav.items.map((item, index) => {
                   return <React.Fragment key={index}>
-                    { item.href && item.text && (
+                    { (item.href || item.to) && item.text && (
                       <li className='govuk-footer__list-item' >
-                        {item.to ?
-                          <Link className={`govuk-footer__link ${item.classes || ''}`} to={item.to} {...item.attributes} >
-                            {item.text}
-                          </Link> : <a className={`govuk-footer__link ${item.classes || ''}`} href={item.href} {...item.attributes} >
-                            {item.text}
-                          </a>
-                        }
+                        <Link classes={`govuk-footer__link ${item.classes || ''}`} to={item.to} href={item.href} {...item.attributes}>
+                          {item.text}
+                        </Link>
                       </li>
                     )}
                   </React.Fragment>
@@ -43,13 +40,9 @@ function Footer(props) {
           <ul className='govuk-footer__inline-list'>
             {props.meta.items.map((item, index) => {
               return <li className='govuk-footer__inline-list-item' key={index}>
-                {item.to ?
-                  <Link className={`govuk-footer__link ${item.classes || ''}`} to={item.to} {...item.attributes}>
-                    {item.text}
-                  </Link> : <a className={`govuk-footer__link ${item.classes || ''}`} href={item.href} {...item.attributes}>
-                    {item.text}
-                  </a>
-                }
+                <Link classes={`govuk-footer__link ${item.classes || ''}`} to={item.to} href={item.href} {...item.attributes}>
+                  {item.text}
+                </Link>
               </li>
             })}
           </ul>
