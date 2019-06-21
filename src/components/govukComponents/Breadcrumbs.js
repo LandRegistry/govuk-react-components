@@ -4,12 +4,9 @@ import Link from '../utils/Link.js'
 function Breadcrumbs(props) {
 
   const breadcrumbs = props.items.map((item, index) => {
-
-    const {attributes, href, to} = item
-
-    return (href || to) ?
+    return (item.href || item.to) ?
       <li key={'breadcrumb' + index} className="govuk-breadcrumbs__list-item">
-        <Link classes="govuk-breadcrumbs__link" {...{attributes, href, to}}>{item.html ? item.html : item.text}</Link>
+        <Link classes="govuk-breadcrumbs__link" attributes={item.attributes} href={item.href} to={item.to}>{item.html ? item.html : item.text}</Link>
       </li >
       :
       <li key={'breadcrumb' + index} className="govuk-breadcrumbs__list-item" aria-current="page">{item.html ? item.html : item.text}</li>
