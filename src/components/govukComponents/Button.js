@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Link from '../utils/Link.js'
 
 function Button(props) {
 
@@ -13,7 +13,10 @@ function Button(props) {
     element = 'button'
   }
 
-  const commonAttributes = { className: 'govuk-button ' + props.classes + (props.disabled ? ' govuk-button--disabled' : ''), ...props.attributes }
+  const commonAttributes = {
+    className: 'govuk-button ' + props.classes + (props.disabled ? ' govuk-button--disabled' : ''),
+    ...props.attributes
+  }
 
   var buttonAttributes = { name: props.name, type: props.type }
 
@@ -29,24 +32,30 @@ function Button(props) {
     }
   }
 
+  var button
   if (element === 'a') {
-    var button
 
-    if(props.to) {
-      button = <Link to={props.to} role="button" draggable="false" {...commonAttributes}>
-        {props.html ? props.html : props.text}
-      </Link>
-    } else {
-      button = <a href={props.href} role="button" draggable="false" {...commonAttributes}>
-        {props.html ? props.html : props.text}
-      </a>
+    const linkAttributes = {
+      ...commonAttributes,
+      classes: commonAttributes.className,
+      attributes: {
+        role: 'button',
+        draggable: 'false'
+      },
+      href: props.href,
+      to: props.to
     }
+
+    button = <Link {...linkAttributes}>
+      {props.html ? props.html : props.text}
+    </Link>
+
   } else if (element === 'button') {
-    var button = <button {...buttonAttributes} {...commonAttributes}>
+    button = <button {...buttonAttributes} {...commonAttributes}>
       {props.html ? props.html : props.text}
     </button >
   } else if (element === 'input') {
-    var button = <input value={props.text} {...buttonAttributes} {...commonAttributes} />
+    button = <input value={props.text} {...buttonAttributes} {...commonAttributes} />
   }
 
   return button

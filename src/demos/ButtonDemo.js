@@ -15,17 +15,28 @@ function BackLinkDemo() {
         type="submit"
         text="Continue"
       />
+      <br /><br />
       <Button
         classes="custom-class new-class"
         type="submit"
         text="Disabled"
         disabled="disabled"
       />
+      <br /><br />
       <Button
         element="a"
         classes="custom-class new-class"
         type="submit"
         html={<span>link as Button with HTML</span>}
+        href="/foo"
+      />
+      <br /><br />
+      <Button
+        element="a"
+        classes="custom-class new-class"
+        type="submit"
+        text="React Router <Link> button (Goes to accordion page)"
+        to="/accordion"
       />
     </main>
   )
