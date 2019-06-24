@@ -27,7 +27,7 @@ function Footer(props) {
           </div>
         })}
       </div>
-      <hr className='govuk-footer__section-break'></hr>
+      <hr className='govuk-footer__section-break' />
     </>
   }
 
