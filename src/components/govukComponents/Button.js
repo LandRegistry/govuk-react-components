@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import ReactDOM from 'react-dom';
 import Link from '../utils/Link.js'
+import ButtonJS from 'govuk-frontend/components/button/button'
 
 function Button(props) {
+
+  const buttonRef = React.createRef();
+
+  useEffect(() => {
+    // ReactDOM.findDOMNode necessary as this might otherwise be invoked directly with a react-router <Link> object.
+    new ButtonJS(ReactDOM.findDOMNode(buttonRef.current)).init()
+  }, [])
 
   var element = '';
 
@@ -15,7 +24,8 @@ function Button(props) {
 
   const commonAttributes = {
     className: 'govuk-button ' + props.classes + (props.disabled ? ' govuk-button--disabled' : ''),
-    ...props.attributes
+    ...props.attributes,
+    ref: buttonRef
   }
 
   var buttonAttributes = { name: props.name, type: props.type }
