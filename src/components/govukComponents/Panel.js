@@ -1,13 +1,14 @@
 import React from 'react'
 
 function Panel(props) {
-
-  var HeadingLevel = props.headingLevel ? 'h' + props.headingLevel : 'h1'
+  const HeadingLevel = props.headingLevel ? `h${props.headingLevel}` : 'h1'
 
   if (props.html || props.text) {
-    var innerHtml = <div className="govuk-panel__body">
-      {props.html ? props.html : props.text}
-    </div>
+    var innerHtml = (
+      <div className="govuk-panel__body">
+        {props.html ? props.html : props.text}
+      </div>
+    )
   }
   return (
 
@@ -16,12 +17,12 @@ function Panel(props) {
         {props.titleHtml ? props.titleHtml : props.titleText}
       </HeadingLevel>
       {innerHtml}
-    </div >
+    </div>
   )
 }
 
 Panel.defaultProps = {
-  classes: ''
+  classes: '',
 }
 
 

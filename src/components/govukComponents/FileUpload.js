@@ -4,25 +4,28 @@ import Hint from './Hint'
 import Label from './Label'
 
 function FileUpload(props) {
-
-  var describedBy = props.describedBy
+  let { describedBy } = props
 
   if (props.hint) {
-    const hintId = props.id + '-hint'
-    describedBy += ' ' + hintId
-    var hint = <Hint
-      id={hintId}
-      {...props.hint}
-    />
+    const hintId = `${props.id}-hint`
+    describedBy += ` ${hintId}`
+    var hint = (
+      <Hint
+        id={hintId}
+        {...props.hint}
+      />
+    )
   }
 
   if (props.errorMessage) {
-    const errorId = props.id ? props.id + '-error' : '';
-    describedBy += ' ' + errorId
-    var errorMessage = <ErrorMessage
-      id={errorId}
-      {...props.errorMessage}
-    />
+    const errorId = props.id ? `${props.id}-error` : '';
+    describedBy += ` ${errorId}`
+    var errorMessage = (
+      <ErrorMessage
+        id={errorId}
+        {...props.errorMessage}
+      />
+    )
   }
   return (
 
@@ -39,7 +42,7 @@ function FileUpload(props) {
         name={props.name}
         type="file"
         defaultValue={props.value}
-        aria-describedby={describedBy ? describedBy : null}
+        aria-describedby={describedBy || null}
         {...props.attributes}
       />
     </div>
@@ -48,7 +51,7 @@ function FileUpload(props) {
 
 FileUpload.defaultProps = {
   describedBy: '',
-  classes: ''
+  classes: '',
 }
 
 export default FileUpload

@@ -3,70 +3,69 @@ import Checkboxes from '../components/govukComponents/Checkboxes'
 import Input from '../components/govukComponents/Input'
 
 function CheckboxesDemo() {
-
   useEffect(() => {
     document.title = 'Checkboxes demo'
   }, [])
 
-  var items = [{
-    value: "carcasses",
-    text: "Waste from animal carcasses",
+  const items = [{
+    value: 'carcasses',
+    text: 'Waste from animal carcasses',
   },
   {
-    value: "mines",
-    text: "Waste from mines or quarries"
+    value: 'mines',
+    text: 'Waste from mines or quarries',
   },
   {
-    value: "farm",
-    text: "Farm or agricultural waste"
+    value: 'farm',
+    text: 'Farm or agricultural waste',
   }]
 
-  var items2 = [
+  const items2 = [
     {
-      id: "british",
-      value: "british",
-      text: "British",
+      id: 'british',
+      value: 'british',
+      text: 'British',
       hint: {
-        text: "including English, Scottish, Welsh and Northern Irish"
-      }
+        text: 'including English, Scottish, Welsh and Northern Irish',
+      },
     },
     {
-      id: "irish",
-      value: "irish",
-      text: "Irish"
+      id: 'irish',
+      value: 'irish',
+      text: 'Irish',
     },
     {
-      value: "other",
-      text: "Citizen of another country"
-    }
+      value: 'other',
+      text: 'Citizen of another country',
+    },
   ]
 
-  const emailHtml = <Input id="contact-by-email" name="contact-by-email" type="email" classes="govuk-!-width-one-third" label={{ text: "Email address" }} attributes={{ spellCheck: "false" }} />
-  const phoneHtml = <Input id="contact-by-phone" name="contact-by-phone" type="telephone" classes="govuk-!-width-one-third" label={{ text: "Phone number" }} attributes={{ spellCheck: "false" }} />
-  const textHtml = <Input id="contacty-by-text" name="contact-by-text" type="telephone" classes="govuk-!-width-one-third" label={{ text: "Mobile phone number" }} attributes={{ spellCheck: "false" }} />
+  const emailHtml = <Input id="contact-by-email" name="contact-by-email" type="email" classes="govuk-!-width-one-third" label={{ text: 'Email address' }} attributes={{ spellCheck: 'false' }} />
+  const phoneHtml = <Input id="contact-by-phone" name="contact-by-phone" type="telephone" classes="govuk-!-width-one-third" label={{ text: 'Phone number' }} attributes={{ spellCheck: 'false' }} />
+  const textHtml = <Input id="contacty-by-text" name="contact-by-text" type="telephone" classes="govuk-!-width-one-third" label={{ text: 'Mobile phone number' }} attributes={{ spellCheck: 'false' }} />
 
-  var itemsConditional = [
+  const itemsConditional = [
     {
-      value: "email",
-      text: "Email",
+      value: 'email',
+      text: 'Email',
       conditional: {
-        html: emailHtml
-      }
+        html: emailHtml,
+      },
     },
     {
-      value: "phone",
-      text: "Phone",
+      value: 'phone',
+      text: 'Phone',
       conditional: {
-        html: phoneHtml
-      }
+        html: phoneHtml,
+      },
     },
     {
-      value: "text message",
-      text: "Text message",
+      value: 'text message',
+      text: 'Text message',
       conditional: {
-        html: textHtml
-      }
-    }
+        html: textHtml,
+      },
+    },
   ]
 
   return (

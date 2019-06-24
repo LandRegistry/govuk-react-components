@@ -1,7 +1,6 @@
 import React from 'react'
 
 function WarningText(props) {
-
   return (
     <div className={`govuk-warning-text ${props.classes}`} {...props.attributes}>
       <span className="govuk-warning-text__icon" aria-hidden="true">!</span>
@@ -14,7 +13,7 @@ function WarningText(props) {
 }
 
 WarningText.defaultProps = {
-  classes: ''
+  classes: '',
 }
 
 export default WarningText;

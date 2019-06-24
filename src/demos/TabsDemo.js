@@ -2,40 +2,39 @@ import React, { useEffect } from 'react';
 import Tabs from '../components/govukComponents/Tabs'
 
 function TabsDemo() {
-
   useEffect(() => {
     document.title = 'Tabs demo'
   }, [])
 
-  var items = [
+  const items = [
     {
-      label: "Past day",
-      id: "past-day",
+      label: 'Past day',
+      id: 'past-day',
       panel: {
-        text: 'test'
-      }
+        text: 'test',
+      },
     },
     {
-      label: "Past week",
-      id: "past-week",
+      label: 'Past week',
+      id: 'past-week',
       panel: {
-        text: "next test"
-      }
+        text: 'next test',
+      },
     },
     {
-      label: "Past month",
-      id: "past-month",
+      label: 'Past month',
+      id: 'past-month',
       panel: {
-        text: 'penultimate test'
-      }
+        text: 'penultimate test',
+      },
     },
     {
-      label: "Past year",
-      id: "past-year",
+      label: 'Past year',
+      id: 'past-year',
       panel: {
-        text: 'final test'
-      }
-    }
+        text: 'final test',
+      },
+    },
   ]
 
   return (

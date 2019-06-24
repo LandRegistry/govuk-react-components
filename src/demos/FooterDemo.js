@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import Footer from '../components/govukComponents/Footer'
 
 function FooterDemo() {
-
   useEffect(() => {
     document.title = 'Footer demo'
   }, [])

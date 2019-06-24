@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom';
-import Link from '../utils/Link.js'
 import ButtonJS from 'govuk-frontend/components/button/button'
+import Link from '../utils/Link.js'
 
 function Button(props) {
-
   const buttonRef = React.createRef();
 
   useEffect(() => {
@@ -12,7 +11,7 @@ function Button(props) {
     new ButtonJS(ReactDOM.findDOMNode(buttonRef.current)).init()
   }, [])
 
-  var element = '';
+  let element = '';
 
   if (props.element) {
     element = props.element
@@ -23,12 +22,12 @@ function Button(props) {
   }
 
   const commonAttributes = {
-    className: 'govuk-button ' + props.classes + (props.disabled ? ' govuk-button--disabled' : ''),
+    className: `govuk-button ${props.classes}${props.disabled ? ' govuk-button--disabled' : ''}`,
     ...props.attributes,
-    ref: buttonRef
+    ref: buttonRef,
   }
 
-  var buttonAttributes = { name: props.name, type: props.type }
+  let buttonAttributes = { name: props.name, type: props.type }
 
   if (props.preventDoubleClick) {
     buttonAttributes['data-prevent-double-click'] = props.preventDoubleClick
@@ -38,32 +37,34 @@ function Button(props) {
     buttonAttributes = {
       ...buttonAttributes,
       'aria-disabled': true,
-      'disabled': 'disabled'
+      disabled: 'disabled',
     }
   }
 
-  var button
+  let button
   if (element === 'a') {
-
     const linkAttributes = {
       ...commonAttributes,
       classes: commonAttributes.className,
       attributes: {
         role: 'button',
-        draggable: 'false'
+        draggable: 'false',
       },
       href: props.href,
-      to: props.to
+      to: props.to,
     }
 
-    button = <Link {...linkAttributes}>
-      {props.html ? props.html : props.text}
-    </Link>
-
+    button = (
+      <Link {...linkAttributes}>
+        {props.html ? props.html : props.text}
+      </Link>
+    )
   } else if (element === 'button') {
-    button = <button {...buttonAttributes} {...commonAttributes}>
-      {props.html ? props.html : props.text}
-    </button >
+    button = (
+      <button {...buttonAttributes} {...commonAttributes}>
+        {props.html ? props.html : props.text}
+      </button>
+    )
   } else if (element === 'input') {
     button = <input value={props.text} {...buttonAttributes} {...commonAttributes} />
   }
@@ -73,7 +74,7 @@ function Button(props) {
 
 Button.defaultProps = {
   type: 'submit',
-  classes: ''
+  classes: '',
 }
 
 export default Button

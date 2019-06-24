@@ -4,24 +4,28 @@ import Hint from './Hint'
 import ErrorMessage from './ErrorMessage'
 
 function Textarea(props) {
-  var describedBy = props.describedBy
+  let { describedBy } = props
 
   if (props.hint) {
-    const hintId = props.id + '-hint'
-    describedBy += ' ' + hintId
-    var hint = <Hint
-      id={hintId}
-      {...props.hint}
-    />
+    const hintId = `${props.id}-hint`
+    describedBy += ` ${hintId}`
+    var hint = (
+      <Hint
+        id={hintId}
+        {...props.hint}
+      />
+    )
   }
 
   if (props.errorMessage) {
-    const errorId = props.id ? props.id + '-error' : '';
-    describedBy += ' ' + errorId
-    var errorMessage = <ErrorMessage
-      id={errorId}
-      {...props.errorMessage}
-    />
+    const errorId = props.id ? `${props.id}-error` : '';
+    describedBy += ` ${errorId}`
+    var errorMessage = (
+      <ErrorMessage
+        id={errorId}
+        {...props.errorMessage}
+      />
+    )
   }
 
   return (
@@ -42,9 +46,8 @@ function Textarea(props) {
         aria-describedby={describedBy.trim() || null}
         autoComplete={props.autocomplete}
         {...props.attributes}
-      >
-      </textarea>
-    </div >
+      />
+    </div>
 
   )
 }
@@ -52,7 +55,7 @@ function Textarea(props) {
 Textarea.defaultProps = {
   describedBy: '',
   rows: 5,
-  classes: ''
+  classes: '',
 }
 
 export default Textarea

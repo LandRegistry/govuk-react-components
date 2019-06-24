@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import Button from '../components/govukComponents/Button'
 
 function BackLinkDemo() {
-
   useEffect(() => {
     document.title = 'Button link demo'
   }, [])
@@ -15,14 +14,16 @@ function BackLinkDemo() {
         type="submit"
         text="Continue"
       />
-      <br /><br />
+      <br />
+      <br />
       <Button
         classes="custom-class new-class"
         type="submit"
         text="Disabled"
         disabled="disabled"
       />
-      <br /><br />
+      <br />
+      <br />
       <Button
         element="a"
         classes="custom-class new-class"
@@ -30,7 +31,8 @@ function BackLinkDemo() {
         html={<span>link as Button with HTML</span>}
         href="/foo"
       />
-      <br /><br />
+      <br />
+      <br />
       <Button
         element="a"
         classes="custom-class new-class"

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import FileUpload from '../components/govukComponents/FileUpload'
 
 function FileUploadDemo() {
-
   useEffect(() => {
     document.title = 'Tutorial checkbox demo'
   }, [])

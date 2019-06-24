@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Tag(props) {
-
   return (
     <strong className={`govuk-tag ${props.classes}`} {...props.attributes}>
       {props.html ? props.html : props.text}
@@ -10,7 +9,7 @@ function Tag(props) {
 }
 
 Tag.defaultProps = {
-  classes: ''
+  classes: '',
 }
 
 export default Tag;

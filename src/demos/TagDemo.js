@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import Tag from '../components/govukComponents/Tag'
 
 function TagDemo() {
-
   useEffect(() => {
     document.title = 'Tag demo'
   }, [])

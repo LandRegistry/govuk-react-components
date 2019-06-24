@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Details(props) {
-
   return (
     <details id={props.id} className={`govuk-details ${props.classes}`} {...props.attributes} open={props.open}>
       <summary className="govuk-details__summary">
@@ -12,13 +11,13 @@ function Details(props) {
       <div className="govuk-details__text">
         {props.html ? props.html : props.text}
       </div>
-    </details >
+    </details>
 
   )
 }
 
 Details.defaultProps = {
-  classes: ''
+  classes: '',
 }
 
 export default Details

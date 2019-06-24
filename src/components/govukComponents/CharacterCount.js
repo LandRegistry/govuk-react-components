@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
-import Textarea from "./Textarea"
 import CharacterCountJS from 'govuk-frontend/components/character-count/character-count'
+import Textarea from './Textarea'
 
 function CharacterCount(props) {
-
   const characterCountRef = React.createRef();
   const characterCountInfoClass = `${props.id}-info`
 
@@ -34,14 +33,18 @@ function CharacterCount(props) {
         describedBy={characterCountInfoClass}
       />
       <span id={characterCountInfoClass} className="govuk-hint govuk-character-count__message" aria-live="polite">
-        You can enter up to {props.maxlength || props.maxwords} {props.maxwords ? 'words' : 'characters'}
+        You can enter up to
+        {' '}
+        {props.maxlength || props.maxwords}
+        {' '}
+        {props.maxwords ? 'words' : 'characters'}
       </span>
     </div>
   )
 }
 
 CharacterCount.defaultProps = {
-  classes: ''
+  classes: '',
 }
 
 export default CharacterCount

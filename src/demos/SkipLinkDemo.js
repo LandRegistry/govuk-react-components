@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import SkipLink from '../components/govukComponents/SkipLink'
 
 function SkipLinkDemo() {
-
   useEffect(() => {
     document.title = 'Skip link demo'
   }, [])

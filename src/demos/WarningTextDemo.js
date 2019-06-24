@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import WarningText from '../components/govukComponents/WarningText'
 
 function WarningTextDemo() {
-
   useEffect(() => {
     document.title = 'Warning text demo'
   })

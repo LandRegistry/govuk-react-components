@@ -4,41 +4,46 @@ import Hint from './Hint'
 import ErrorMessage from './ErrorMessage'
 
 function Select(props) {
-
-  var describedBy = props.describedBy
+  let { describedBy } = props
 
   if (props.hint) {
-    const hintId = props.id + '-hint'
-    describedBy += ' ' + hintId
-    var hint = <Hint
-      id={hintId}
-      {...props.hint}
-    />
+    const hintId = `${props.id}-hint`
+    describedBy += ` ${hintId}`
+    var hint = (
+      <Hint
+        id={hintId}
+        {...props.hint}
+      />
+    )
   }
 
   if (props.errorMessage) {
-    const errorId = props.id ? props.id + '-error' : '';
-    describedBy += ' ' + errorId
-    var errorMessage = <ErrorMessage
-      id={errorId}
-      {...props.errorMessage}
-    />
+    const errorId = props.id ? `${props.id}-error` : '';
+    describedBy += ` ${errorId}`
+    var errorMessage = (
+      <ErrorMessage
+        id={errorId}
+        {...props.errorMessage}
+      />
+    )
   }
 
   const selectedItem = props.items.find(item => item.selected === true)
   const defaultValue = selectedItem ? selectedItem.value : null
 
-  var options = props.items.map((option, index) =>
+  const options = props.items.map((option, index) => (
     <option
       key={option.value + index}
       value={option.value}
       disabled={option.disabled}
-    >{option.text}</option>
-  )
+    >
+      {option.text}
+    </option>
+  ))
 
   return (
 
-    <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''} ${(props.formGroup && props.formGroup.classes) || ''}`} >
+    <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''} ${(props.formGroup && props.formGroup.classes) || ''}`}>
       <Label
         {...props.label}
         for={props.id}
@@ -61,8 +66,7 @@ function Select(props) {
 
 Select.defaultProps = {
   describedBy: '',
-  classes: ''
+  classes: '',
 }
 
 export default Select
-

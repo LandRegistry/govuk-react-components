@@ -1,7 +1,6 @@
 import React from 'react'
 
 function InsetText(props) {
-
   return (
     <div
       id={props.id}
@@ -14,7 +13,7 @@ function InsetText(props) {
 }
 
 InsetText.defaultProps = {
-  classes: ''
+  classes: '',
 }
 
 export default InsetText;

@@ -2,31 +2,30 @@ import React, { useEffect } from 'react';
 import Select from '../components/govukComponents/Select'
 
 function SelectDemo() {
-
   useEffect(() => {
     document.title = 'Select demo'
   }, [])
 
-  var items = [
+  const items = [
     {
-      value: "published",
-      text: "Recently published"
+      value: 'published',
+      text: 'Recently published',
 
     },
     {
-      value: "updated",
-      text: "Recently updated",
-      disabled: true
+      value: 'updated',
+      text: 'Recently updated',
+      disabled: true,
     },
     {
-      value: "views",
-      text: "Most views"
+      value: 'views',
+      text: 'Most views',
     },
     {
-      value: "comments",
-      text: "Most comments",
-      selected: true
-    }
+      value: 'comments',
+      text: 'Most comments',
+      selected: true,
+    },
   ]
 
   return (
@@ -36,7 +35,7 @@ function SelectDemo() {
         id="sort"
         name="sort"
         label={
-          { text: "Sort by" }
+          { text: 'Sort by' }
         }
         items={items}
       />

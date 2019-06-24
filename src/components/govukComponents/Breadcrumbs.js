@@ -2,15 +2,13 @@ import React from 'react'
 import Link from '../utils/Link.js'
 
 function Breadcrumbs(props) {
-
-  const breadcrumbs = props.items.map((item, index) => {
-    return (item.href || item.to) ?
-      <li key={'breadcrumb' + index} className="govuk-breadcrumbs__list-item">
+  const breadcrumbs = props.items.map((item, index) => ((item.href || item.to)
+    ? (
+      <li key={`breadcrumb${index}`} className="govuk-breadcrumbs__list-item">
         <Link classes="govuk-breadcrumbs__link" attributes={item.attributes} href={item.href} to={item.to}>{item.html ? item.html : item.text}</Link>
-      </li >
-      :
-      <li key={'breadcrumb' + index} className="govuk-breadcrumbs__list-item" aria-current="page">{item.html ? item.html : item.text}</li>
-  })
+      </li>
+    )
+    : <li key={`breadcrumb${index}`} className="govuk-breadcrumbs__list-item" aria-current="page">{item.html ? item.html : item.text}</li>))
 
   return (
     <div className={`govuk-breadcrumbs ${props.classes}`} {...props.attributes}>
@@ -22,7 +20,7 @@ function Breadcrumbs(props) {
 }
 
 Breadcrumbs.defaultProps = {
-  classes: ''
+  classes: '',
 }
 
 export default Breadcrumbs

@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 function Nav(props) {
-
-  const links = props.navigation.map((link, key) =>
+  const links = props.navigation.map((link, key) => (
     <li key={key}>
-      <NavLink className={`govuk-link ${link.classes ? ' ' + link.classes : ''}`} to={link.href} >
+      <NavLink className={`govuk-link ${link.classes ? ` ${link.classes}` : ''}`} to={link.href}>
         {link.text}
       </NavLink>
     </li>
-  )
+  ))
 
   return (
     <div className="app-pane__nav">

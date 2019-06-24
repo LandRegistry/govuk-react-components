@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import BackLink from '../components/govukComponents/BackLink'
 
 function BackLinkDemo() {
-
   useEffect(() => {
     document.title = 'Back link demo'
   }, [])

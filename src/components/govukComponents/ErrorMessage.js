@@ -1,7 +1,6 @@
 import React from 'react'
 
 function ErrorMessage(props) {
-
   if (props.visuallyHiddenText) {
     var visuallyHiddenText = <span className="govuk-visually-hidden">{props.visuallyHiddenText}</span>
   }
@@ -15,8 +14,8 @@ function ErrorMessage(props) {
 }
 
 ErrorMessage.defaultProps = {
-  visuallyHiddenText: "Error:",
-  classes: ''
+  visuallyHiddenText: 'Error:',
+  classes: '',
 }
 
 export default ErrorMessage

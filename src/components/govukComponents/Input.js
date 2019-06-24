@@ -4,25 +4,28 @@ import Hint from './Hint'
 import ErrorMessage from './ErrorMessage'
 
 function Input(props) {
-
-  var describedBy = props.describedBy
+  let { describedBy } = props
 
   if (props.hint) {
-    const hintId = props.id + '-hint'
-    describedBy += ' ' + hintId
-    var hint = <Hint
-      id={hintId}
-      {...props.hint}
-    />
+    const hintId = `${props.id}-hint`
+    describedBy += ` ${hintId}`
+    var hint = (
+      <Hint
+        id={hintId}
+        {...props.hint}
+      />
+    )
   }
 
   if (props.errorMessage) {
-    const errorId = props.id ? props.id + '-error' : '';
-    describedBy += ' ' + errorId
-    var errorMessage = <ErrorMessage
-      id={errorId}
-      {...props.errorMessage}
-    />
+    const errorId = props.id ? `${props.id}-error` : '';
+    describedBy += ` ${errorId}`
+    var errorMessage = (
+      <ErrorMessage
+        id={errorId}
+        {...props.errorMessage}
+      />
+    )
   }
 
   return (
@@ -30,12 +33,16 @@ function Input(props) {
       <Label
         {...props.label}
         for={props.id}
-      ></Label>
+      />
       {hint}
       {errorMessage}
-      <input className={`govuk-input ${props.classes} ${props.errorMessage ? ' govuk-input--error' : ''}`} id={props.id} name={props.name ? props.name : props.id} type={props.type}
+      <input
+        className={`govuk-input ${props.classes} ${props.errorMessage ? ' govuk-input--error' : ''}`}
+        id={props.id}
+        name={props.name ? props.name : props.id}
+        type={props.type}
         defaultValue={props.value}
-        aria-describedby={describedBy ? describedBy : null}
+        aria-describedby={describedBy || null}
         autoComplete={props.autocomplete}
         pattern={props.pattern}
         {...props.attributes}
@@ -47,8 +54,7 @@ function Input(props) {
 Input.defaultProps = {
   type: 'text',
   describedBy: '',
-  classes: ''
+  classes: '',
 }
 
 export default Input
-
