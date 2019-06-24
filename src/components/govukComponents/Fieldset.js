@@ -7,9 +7,9 @@ function Fieldset(props) {
         {props.legend.isPageHeading
           ? (
             <h1 className="govuk-fieldset__heading">
-              {props.legend.html ? props.legend.html : props.legend.text}
+              {props.legend.html || props.legend.text}
             </h1>
-          ) : props.legend.html ? props.legend.html : props.legend.text}
+          ) : props.legend.html || props.legend.text}
       </legend>
     )
   }

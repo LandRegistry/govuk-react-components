@@ -56,13 +56,13 @@ function Button(props) {
 
     button = (
       <Link {...linkAttributes}>
-        {props.html ? props.html : props.text}
+        {props.html || props.text}
       </Link>
     )
   } else if (element === 'button') {
     button = (
       <button {...buttonAttributes} {...commonAttributes}>
-        {props.html ? props.html : props.text}
+        {props.html || props.text}
       </button>
     )
   } else if (element === 'input') {

@@ -4,7 +4,7 @@ function ErrorSummary(props) {
   if (props.descriptionHtml || props.descriptionText) {
     var description = (
       <p>
-        {props.descriptionHtml ? props.descriptionHtml : props.descriptionText}
+        {props.descriptionHtml || props.descriptionText}
       </p>
     )
   }
@@ -18,7 +18,7 @@ function ErrorSummary(props) {
       data-module="error-summary"
     >
       <h2 className="govuk-error-summary__title" id="error-summary-title">
-        {props.titleHtml ? props.titleHtml : props.titleText}
+        {props.titleHtml || props.titleText}
       </h2>
       <div className="govuk-error-summary__body">
         {description}
@@ -27,8 +27,8 @@ function ErrorSummary(props) {
             <li key={error.href + index}>
               {
                 error.href
-                  ? <a href={error.href} {...error.attributes}>{error.html ? error.html : error.text}</a>
-                  : <>{error.html ? error.html : error.text}</>
+                  ? <a href={error.href} {...error.attributes}>{error.html || error.text}</a>
+                  : <>{error.html || error.text}</>
               }
             </li>
           ))

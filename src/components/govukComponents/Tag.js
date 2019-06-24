@@ -3,7 +3,7 @@ import React from 'react'
 function Tag(props) {
   return (
     <strong className={`govuk-tag ${props.classes}`} {...props.attributes}>
-      {props.html ? props.html : props.text}
+      {props.html || props.text}
     </strong>
   )
 }

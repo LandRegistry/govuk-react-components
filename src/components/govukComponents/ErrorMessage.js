@@ -8,7 +8,7 @@ function ErrorMessage(props) {
   return (
     <span id={props.id} className={`govuk-error-message ${props.classes}`} {...props.attributes}>
       {visuallyHiddenText}
-      {props.html ? props.html : props.text}
+      {props.html || props.text}
     </span>
   )
 }

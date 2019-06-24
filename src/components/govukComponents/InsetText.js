@@ -7,7 +7,7 @@ function InsetText(props) {
       className={`govuk-inset-text ${props.classes}`}
       {...props.attributes}
     >
-      {props.html ? props.html : props.text}
+      {props.html || props.text}
     </div>
   )
 }

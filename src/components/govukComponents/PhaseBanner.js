@@ -8,7 +8,7 @@ function PhaseBanner(props) {
         <Tag {...props.tag} classes={`govuk-phase-banner__content__tag${(props.tag && props.tag.classes) || ''}`} />
 
         <span className="govuk-phase-banner__text">
-          { props.html ? props.html : props.text }
+        {props.html || props.text}
         </span>
       </p>
     </div>

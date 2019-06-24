@@ -4,7 +4,7 @@ import Link from '../utils/Link.js'
 function ActionLink(props) {
   const contents = (
     <>
-      {props.html ? props.html : props.text}
+      {props.html || props.text}
       {props.visuallyHiddenText && (
       <span className="govuk-visually-hidden">
         {' '}

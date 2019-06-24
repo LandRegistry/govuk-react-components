@@ -4,7 +4,7 @@ function Label(props) {
   if (props.html || props.text) {
     var label = (
       <label className={`govuk-label ${props.classes}`} {...props.attributes} htmlFor={props.for}>
-        {props.html ? props.html : props.text}
+        {props.html || props.text}
       </label>
     )
   }

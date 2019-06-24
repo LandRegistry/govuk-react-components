@@ -38,7 +38,7 @@ function Tabs(props) {
         id={item.id}
         {...props.attributes}
       >
-        {item.panel.html ? item.panel.html : item.panel.text}
+        {item.panel.html || item.panel.text}
       </section>
     ))
   }

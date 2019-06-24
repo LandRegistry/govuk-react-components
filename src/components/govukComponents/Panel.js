@@ -6,7 +6,7 @@ function Panel(props) {
   if (props.html || props.text) {
     var innerHtml = (
       <div className="govuk-panel__body">
-        {props.html ? props.html : props.text}
+        {props.html || props.text}
       </div>
     )
   }
@@ -14,7 +14,7 @@ function Panel(props) {
 
     <div className={`govuk-panel govuk-panel--confirmation ${props.classes}`} {...props.attributes}>
       <HeadingLevel className="govuk-panel__title">
-        {props.titleHtml ? props.titleHtml : props.titleText}
+        {props.titleHtml || props.titleText}
       </HeadingLevel>
       {innerHtml}
     </div>
