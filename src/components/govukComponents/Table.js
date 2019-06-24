@@ -17,7 +17,7 @@ function Table(props) {
         <tr className="govuk-table__row">
           {props.head.map((item, index) => (
             <th
-              key={index}
+              key={(item.html || item.text) + index}
               scope="col"
               className={`govuk-table__header ${item.format ? `govuk-table__header--${item.format}` : ''} ${item.classes || ''}`}
               colSpan={item.colspan || null}

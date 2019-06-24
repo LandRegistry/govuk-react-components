@@ -11,7 +11,10 @@
   ],
   "rules": {
     "semi": "off",
-    "no-extra-semi": "warn"
+    "no-extra-semi": "warn",
+    "react/jsx-filename-extension": "off",
+    "react/destructuring-assignment": "off",
+    "react/no-array-index-key": "off"
   },
   "settings": {
     "react": {

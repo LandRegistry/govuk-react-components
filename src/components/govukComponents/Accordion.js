@@ -12,22 +12,22 @@ function Accordion(props) {
   const HeadingLevel = props.headingLevel ? `h${props.headingLevel}` : 'h2'
 
   const innerHtml = props.items.map((item, index) => (
-    <div key={`accordion${index + 1}`} className={`govuk-accordion__section${item.expanded ? ' ' + 'govuk-accordion__section--expanded' : ''}`}>
+    <div key={(item.heading.html || item.heading.text) + index} className={`govuk-accordion__section ${item.expanded ? 'govuk-accordion__section--expanded' : ''}`}>
       <div className="govuk-accordion__section-header">
         <HeadingLevel className="govuk-accordion__section-heading">
           <span className="govuk-accordion__section-button" id={`${id}-heading-${index + 1}`}>
-            {item.heading.html ? item.heading.html : item.heading.text}
+            {item.heading.html || item.heading.text}
           </span>
         </HeadingLevel>
         {item.summary
           ? (
             <div className="govuk-accordion__section-summary govuk-body" id={`${id}-summary-${index + 1}`}>
-              {item.summary.html ? item.summary.html : item.summary.text}
+              {item.summary.html || item.summary.text}
             </div>
           ) : ''}
       </div>
       <div id={`${id}-content-${index + 1}`} className="govuk-accordion__section-content" aria-labelledby={`${id}-heading-${index + 1}`}>
-        {item.content.html ? item.content.html : item.content.text}
+        {item.content.html || item.content.text}
       </div>
     </div>
   ))
