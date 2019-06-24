@@ -1,20 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Link from '../utils/Link.js'
 
 function BackLink(props) {
-  const classes = `govuk-back-link${props.classes ? ' ' + props.classes : ''}`
   const contents = props.html ? props.html : props.text
 
-  if (props.href === '#') {
-    return <a href={props.href} className={classes} {...props.attributes}>{contents}</a>
-  } else {
-    return <Link to={props.href} className={classes} {...props.attributes}>{contents}</Link>
-  }
+  return <Link classes={`govuk-back-link ${props.classes}`} attributes={props.attributes} href={props.href} to={props.to}>
+    {contents}
+  </Link>
 }
 
 BackLink.defaultProps = {
-  to: "/",
-  text: 'Back'
+  href: "/",
+  text: 'Back',
+  classes: ''
 }
 
 export default BackLink

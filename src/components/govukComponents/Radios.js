@@ -39,7 +39,7 @@ function Radios(props) {
     {hint}
     {errorMessage}
 
-    <div className={`govuk-radios${props.classes ? ' ' + props.classes : ''}${isConditional ? ' govuk-radios--conditional' : ''}`}
+    <div className={`govuk-radios ${props.classes}${isConditional ? ' govuk-radios--conditional' : ''}`}
       {...props.attributes}
       ref={radioRef}
       data-module={isConditional ? 'radios' : null}
@@ -96,12 +96,16 @@ function Radios(props) {
   </>
 
   return (
-    <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''} ${props.formGroup ? props.formGroup.classes : ''}`} >
+    <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''} ${(props.formGroup && props.formGroup.classes) || ''}`} >
       {hasFieldset ? <Fieldset describedBy={describedBy} {...props.fieldset}>
         {innerHtml}
       </Fieldset> : innerHtml}
     </div>
   )
+}
+
+Radios.defaultProps = {
+  classes: ''
 }
 
 export default Radios

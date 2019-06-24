@@ -38,7 +38,7 @@ function Select(props) {
 
   return (
 
-    <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''}${props.formGroup ? ' ' + props.formGroup.classes : ''}`} >
+    <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''} ${(props.formGroup && props.formGroup.classes) || ''}`} >
       <Label
         {...props.label}
         for={props.id}
@@ -46,7 +46,7 @@ function Select(props) {
       {hint}
       {errorMessage}
       <select
-        className={`govuk-select${props.classes ? ' ' + props.classes : ''}${props.errorMessage ? ' govuk-select--error' : ''}`}
+        className={`govuk-select ${props.classes}${props.errorMessage ? ' govuk-select--error' : ''}`}
         id={props.id}
         name={props.name}
         defaultValue={defaultValue}
@@ -60,7 +60,8 @@ function Select(props) {
 }
 
 Select.defaultProps = {
-  describedBy: ''
+  describedBy: '',
+  classes: ''
 }
 
 export default Select

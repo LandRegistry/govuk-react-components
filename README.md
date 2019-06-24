@@ -1,68 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# GOV.UK React components
 
-## Available Scripts
+This repository contains govuk-frontend compatible React components. It takes a lighter touch approach than https://github.com/govuk-react/govuk-react as follows:
 
-In the project directory, you can run:
+- These components assume that you will include the govuk-frontend styles into the page yourself. No attempt to subsume the CSS into the JS has been made
+- The components in this repository are effectively just JSX ports of the Nunjucks macros and so output the identical markup structure
+- The `props` for these components are a like for like match of the `params` that get passed to the govuk-frontend Nunjucks macros.
 
-### `npm start`
+If these decisions don't sound like your cup of tea, it may be worth giving https://github.com/govuk-react/govuk-react a look as it takes the opposite stance on some of the above points.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
+## Assumptions
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+These components assume you:
 
-### `npm test`
+- Have compiled the govuk-frontend scss and have included it in your page
+- Are using react-router
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Exceptions
 
-### `npm run build`
+Exceptions to the above conformance are:
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Links - Anywhere that accepts an `href` / `text` combo of params to create a hyperlink, will also accept a `to` prop instead of `href`, which will be used in a react-router `<Link>` element.
+- Anywhere that accepts an `html` param in Nunjucks will expect the equivalent prop in React to be a piece of JSX - _not_ a string of html, because we want to avoid dangerouslySetInnerHtml if at all possible. If you absolutely have to deal with strings of html it is up to you to convert them safely to JSX using something like a combination of https://github.com/cure53/DOMPurify and https://github.com/remarkablemark/html-react-parser  
+  Text is treated in exactly the same way - it essentially is JSX.
+  
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Versioning
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This repository will be tagged with the same tag as the govuk-frontend version which it is compatible with. For example `v2.12.0`. If additional versions need to be released in order to fix bugs, the tag may be suffixed, such as `v2.12.0-1`, `v2.12.0-2`, `v2.12.0-3`
 
-### `npm run eject`
+## Tests
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+The test suite renders the examples from the govuk-frontend repository through the Nunjucks macros as well as the JSX components and compares the output. Any differences here constitute a failure.

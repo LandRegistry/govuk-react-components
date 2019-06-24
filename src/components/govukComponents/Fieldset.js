@@ -3,7 +3,7 @@ import React from 'react'
 function Fieldset(props) {
 
   if (props.legend.html || props.legend.text) {
-    var legend = <legend className={`govuk-fieldset__legend ${props.legend.classes ? ' ' + props.legend.classes : ''}`}>
+    var legend = <legend className={`govuk-fieldset__legend ${props.legend.classes || ''}`}>
       {props.legend.isPageHeading ?
         <h1 className="govuk-fieldset__heading">
           {props.legend.html ? props.legend.html : props.legend.text}
@@ -12,7 +12,7 @@ function Fieldset(props) {
   }
 
   return (
-    <fieldset className={`govuk-fieldset${props.classes ? ' ' + props.classes : ''}`}
+    <fieldset className={`govuk-fieldset ${props.classes}`}
       aria-describedby={props.describedBy ? props.describedBy : null}
       {...props.attributes}
     >
@@ -23,7 +23,8 @@ function Fieldset(props) {
 }
 
 Fieldset.defaultProps = {
-  describedBy: ''
+  describedBy: '',
+  classes: ''
 }
 
 export default Fieldset

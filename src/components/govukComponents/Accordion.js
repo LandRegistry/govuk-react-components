@@ -32,11 +32,15 @@ function Accordion(props) {
   )
   return (
 
-    <div className={`govuk-accordion${props.classes ? ' ' + props.classes : ''}`} data-module="accordion" id={props.id} {...props.attributes} ref={accordionRef}>
+    <div className={`govuk-accordion ${props.classes}`} data-module="accordion" id={props.id} {...props.attributes} ref={accordionRef}>
       {innerHtml}
     </div >
 
   )
+}
+
+Accordion.defaultProps = {
+  classes: ''
 }
 
 export default Accordion

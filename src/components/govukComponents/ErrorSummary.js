@@ -8,7 +8,7 @@ function ErrorSummary(props) {
     </p>
   }
   return (
-    <div className={`govuk-error-summary${props.classes ? ' ' + props.classes : ''}`}
+    <div className={`govuk-error-summary ${props.classes}`}
       aria-labelledby="error-summary-title"
       role="alert"
       tabIndex="-1"
@@ -34,6 +34,10 @@ function ErrorSummary(props) {
       </div>
     </div>
   )
+}
+
+ErrorSummary.defaultProps = {
+  classes: ''
 }
 
 export default ErrorSummary

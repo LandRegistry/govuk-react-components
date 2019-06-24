@@ -56,7 +56,7 @@ function DateInput(props) {
           classes: "govuk-date-input__label"
         }}
         id={item.id ? item.id : (props.id + "-" + item.name)}
-        classes={"govuk-date-input__input " + (item.classes ? ' ' + item.classes : '')}
+        classes={"govuk-date-input__input " + (item.classes || '')}
         name={props.namePrefix ? (props.namePrefix + "-" + item.name) : item.name}
         value={item.value}
         type="number"
@@ -69,7 +69,7 @@ function DateInput(props) {
   const innerHtml = <>
     {hint}
     {errorMessage}
-    <div className={`govuk-date-input${props.classes ? ' ' + props.classes : ''}`}
+    <div className={`govuk-date-input ${props.classes}`}
       {...props.attributes}
       id={props.id}>
       {items}
@@ -78,7 +78,7 @@ function DateInput(props) {
 
   return (
 
-    <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''}${props.formGroup ? ' ' + props.formGroup.classes : ''}`}>
+    <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''} ${(props.formGroup && props.formGroup.classes) || ''}`}>
       {props.fieldset ? <Fieldset
         describedBy={describedBy}
         classes={props.fieldset.classes}
@@ -94,6 +94,7 @@ function DateInput(props) {
 }
 
 DateInput.defaultProps = {
+  classes: ''
 }
 
 export default DateInput

@@ -26,7 +26,7 @@ function FileUpload(props) {
   }
   return (
 
-    <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''}${props.formGroup ? ' ' + props.formGroup.classes : ''}`}>
+    <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''} ${(props.formGroup && props.formGroup.classes) || ''}`}>
       <Label
         {...props.label}
         for={props.id}
@@ -34,7 +34,7 @@ function FileUpload(props) {
       {hint}
       {errorMessage}
       <input
-        className={`govuk-file-upload${props.classes ? ' ' + props.classes : ''}${props.errorMessage ? ' govuk-file-upload--error' : ''}`}
+        className={`govuk-file-upload ${props.classes}${props.errorMessage ? ' govuk-file-upload--error' : ''}`}
         id={props.id}
         name={props.name}
         type="file"
@@ -47,7 +47,8 @@ function FileUpload(props) {
 }
 
 FileUpload.defaultProps = {
-  describedBy: ''
+  describedBy: '',
+  classes: ''
 }
 
 export default FileUpload
