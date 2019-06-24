@@ -7,10 +7,12 @@
     "react"
   ],
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
+    "airbnb"
   ],
+  "rules": {
+    "semi": "off",
+    "no-extra-semi": "warn"
+  },
   "settings": {
     "react": {
       "version": "16",
