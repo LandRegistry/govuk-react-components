@@ -15,12 +15,12 @@ function Footer(props) {
                 {nav.items.map((item, index) => (
                   <React.Fragment key={(item.href || item.to) + index}>
                     { (item.href || item.to) && item.text && (
-              <li className="govuk-footer__list-item">
-          <Link classes={`govuk-footer__link ${item.classes || ''}`} to={item.to} href={item.href} {...item.attributes}>
-                        {item.text}
-                      </Link>
-        </li>
-              )}
+                      <li className="govuk-footer__list-item">
+                        <Link classes={`govuk-footer__link ${item.classes || ''}`} to={item.to} href={item.href} {...item.attributes}>
+                          {item.text}
+                          </Link>
+                      </li>
+                    )}
                   </React.Fragment>
                 ))}
               </ul>
