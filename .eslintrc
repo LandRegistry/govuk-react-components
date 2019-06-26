@@ -6,15 +6,20 @@
   "plugins": [
     "react"
   ],
-  "extends": [
-    "airbnb"
-  ],
+  "extends": ["airbnb"],
   "rules": {
     "semi": "off",
     "no-extra-semi": "warn",
     "react/jsx-filename-extension": "off",
     "react/destructuring-assignment": "off",
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+    "react/jsx-closing-tag-location": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/forbid-prop-types": "off",
+    "react/require-default-props": "off",
+    "jsx-a11y/no-redundant-roles": "off",
+    "prefer-destructuring": "off",
+    "no-var": "off",
   },
   "settings": {
     "react": {

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function Tag(props) {
   return (
@@ -10,6 +11,13 @@ function Tag(props) {
 
 Tag.defaultProps = {
   classes: '',
+}
+
+Tag.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  html: PropTypes.string,
+  text: PropTypes.string,
 }
 
 export default Tag;

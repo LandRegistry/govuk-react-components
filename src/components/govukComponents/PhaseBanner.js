@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Tag from './Tag'
 
 function PhaseBanner(props) {
@@ -8,7 +9,7 @@ function PhaseBanner(props) {
         <Tag {...props.tag} classes={`govuk-phase-banner__content__tag${(props.tag && props.tag.classes) || ''}`} />
 
         <span className="govuk-phase-banner__text">
-        {props.html || props.text}
+          {props.html || props.text}
         </span>
       </p>
     </div>
@@ -17,6 +18,14 @@ function PhaseBanner(props) {
 
 PhaseBanner.defaultProps = {
   classes: '',
+}
+
+PhaseBanner.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  html: PropTypes.string,
+  tag: PropTypes.object,
+  text: PropTypes.string,
 }
 
 export default PhaseBanner;

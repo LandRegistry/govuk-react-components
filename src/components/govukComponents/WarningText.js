@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function WarningText(props) {
   return (
@@ -14,6 +15,15 @@ function WarningText(props) {
 
 WarningText.defaultProps = {
   classes: '',
+  attributes: {},
+}
+
+WarningText.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  html: PropTypes.string,
+  iconFallbackText: PropTypes.string.isRequired,
+  text: PropTypes.string,
 }
 
 export default WarningText;

@@ -14,7 +14,8 @@
     "start": "webpack-dev-server --mode development --open --hot --history-api-fallback",
     "build": "webpack --mode production",
     "test": "jest tests --notify --verbose",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "lint-fix": "eslint src --fix"
   },
   "jest": {
     "moduleNameMapper": {
@@ -56,6 +57,7 @@
     "mkdirp": "^0.5.1",
     "node-sass": "4.12.0",
     "nunjucks": "3.2.0",
+    "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-html-parser": "2.0.2",

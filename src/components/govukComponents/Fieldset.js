@@ -1,8 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function Fieldset(props) {
+  var legend
   if (props.legend.html || props.legend.text) {
-    var legend = (
+    legend = (
       <legend className={`govuk-fieldset__legend ${props.legend.classes || ''}`}>
         {props.legend.isPageHeading
           ? (
@@ -29,6 +31,14 @@ function Fieldset(props) {
 Fieldset.defaultProps = {
   describedBy: '',
   classes: '',
+}
+
+Fieldset.propTypes = {
+  legend: PropTypes.object,
+  classes: PropTypes.string,
+  describedBy: PropTypes.string,
+  attributes: PropTypes.object,
+  children: PropTypes.element.isRequired,
 }
 
 export default Fieldset

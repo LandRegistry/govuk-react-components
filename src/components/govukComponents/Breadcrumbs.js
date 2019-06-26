@@ -1,5 +1,6 @@
 import React from 'react'
-import Link from '../utils/Link.js'
+import PropTypes from 'prop-types'
+import Link from '../utils/Link'
 
 function Breadcrumbs(props) {
   const breadcrumbs = props.items.map((item, index) => ((item.href || item.to)
@@ -21,6 +22,12 @@ function Breadcrumbs(props) {
 
 Breadcrumbs.defaultProps = {
   classes: '',
+}
+
+Breadcrumbs.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  items: PropTypes.array,
 }
 
 export default Breadcrumbs

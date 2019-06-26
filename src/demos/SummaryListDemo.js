@@ -55,15 +55,15 @@ function SummaryListDemo() {
           html: <>
             <p className="govuk-body">email@email.com</p>
             <p className="govuk-body">
-Address line 1
+              Address line 1
               <br />
-Address line 2
+              Address line 2
               <br />
-Address line 3
+              Address line 3
               <br />
-Address line 4
+              Address line 4
               <br />
-Address line 5
+              Address line 5
             </p>
           </>,
         },

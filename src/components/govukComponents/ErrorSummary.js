@@ -1,8 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function ErrorSummary(props) {
+  var description
   if (props.descriptionHtml || props.descriptionText) {
-    var description = (
+    description = (
       <p>
         {props.descriptionHtml || props.descriptionText}
       </p>
@@ -41,6 +43,16 @@ function ErrorSummary(props) {
 
 ErrorSummary.defaultProps = {
   classes: '',
+}
+
+ErrorSummary.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  descriptionHtml: PropTypes.string,
+  descriptionText: PropTypes.string,
+  errorList: PropTypes.array,
+  titleHtml: PropTypes.string,
+  titleText: PropTypes.string,
 }
 
 export default ErrorSummary

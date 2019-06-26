@@ -1,16 +1,20 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Hint from './Hint'
 import ErrorMessage from './ErrorMessage'
 import Fieldset from './Fieldset'
 import Input from './Input'
 
 function DateInput(props) {
-  let describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
+  var describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
+  var hint
+  var errorMessage
+  var dateInputItems = []
 
   if (props.hint) {
     const hintId = `${props.id}-hint`
     describedBy += ` ${hintId}`
-    var hint = (
+    hint = (
       <Hint
         id={hintId}
         {...props.hint}
@@ -21,14 +25,13 @@ function DateInput(props) {
   if (props.errorMessage) {
     const errorId = props.id ? `${props.id}-error` : '';
     describedBy += ` ${errorId}`
-    var errorMessage = (
+    errorMessage = (
       <ErrorMessage
         id={errorId}
         {...props.errorMessage}
       />
     )
   }
-  let dateInputItems = []
   if (props.items) {
     dateInputItems = props.items
   } else {
@@ -55,7 +58,9 @@ function DateInput(props) {
     <div key={item.name + index} className="govuk-date-input__item">
       <Input
         label={{
-          text: item.label ? item.label.charAt(0).toUpperCase() + item.label.slice(1) : item.name.charAt(0).toUpperCase() + item.name.slice(1),
+          text: item.label
+            ? item.label.charAt(0).toUpperCase() + item.label.slice(1)
+            : item.name.charAt(0).toUpperCase() + item.name.slice(1),
           classes: 'govuk-date-input__label',
         }}
         id={item.id ? item.id : (`${props.id}-${item.name}`)}
@@ -84,7 +89,6 @@ function DateInput(props) {
   )
 
   return (
-
     <div className={`govuk-form-group${props.errorMessage ? ' govuk-form-group--error' : ''} ${(props.formGroup && props.formGroup.classes) || ''}`}>
       {props.fieldset ? (
         <Fieldset
@@ -105,6 +109,18 @@ function DateInput(props) {
 
 DateInput.defaultProps = {
   classes: '',
+}
+
+DateInput.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  errorMessage: PropTypes.object,
+  fieldset: PropTypes.object,
+  formGroup: PropTypes.object,
+  hint: PropTypes.object,
+  id: PropTypes.string,
+  items: PropTypes.array,
+  namePrefix: PropTypes.string,
 }
 
 export default DateInput

@@ -1,15 +1,18 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Label from './Label'
 import Hint from './Hint'
 import ErrorMessage from './ErrorMessage'
 
 function Input(props) {
-  let { describedBy } = props
+  var { describedBy } = props
+  var hint
+  var errorMessage
 
   if (props.hint) {
     const hintId = `${props.id}-hint`
     describedBy += ` ${hintId}`
-    var hint = (
+    hint = (
       <Hint
         id={hintId}
         {...props.hint}
@@ -20,7 +23,7 @@ function Input(props) {
   if (props.errorMessage) {
     const errorId = props.id ? `${props.id}-error` : '';
     describedBy += ` ${errorId}`
-    var errorMessage = (
+    errorMessage = (
       <ErrorMessage
         id={errorId}
         {...props.errorMessage}
@@ -55,6 +58,22 @@ Input.defaultProps = {
   type: 'text',
   describedBy: '',
   classes: '',
+}
+
+Input.propTypes = {
+  attributes: PropTypes.object,
+  autocomplete: PropTypes.string,
+  classes: PropTypes.string,
+  describedBy: PropTypes.string,
+  errorMessage: PropTypes.object,
+  formGroup: PropTypes.object,
+  hint: PropTypes.object,
+  id: PropTypes.string,
+  label: PropTypes.string,
+  name: PropTypes.string,
+  pattern: PropTypes.string,
+  type: PropTypes.string,
+  value: PropTypes.string,
 }
 
 export default Input

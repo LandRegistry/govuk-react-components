@@ -1,7 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function Table(props) {
-  let caption
+  var caption
+  var head
   if (props.caption) {
     caption = (
       <caption className={`govuk-table__caption ${props.captionClasses || ''}`}>
@@ -10,7 +12,6 @@ function Table(props) {
     )
   }
 
-  let head
   if (props.head) {
     head = (
       <thead className="govuk-table__head">
@@ -31,7 +32,6 @@ function Table(props) {
       </thead>
     )
   }
-
 
   return (
     <table className={`govuk-table ${props.classes}`} {...props.attributes}>
@@ -70,6 +70,16 @@ function Table(props) {
 
 Table.defaultProps = {
   classes: '',
+}
+
+Table.propTypes = {
+  attributes: PropTypes.object,
+  caption: PropTypes.string,
+  captionClasses: PropTypes.string,
+  classes: PropTypes.string,
+  firstCellIsHeader: PropTypes.bool,
+  head: PropTypes.array,
+  rows: PropTypes.array,
 }
 
 export default Table;

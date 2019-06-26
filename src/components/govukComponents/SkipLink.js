@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function SkipLink(props) {
   return (
@@ -11,6 +12,14 @@ function SkipLink(props) {
 SkipLink.defaultProps = {
   href: '#content',
   classes: '',
+}
+
+SkipLink.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  href: PropTypes.string,
+  html: PropTypes.string,
+  text: PropTypes.string,
 }
 
 export default SkipLink;

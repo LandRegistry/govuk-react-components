@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import PropTypes from 'prop-types'
 import AccordionJS from 'govuk-frontend/components/accordion/accordion'
 
 function Accordion(props) {
@@ -8,25 +9,24 @@ function Accordion(props) {
     new AccordionJS(accordionRef.current).init()
   }, [])
 
-  const { id } = props
   const HeadingLevel = props.headingLevel ? `h${props.headingLevel}` : 'h2'
 
   const innerHtml = props.items.map((item, index) => (
     <div key={(item.heading.html || item.heading.text) + index} className={`govuk-accordion__section ${item.expanded ? 'govuk-accordion__section--expanded' : ''}`}>
       <div className="govuk-accordion__section-header">
         <HeadingLevel className="govuk-accordion__section-heading">
-          <span className="govuk-accordion__section-button" id={`${id}-heading-${index + 1}`}>
+          <span className="govuk-accordion__section-button" id={`${props.id}-heading-${index + 1}`}>
             {item.heading.html || item.heading.text}
           </span>
         </HeadingLevel>
         {item.summary
           ? (
-            <div className="govuk-accordion__section-summary govuk-body" id={`${id}-summary-${index + 1}`}>
+            <div className="govuk-accordion__section-summary govuk-body" id={`${props.id}-summary-${index + 1}`}>
               {item.summary.html || item.summary.text}
             </div>
           ) : ''}
       </div>
-      <div id={`${id}-content-${index + 1}`} className="govuk-accordion__section-content" aria-labelledby={`${id}-heading-${index + 1}`}>
+      <div id={`${props.id}-content-${index + 1}`} className="govuk-accordion__section-content" aria-labelledby={`${props.id}-heading-${index + 1}`}>
         {item.content.html || item.content.text}
       </div>
     </div>
@@ -42,6 +42,14 @@ function Accordion(props) {
 
 Accordion.defaultProps = {
   classes: '',
+}
+
+Accordion.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  headingLevel: PropTypes.string,
+  id: PropTypes.string,
+  items: PropTypes.array,
 }
 
 export default Accordion

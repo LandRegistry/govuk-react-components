@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function InsetText(props) {
   return (
@@ -14,6 +15,14 @@ function InsetText(props) {
 
 InsetText.defaultProps = {
   classes: '',
+}
+
+InsetText.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  html: PropTypes.string,
+  id: PropTypes.string,
+  text: PropTypes.string,
 }
 
 export default InsetText;

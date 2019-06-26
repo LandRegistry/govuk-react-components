@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 function Hint(props) {
   return (
@@ -10,6 +11,13 @@ function Hint(props) {
 
 Hint.defaultProps = {
   classes: '',
+}
+
+Hint.propTypes = {
+  classes: PropTypes.string,
+  html: PropTypes.string,
+  id: PropTypes.string,
+  text: PropTypes.string,
 }
 
 export default Hint

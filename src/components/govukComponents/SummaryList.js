@@ -1,5 +1,6 @@
 import React from 'react'
-import Link from '../utils/Link.js'
+import PropTypes from 'prop-types'
+import Link from '../utils/Link'
 
 function ActionLink(props) {
   const contents = (
@@ -25,26 +26,43 @@ ActionLink.defaultProps = {
   classes: '',
 }
 
+ActionLink.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  href: PropTypes.string,
+  html: PropTypes.string,
+  text: PropTypes.string,
+  to: PropTypes.string,
+  visuallyHiddenText: PropTypes.string,
+}
+
 function actions(row, anyRowHasActions) {
-  const actionLinks = row.actions && row.actions.items.map((action, index) => <ActionLink key={(action.href || action.to) + index} {...action} />)
+  const actionLinks = row.actions && row.actions.items.map((action, index) => <ActionLink
+    key={(action.href || action.to) + index}
+    {...action}
+  />)
 
   if (row.actions && row.actions.items.length) {
     return (
       <dd className={`govuk-summary-list__actions ${row.actions.classes || ''}`}>
-        {row.actions.items.length == 1
+        {row.actions.items.length === 1
           ? actionLinks
           : (
             <ul className="govuk-summary-list__actions-list">
-              {actionLinks.map((actionLink, index) => <li key={actionLink.key} className="govuk-summary-list__actions-list-item">{actionLink}</li>)}
+              {actionLinks.map(actionLink => <li key={actionLink.key} className="govuk-summary-list__actions-list-item">{actionLink}</li>)}
             </ul>
           )
       }
       </dd>
     )
-  } if (anyRowHasActions) {
+  }
+
+  if (anyRowHasActions) {
     // Add dummy column to extend border
     return <span className="govuk-summary-list__actions" />
   }
+
+  return null
 }
 
 function SummaryList(props) {
@@ -70,6 +88,12 @@ function SummaryList(props) {
 
 SummaryList.defaultProps = {
   classes: '',
+}
+
+SummaryList.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  rows: PropTypes.array,
 }
 
 export default SummaryList;

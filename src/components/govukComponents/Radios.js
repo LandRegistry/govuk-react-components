@@ -1,11 +1,15 @@
 import React, { useEffect } from 'react'
 import RadiosJS from 'govuk-frontend/components/radios/radios'
+import PropTypes from 'prop-types'
 import ErrorMessage from './ErrorMessage'
 import Fieldset from './Fieldset'
 import Hint from './Hint'
 import Label from './Label'
 
 function Radios(props) {
+  var describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
+  var hint
+  var errorMessage
   const radioRef = React.createRef();
 
   useEffect(() => {
@@ -13,9 +17,6 @@ function Radios(props) {
   }, [])
 
   const idPrefix = props.idPrefix ? props.idPrefix : props.name
-  let describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
-  let hint
-  let errorMessage
 
   if (props.hint) {
     const hintId = `${idPrefix}-hint`;
@@ -50,10 +51,9 @@ function Radios(props) {
           const name = item.name ? item.name : props.name
           const key = name + index
           const conditionalId = item.conditional ? `conditional-${id}` : null
-          const hasHint = item.hint && (item.hint.text || item.hint.html)
           const itemHintId = `${id}-item-hint`
 
-          let itemDescribedBy = ''
+          var itemDescribedBy = ''
 
           if (!hasFieldset) {
             itemDescribedBy = describedBy
@@ -114,6 +114,18 @@ function Radios(props) {
 
 Radios.defaultProps = {
   classes: '',
+}
+
+Radios.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  errorMessage: PropTypes.object,
+  fieldset: PropTypes.object,
+  formGroup: PropTypes.object,
+  hint: PropTypes.object,
+  idPrefix: PropTypes.string,
+  items: PropTypes.array,
+  name: PropTypes.string,
 }
 
 export default Radios

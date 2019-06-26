@@ -12,12 +12,12 @@ function AccordionDemo() {
     },
     content: {
       html: <>
-        <a href="#" className="govuk-link">Agile and government services: an introduction</a>
+        <a href="/" className="govuk-link">Agile and government services: an introduction</a>
         <br />
-        <a href="#" className="govuk-link">Agile methods: an introduction</a>
+        <a href="/" className="govuk-link">Agile methods: an introduction</a>
         <br />
-        <a href="#" className="govuk-link">Core principles of agile</a>
-            </>,
+        <a href="/" className="govuk-link">Core principles of agile</a>
+      </>,
     },
     summary: {
       text: 'Introductions, methods, core features.',
@@ -28,21 +28,21 @@ function AccordionDemo() {
     },
     content: {
       html: <>
-        <a href="#" className="govuk-link">Creating an agile working environment</a>
+        <a href="/" className="govuk-link">Creating an agile working environment</a>
         <br />
-        <a href="#" className="govuk-link">Agile tools and techniques</a>
+        <a href="/" className="govuk-link">Agile tools and techniques</a>
         <br />
-        <a href="#" className="govuk-link">Set up a team wall</a>
+        <a href="/" className="govuk-link">Set up a team wall</a>
         <br />
-        <a href="#" className="govuk-link">Writing user stories</a>
+        <a href="/" className="govuk-link">Writing user stories</a>
         <br />
-        <a href="#" className="govuk-link">Planning in agile</a>
+        <a href="/" className="govuk-link">Planning in agile</a>
         <br />
-        <a href="#" className="govuk-link">Deciding on priorities</a>
+        <a href="/" className="govuk-link">Deciding on priorities</a>
         <br />
-        <a href="#" className="govuk-link">Developing a roadmap'</a>
+        <a href="/" className="govuk-link">Developing a roadmap</a>
         <br />
-            </>,
+      </>,
     },
     summary: {
       text: 'Worksapces, tools and techniques, user stories, planning',
@@ -54,7 +54,7 @@ function AccordionDemo() {
       text: 'Writing well for the web',
     },
     content: {
-      html: <a className="govuk-link" href="#">This is the content for Writing well for the web.</a>,
+      html: <a className="govuk-link" href="/">This is the content for Writing well for the web.</a>,
     },
   },
   {

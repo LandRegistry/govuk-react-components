@@ -1,8 +1,11 @@
 import React from 'react'
-import Link from '../utils/Link.js'
+import PropTypes from 'prop-types'
+import Link from '../utils/Link'
 
 function Footer(props) {
-  let navigation
+  var navigation
+  var meta
+
   if (props.navigation) {
     navigation = (
       <>
@@ -18,7 +21,7 @@ function Footer(props) {
                       <li className="govuk-footer__list-item">
                         <Link classes={`govuk-footer__link ${item.classes || ''}`} to={item.to} href={item.href} {...item.attributes}>
                           {item.text}
-                          </Link>
+                        </Link>
                       </li>
                     )}
                   </React.Fragment>
@@ -33,7 +36,6 @@ function Footer(props) {
     )
   }
 
-  let meta
   if (props.meta) {
     meta = (
       <>
@@ -115,6 +117,14 @@ Open Government Licence v3.0
 
 Footer.defaultProps = {
   classes: '',
+}
+
+Footer.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  containerClasses: PropTypes.string,
+  meta: PropTypes.object,
+  navigation: PropTypes.array,
 }
 
 export default Footer;

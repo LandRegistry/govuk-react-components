@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import PropTypes from 'prop-types'
 import CheckboxesJS from 'govuk-frontend/components/checkboxes/checkboxes'
 import ErrorMessage from './ErrorMessage'
 import Fieldset from './Fieldset'
@@ -7,15 +8,15 @@ import Label from './Label'
 
 function Checkboxes(props) {
   const checkboxRef = React.createRef();
+  const idPrefix = props.idPrefix ? props.idPrefix : props.name
+  var describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
+  var hint
+  var errorMessage
 
   useEffect(() => {
     new CheckboxesJS(checkboxRef.current).init()
   }, [])
 
-  const idPrefix = props.idPrefix ? props.idPrefix : props.name
-  let describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
-  let hint
-  let errorMessage
 
   if (props.hint) {
     const hintId = `${idPrefix}-hint`;
@@ -49,10 +50,9 @@ function Checkboxes(props) {
           const id = item.id ? item.id : `${idPrefix}-${index + 1}`
           const name = item.name ? item.name : props.name
           const conditionalId = item.conditional ? `conditional-${id}` : null
-          const hasHint = item.hint && (item.hint.text || item.hint.html)
           const itemHintId = `${id}-item-hint`
 
-          let itemDescribedBy = ''
+          var itemDescribedBy = ''
 
           if (!hasFieldset) {
             itemDescribedBy = describedBy
@@ -108,6 +108,18 @@ function Checkboxes(props) {
 
 Checkboxes.defaultProps = {
   classes: '',
+}
+
+Checkboxes.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  errorMessage: PropTypes.object,
+  fieldset: PropTypes.object,
+  formGroup: PropTypes.object,
+  hint: PropTypes.object,
+  idPrefix: PropTypes.string,
+  items: PropTypes.array,
+  name: PropTypes.string,
 }
 
 export default Checkboxes

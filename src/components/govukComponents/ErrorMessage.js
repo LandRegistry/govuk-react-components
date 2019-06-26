@@ -1,8 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function ErrorMessage(props) {
+  var visuallyHiddenText
   if (props.visuallyHiddenText) {
-    var visuallyHiddenText = <span className="govuk-visually-hidden">{props.visuallyHiddenText}</span>
+    visuallyHiddenText = <span className="govuk-visually-hidden">{props.visuallyHiddenText}</span>
   }
 
   return (
@@ -16,6 +18,15 @@ function ErrorMessage(props) {
 ErrorMessage.defaultProps = {
   visuallyHiddenText: 'Error:',
   classes: '',
+}
+
+ErrorMessage.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  html: PropTypes.string,
+  id: PropTypes.string,
+  text: PropTypes.string,
+  visuallyHiddenText: PropTypes.string,
 }
 
 export default ErrorMessage

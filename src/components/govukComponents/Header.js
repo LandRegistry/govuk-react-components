@@ -1,21 +1,22 @@
 import React, { useEffect } from 'react'
+import PropTypes from 'prop-types'
 import HeaderJS from 'govuk-frontend/components/header/header'
 import logo from 'govuk-frontend/assets/images/govuk-logotype-crown.png'
-import Link from '../utils/Link.js'
+import Link from '../utils/Link'
 
 function Header(props) {
   const headerRef = React.createRef();
+  var productName
+  var navigation
 
   useEffect(() => {
     new HeaderJS(headerRef.current).init()
   }, [])
 
-  let productName
   if (props.productName) {
     productName = <span className="govuk-header__product-name">{props.productName}</span>
   }
 
-  let navigation
   if (props.serviceName || props.navigation) {
     navigation = (
       <div className="govuk-header__content">
@@ -34,8 +35,8 @@ function Header(props) {
                   ? (
                     <li key={(item.href || item.to) + index} className={`govuk-header__navigation-item${item.active ? ' govuk-header__navigation-item--active' : ''}`}>
                       <Link classes={`govuk-header__link ${item.classes || ''}`} to={item.to} href={item.href} {...item.attributes}>
-                  {item.text}
-                </Link>
+                        {item.text}
+                      </Link>
                     </li>
                   )
                   : null))
@@ -85,7 +86,18 @@ Header.defaultProps = {
   homepageUrl: '/',
   classes: '',
   containerClasses: 'govuk-width-container',
-  assetsPath: '/assets/images',
+}
+
+Header.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  containerClasses: PropTypes.string,
+  homepageUrl: PropTypes.string,
+  navigation: PropTypes.array,
+  navigationClasses: PropTypes.string,
+  productName: PropTypes.string,
+  serviceName: PropTypes.string,
+  serviceUrl: PropTypes.string,
 }
 
 export default Header
