@@ -20,7 +20,7 @@ function BackLinkDemo() {
         classes="custom-class new-class"
         type="submit"
         text="Disabled"
-        disabled={true}
+        disabled
       />
       <br />
       <br />
