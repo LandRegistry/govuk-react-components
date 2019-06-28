@@ -10,7 +10,7 @@ function Link(props) {
 
   if (to) {
     return <ReactRouterLink
-      ref={forwardedRef}
+      innerRef={forwardedRef}
       to={to}
       className={classes}
       {...attributes}

@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import ReactDOM from 'react-dom'
 import ButtonJS from 'govuk-frontend/components/button/button'
 import Link from '../utils/Link'
 
@@ -13,7 +12,7 @@ function Button(props) {
   useEffect(() => {
     // ReactDOM.findDOMNode necessary as this might otherwise be invoked directly with a
     // react-router <Link> object.
-    new ButtonJS(ReactDOM.findDOMNode(buttonRef.current)).init()
+    new ButtonJS(buttonRef.current).init()
   }, [])
 
   if (props.element) {
