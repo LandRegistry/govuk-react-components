@@ -5,7 +5,7 @@ import logo from 'govuk-frontend/assets/images/govuk-logotype-crown.png'
 import Link from '../utils/Link'
 
 function Header(props) {
-  const headerRef = React.createRef();
+  const headerRef = React.createRef()
   var productName
   var navigation
 

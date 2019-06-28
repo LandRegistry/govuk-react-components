@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import FileUpload from '../components/govukComponents/FileUpload'
 
 function FileUploadDemo() {

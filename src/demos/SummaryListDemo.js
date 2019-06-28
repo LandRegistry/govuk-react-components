@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import SummaryList from '../components/govukComponents/SummaryList'
 
 function SummaryListDemo() {

@@ -1,32 +1,32 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import Nav from './Nav';
-import AccordionDemo from '../demos/AccordionDemo';
-import BackLink from '../demos/BackLink';
-import BreadcrumbsDemo from '../demos/BreadcrumbsDemo';
-import ButtonDemo from '../demos/ButtonDemo';
-import CharacterCountDemo from '../demos/CharacterCountDemo';
-import CheckboxesDemo from '../demos/CheckboxesDemo';
-import DateInputDemo from '../demos/DateInputDemo';
-import DetailsDemo from '../demos/DetailsDemo';
-import ErrorSummaryDemo from '../demos/ErrorSummaryDemo';
-import FileUploadDemo from '../demos/FileUploadDemo';
-import FooterDemo from '../demos/FooterDemo';
-import HintDemo from '../demos/HintDemo';
-import InputDemo from '../demos/InputDemo';
-import InsetTextDemo from '../demos/InsetTextDemo';
-import LabelDemo from '../demos/LabelDemo';
-import PanelDemo from '../demos/PanelDemo';
-import PhaseBannerDemo from '../demos/PhaseBannerDemo';
-import RadiosDemo from '../demos/RadiosDemo';
-import SelectDemo from '../demos/SelectDemo';
-import SkipLinkDemo from '../demos/SkipLinkDemo';
-import SummaryListDemo from '../demos/SummaryListDemo';
-import TableDemo from '../demos/TableDemo';
-import TabsDemo from '../demos/TabsDemo';
-import TagDemo from '../demos/TagDemo';
-import TextareaDemo from '../demos/TextareaDemo';
-import WarningTextDemo from '../demos/WarningTextDemo';
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
+import Nav from './Nav'
+import AccordionDemo from '../demos/AccordionDemo'
+import BackLink from '../demos/BackLink'
+import BreadcrumbsDemo from '../demos/BreadcrumbsDemo'
+import ButtonDemo from '../demos/ButtonDemo'
+import CharacterCountDemo from '../demos/CharacterCountDemo'
+import CheckboxesDemo from '../demos/CheckboxesDemo'
+import DateInputDemo from '../demos/DateInputDemo'
+import DetailsDemo from '../demos/DetailsDemo'
+import ErrorSummaryDemo from '../demos/ErrorSummaryDemo'
+import FileUploadDemo from '../demos/FileUploadDemo'
+import FooterDemo from '../demos/FooterDemo'
+import HintDemo from '../demos/HintDemo'
+import InputDemo from '../demos/InputDemo'
+import InsetTextDemo from '../demos/InsetTextDemo'
+import LabelDemo from '../demos/LabelDemo'
+import PanelDemo from '../demos/PanelDemo'
+import PhaseBannerDemo from '../demos/PhaseBannerDemo'
+import RadiosDemo from '../demos/RadiosDemo'
+import SelectDemo from '../demos/SelectDemo'
+import SkipLinkDemo from '../demos/SkipLinkDemo'
+import SummaryListDemo from '../demos/SummaryListDemo'
+import TableDemo from '../demos/TableDemo'
+import TabsDemo from '../demos/TabsDemo'
+import TagDemo from '../demos/TagDemo'
+import TextareaDemo from '../demos/TextareaDemo'
+import WarningTextDemo from '../demos/WarningTextDemo'
 
 
 function Main() {
@@ -154,4 +154,4 @@ function Main() {
   )
 }
 
-export default Main;
+export default Main

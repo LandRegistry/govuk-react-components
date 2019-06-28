@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import Hint from '../components/govukComponents/Hint'
 
 function HintDemo() {

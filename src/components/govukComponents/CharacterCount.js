@@ -4,7 +4,7 @@ import CharacterCountJS from 'govuk-frontend/components/character-count/characte
 import Textarea from './Textarea'
 
 function CharacterCount(props) {
-  const characterCountRef = React.createRef();
+  const characterCountRef = React.createRef()
   const characterCountInfoClass = `${props.id}-info`
 
   useEffect(() => {

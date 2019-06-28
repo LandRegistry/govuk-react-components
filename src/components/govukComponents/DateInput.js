@@ -23,7 +23,7 @@ function DateInput(props) {
   }
 
   if (props.errorMessage) {
-    const errorId = props.id ? `${props.id}-error` : '';
+    const errorId = props.id ? `${props.id}-error` : ''
     describedBy += ` ${errorId}`
     errorMessage = (
       <ErrorMessage

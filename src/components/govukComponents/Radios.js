@@ -10,7 +10,7 @@ function Radios(props) {
   var describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
   var hint
   var errorMessage
-  const radioRef = React.createRef();
+  const radioRef = React.createRef()
 
   useEffect(() => {
     new RadiosJS(radioRef.current).init()
@@ -19,8 +19,8 @@ function Radios(props) {
   const idPrefix = props.idPrefix ? props.idPrefix : props.name
 
   if (props.hint) {
-    const hintId = `${idPrefix}-hint`;
-    describedBy += ` ${hintId}`;
+    const hintId = `${idPrefix}-hint`
+    describedBy += ` ${hintId}`
 
     hint = <Hint id={hintId} {...props.hint} aria-describedby={describedBy} />
   }
@@ -30,8 +30,8 @@ function Radios(props) {
   const hasFieldset = !!props.fieldset
 
   if (props.errorMessage) {
-    const errorId = `${idPrefix}-error`;
-    describedBy += ` ${errorId}`;
+    const errorId = `${idPrefix}-error`
+    describedBy += ` ${errorId}`
     errorMessage = <ErrorMessage id={errorId} {...props.errorMessage} />
   }
 

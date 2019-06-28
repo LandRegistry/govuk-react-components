@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import AccordionJS from 'govuk-frontend/components/accordion/accordion'
 
 function Accordion(props) {
-  const accordionRef = React.createRef();
+  const accordionRef = React.createRef()
 
   useEffect(() => {
     new AccordionJS(accordionRef.current).init()

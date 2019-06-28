@@ -22,4 +22,4 @@ SkipLink.propTypes = {
   text: PropTypes.string,
 }
 
-export default SkipLink;
+export default SkipLink

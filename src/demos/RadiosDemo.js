@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import Radios from '../components/govukComponents/Radios'
 import Input from '../components/govukComponents/Input'
 

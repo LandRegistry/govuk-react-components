@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom'
 import ButtonJS from 'govuk-frontend/components/button/button'
 import Link from '../utils/Link'
 
 function Button(props) {
-  const buttonRef = React.createRef();
-  var element = '';
+  const buttonRef = React.createRef()
+  var element = ''
   var buttonAttributes = { name: props.name, type: props.type }
   var button
 

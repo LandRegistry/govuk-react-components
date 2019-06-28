@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import PhaseBanner from '../components/govukComponents/PhaseBanner'
 
 function PhaseBannerDemo() {

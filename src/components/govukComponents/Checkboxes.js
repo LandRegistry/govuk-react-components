@@ -7,7 +7,7 @@ import Hint from './Hint'
 import Label from './Label'
 
 function Checkboxes(props) {
-  const checkboxRef = React.createRef();
+  const checkboxRef = React.createRef()
   const idPrefix = props.idPrefix ? props.idPrefix : props.name
   var describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
   var hint
@@ -19,8 +19,8 @@ function Checkboxes(props) {
 
 
   if (props.hint) {
-    const hintId = `${idPrefix}-hint`;
-    describedBy += ` ${hintId}`;
+    const hintId = `${idPrefix}-hint`
+    describedBy += ` ${hintId}`
 
     hint = <Hint id={hintId} {...props.hint} aria-describedby={describedBy} />
   }
@@ -30,8 +30,8 @@ function Checkboxes(props) {
   const hasFieldset = !!props.fieldset
 
   if (props.errorMessage) {
-    const errorId = `${idPrefix}-error`;
-    describedBy += ` ${errorId}`;
+    const errorId = `${idPrefix}-error`
+    describedBy += ` ${errorId}`
     errorMessage = <ErrorMessage id={errorId} {...props.errorMessage} />
   }
 

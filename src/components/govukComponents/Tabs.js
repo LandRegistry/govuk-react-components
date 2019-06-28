@@ -74,4 +74,4 @@ Tabs.propTypes = {
   title: PropTypes.string,
 }
 
-export default Tabs;
+export default Tabs

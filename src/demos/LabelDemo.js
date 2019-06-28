@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import Label from '../components/govukComponents/Label'
 
 function LabelDemo() {

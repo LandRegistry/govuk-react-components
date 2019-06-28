@@ -25,4 +25,4 @@ InsetText.propTypes = {
   text: PropTypes.string,
 }
 
-export default InsetText;
+export default InsetText

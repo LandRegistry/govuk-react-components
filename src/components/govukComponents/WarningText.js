@@ -26,4 +26,4 @@ WarningText.propTypes = {
   text: PropTypes.string,
 }
 
-export default WarningText;
+export default WarningText

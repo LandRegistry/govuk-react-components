@@ -8,8 +8,7 @@
   ],
   "extends": ["airbnb"],
   "rules": {
-    "semi": "off",
-    "no-extra-semi": "warn",
+    "semi": ["error", "never"],
     "react/jsx-filename-extension": "off",
     "react/destructuring-assignment": "off",
     "react/no-array-index-key": "off",

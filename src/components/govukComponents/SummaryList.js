@@ -96,4 +96,4 @@ SummaryList.propTypes = {
   rows: PropTypes.array,
 }
 
-export default SummaryList;
+export default SummaryList

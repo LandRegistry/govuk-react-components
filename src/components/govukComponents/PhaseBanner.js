@@ -28,4 +28,4 @@ PhaseBanner.propTypes = {
   text: PropTypes.string,
 }
 
-export default PhaseBanner;
+export default PhaseBanner

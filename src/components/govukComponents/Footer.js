@@ -127,4 +127,4 @@ Footer.propTypes = {
   navigation: PropTypes.array,
 }
 
-export default Footer;
+export default Footer

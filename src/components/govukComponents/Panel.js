@@ -35,4 +35,4 @@ Panel.propTypes = {
   titleText: PropTypes.string,
 }
 
-export default Panel;
+export default Panel

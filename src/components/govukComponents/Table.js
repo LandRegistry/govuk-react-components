@@ -82,4 +82,4 @@ Table.propTypes = {
   rows: PropTypes.array,
 }
 
-export default Table;
+export default Table

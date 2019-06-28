@@ -20,4 +20,4 @@ Tag.propTypes = {
   text: PropTypes.string,
 }
 
-export default Tag;
+export default Tag

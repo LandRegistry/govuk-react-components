@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import Breadcrumbs from '../components/govukComponents/Breadcrumbs'
 
 function BreadcrumbsDemo() {

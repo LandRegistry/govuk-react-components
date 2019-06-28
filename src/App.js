@@ -1,7 +1,7 @@
-import React from 'react';
-import Header from './components/govukComponents/Header';
-import Footer from './components/govukComponents/Footer';
-import Main from './components/Main';
+import React from 'react'
+import Header from './components/govukComponents/Header'
+import Footer from './components/govukComponents/Footer'
+import Main from './components/Main'
 
 function App() {
   const navigationItems = [{
@@ -27,7 +27,7 @@ function App() {
       <Main />
       <Footer meta={{ items: navigationItems }} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

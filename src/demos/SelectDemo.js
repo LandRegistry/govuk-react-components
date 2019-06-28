@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import Select from '../components/govukComponents/Select'
 
 function SelectDemo() {

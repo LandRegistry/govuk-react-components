@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import Checkboxes from '../components/govukComponents/Checkboxes'
 import Input from '../components/govukComponents/Input'
 
