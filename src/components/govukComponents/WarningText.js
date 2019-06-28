@@ -22,7 +22,7 @@ WarningText.propTypes = {
   attributes: PropTypes.object,
   classes: PropTypes.string,
   html: PropTypes.node,
-  iconFallbackText: PropTypes.string.isRequired,
+  iconFallbackText: PropTypes.node.isRequired,
   text: PropTypes.node,
 }
 

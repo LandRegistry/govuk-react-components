@@ -31,8 +31,8 @@ Panel.propTypes = {
   headingLevel: PropTypes.number,
   html: PropTypes.node,
   text: PropTypes.node,
-  titleHtml: PropTypes.string,
-  titleText: PropTypes.string,
+  titleHtml: PropTypes.node,
+  titleText: PropTypes.node,
 }
 
 export default Panel

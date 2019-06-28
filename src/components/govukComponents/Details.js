@@ -27,8 +27,8 @@ Details.propTypes = {
   html: PropTypes.node,
   id: PropTypes.string,
   open: PropTypes.bool,
-  summaryHtml: PropTypes.string,
-  summaryText: PropTypes.string,
+  summaryHtml: PropTypes.node,
+  summaryText: PropTypes.node,
   text: PropTypes.node,
 }
 

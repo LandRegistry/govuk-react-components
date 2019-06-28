@@ -48,11 +48,11 @@ ErrorSummary.defaultProps = {
 ErrorSummary.propTypes = {
   attributes: PropTypes.object,
   classes: PropTypes.string,
-  descriptionHtml: PropTypes.string,
-  descriptionText: PropTypes.string,
+  descriptionHtml: PropTypes.node,
+  descriptionText: PropTypes.node,
   errorList: PropTypes.array,
-  titleHtml: PropTypes.string,
-  titleText: PropTypes.string,
+  titleHtml: PropTypes.node,
+  titleText: PropTypes.node,
 }
 
 export default ErrorSummary

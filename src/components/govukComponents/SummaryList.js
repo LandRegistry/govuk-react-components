@@ -33,7 +33,7 @@ ActionLink.propTypes = {
   html: PropTypes.node,
   text: PropTypes.node,
   to: PropTypes.string,
-  visuallyHiddenText: PropTypes.string,
+  visuallyHiddenText: PropTypes.node,
 }
 
 function actions(row, anyRowHasActions) {

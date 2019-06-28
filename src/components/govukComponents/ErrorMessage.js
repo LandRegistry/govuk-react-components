@@ -26,7 +26,7 @@ ErrorMessage.propTypes = {
   html: PropTypes.node,
   id: PropTypes.string,
   text: PropTypes.node,
-  visuallyHiddenText: PropTypes.string,
+  visuallyHiddenText: PropTypes.node,
 }
 
 export default ErrorMessage
