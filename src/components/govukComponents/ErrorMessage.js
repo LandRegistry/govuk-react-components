@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function ErrorMessage(props) {
-  var visuallyHiddenText
+  let visuallyHiddenText
   if (props.visuallyHiddenText) {
     visuallyHiddenText = <span className="govuk-visually-hidden">{props.visuallyHiddenText}</span>
   }

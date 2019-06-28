@@ -5,9 +5,9 @@ import Hint from './Hint'
 import Label from './Label'
 
 function FileUpload(props) {
-  var { describedBy } = props
-  var hint
-  var errorMessage
+  let { describedBy } = props
+  let hint
+  let errorMessage
 
   if (props.hint) {
     const hintId = `${props.id}-hint`

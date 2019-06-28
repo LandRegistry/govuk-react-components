@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function Table(props) {
-  var caption
-  var head
+  let caption
+  let head
   if (props.caption) {
     caption = (
       <caption className={`govuk-table__caption ${props.captionClasses || ''}`}>

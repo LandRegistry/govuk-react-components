@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import Link from '../utils/Link'
 
 function Footer(props) {
-  var navigation
-  var meta
+  let navigation
+  let meta
 
   if (props.navigation) {
     navigation = (

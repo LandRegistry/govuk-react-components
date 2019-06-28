@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function ErrorSummary(props) {
-  var description
+  let description
   if (props.descriptionHtml || props.descriptionText) {
     description = (
       <p>

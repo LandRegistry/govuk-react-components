@@ -6,9 +6,9 @@ import Link from '../utils/Link'
 
 function Button(props) {
   const buttonRef = React.createRef()
-  var element = ''
-  var buttonAttributes = { name: props.name, type: props.type }
-  var button
+  let element = ''
+  let buttonAttributes = { name: props.name, type: props.type }
+  let button
 
   useEffect(() => {
     // ReactDOM.findDOMNode necessary as this might otherwise be invoked directly with a

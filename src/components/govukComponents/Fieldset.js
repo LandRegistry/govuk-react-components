@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 function Fieldset(props) {
-  var legend
+  let legend
   if (props.legend.html || props.legend.text) {
     legend = (
       <legend className={`govuk-fieldset__legend ${props.legend.classes || ''}`}>

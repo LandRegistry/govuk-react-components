@@ -6,10 +6,10 @@ import Fieldset from './Fieldset'
 import Input from './Input'
 
 function DateInput(props) {
-  var describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
-  var hint
-  var errorMessage
-  var dateInputItems = []
+  let describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
+  let hint
+  let errorMessage
+  let dateInputItems = []
 
   if (props.hint) {
     const hintId = `${props.id}-hint`

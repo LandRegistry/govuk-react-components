@@ -7,9 +7,9 @@ import Hint from './Hint'
 import Label from './Label'
 
 function Radios(props) {
-  var describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
-  var hint
-  var errorMessage
+  let describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
+  let hint
+  let errorMessage
   const radioRef = React.createRef()
 
   useEffect(() => {
@@ -53,7 +53,7 @@ function Radios(props) {
           const conditionalId = item.conditional ? `conditional-${id}` : null
           const itemHintId = `${id}-item-hint`
 
-          var itemDescribedBy = ''
+          let itemDescribedBy = ''
 
           if (!hasFieldset) {
             itemDescribedBy = describedBy

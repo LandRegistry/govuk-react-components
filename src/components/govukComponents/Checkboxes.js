@@ -9,9 +9,9 @@ import Label from './Label'
 function Checkboxes(props) {
   const checkboxRef = React.createRef()
   const idPrefix = props.idPrefix ? props.idPrefix : props.name
-  var describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
-  var hint
-  var errorMessage
+  let describedBy = props.fieldset && props.fieldset.describedBy ? props.fieldset.describedBy : ''
+  let hint
+  let errorMessage
 
   useEffect(() => {
     new CheckboxesJS(checkboxRef.current).init()
@@ -52,7 +52,7 @@ function Checkboxes(props) {
           const conditionalId = item.conditional ? `conditional-${id}` : null
           const itemHintId = `${id}-item-hint`
 
-          var itemDescribedBy = ''
+          let itemDescribedBy = ''
 
           if (!hasFieldset) {
             itemDescribedBy = describedBy
