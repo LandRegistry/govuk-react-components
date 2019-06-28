@@ -49,7 +49,7 @@ function Radios(props) {
         {props.items.map((item, index) => {
           const id = item.id ? item.id : `${idPrefix}-${index + 1}`
           const name = item.name ? item.name : props.name
-          const key = name + index
+          const key = item.reactListKey || index
           const conditionalId = item.conditional ? `conditional-${id}` : null
           const itemHintId = `${id}-item-hint`
 

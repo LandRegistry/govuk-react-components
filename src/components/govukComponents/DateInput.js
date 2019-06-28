@@ -55,7 +55,7 @@ function DateInput(props) {
   }
 
   const items = dateInputItems.map((item, index) => (
-    <div key={item.name + index} className="govuk-date-input__item">
+    <div key={item.reactListKey || index} className="govuk-date-input__item">
       <Input
         label={{
           text: item.label

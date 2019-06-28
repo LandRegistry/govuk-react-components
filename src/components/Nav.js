@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 function Nav(props) {
   const links = props.navigation.map((link, key) => (
-    <li key={key}>
+    <li key={link.href || key}>
       <NavLink className={`govuk-link ${link.classes || ''}`} to={link.href}>
         {link.text}
       </NavLink>

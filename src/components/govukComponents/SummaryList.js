@@ -38,7 +38,7 @@ ActionLink.propTypes = {
 
 function actions(row, anyRowHasActions) {
   const actionLinks = row.actions && row.actions.items.map((action, index) => <ActionLink
-    key={(action.href || action.to) + index}
+    key={action.reactListKey || index}
     {...action}
   />)
 
@@ -71,7 +71,7 @@ function SummaryList(props) {
   return (
     <dl className={`govuk-summary-list ${props.classes}`} {...props.attributes}>
       {props.rows.map((row, index) => (
-        <div key={(row.key.html || row.key.text) + index} className={`govuk-summary-list__row ${row.classes || ''}`}>
+        <div key={row.reactListKey || index} className={`govuk-summary-list__row ${row.classes || ''}`}>
           <dt className={`govuk-summary-list__key ${row.key.classes || ''}`}>
             { row.key.html || row.key.text }
           </dt>

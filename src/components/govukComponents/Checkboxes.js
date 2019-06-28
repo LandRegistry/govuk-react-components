@@ -63,7 +63,7 @@ function Checkboxes(props) {
           }
 
           return (
-            <React.Fragment key={props.name + index}>
+            <React.Fragment key={item.reactListKey || index}>
               <div className="govuk-checkboxes__item">
                 <input
                   className="govuk-checkboxes__input"

@@ -36,7 +36,7 @@ function Select(props) {
 
   const options = props.items.map((option, index) => (
     <option
-      key={option.value + index}
+      key={option.reactListKey || index}
       value={option.value}
       disabled={option.disabled}
     >

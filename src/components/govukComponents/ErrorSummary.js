@@ -26,7 +26,7 @@ function ErrorSummary(props) {
         {description}
         <ul className="govuk-list govuk-error-summary__list">
           {props.errorList.map((error, index) => (
-            <li key={error.href + index}>
+            <li key={error.reactListKey || index}>
               {
                 error.href
                   ? <a href={error.href} {...error.attributes}>{error.html || error.text}</a>

@@ -18,7 +18,7 @@ function Table(props) {
         <tr className="govuk-table__row">
           {props.head.map((item, index) => (
             <th
-              key={(item.html || item.text) + index}
+              key={item.reactListKey || index}
               scope="col"
               className={`govuk-table__header ${item.format ? `govuk-table__header--${item.format}` : ''} ${item.classes || ''}`}
               colSpan={item.colspan || null}
@@ -40,7 +40,7 @@ function Table(props) {
 
       <tbody className="govuk-table__body">
         {props.rows.map((row, rowIndex) => (
-          <tr key={rowIndex} className="govuk-table__row">
+          <tr key={row.reactListKey || rowIndex} className="govuk-table__row">
             {row.map((cell, cellIndex) => {
               const commonAttributes = {
                 colSpan: cell.colspan,
@@ -50,13 +50,13 @@ function Table(props) {
 
               if (cellIndex === 0 && props.firstCellIsHeader) {
                 return (
-                  <th key={`${rowIndex}:${cellIndex}`} scope="row" className={`govuk-table__header ${cell.classes || ''}`} {...commonAttributes}>
+                  <th key={cell.reactListKey || cellIndex} scope="row" className={`govuk-table__header ${cell.classes || ''}`} {...commonAttributes}>
                     {cell.html || cell.text}
                   </th>
                 )
               }
               return (
-                <td key={`${rowIndex}:${cellIndex}`} className={`govuk-table__cell ${cell.classes || ''} ${cell.format ? `govuk-table__cell--${cell.format}` : ''}`} {...commonAttributes}>
+                <td key={cell.reactListKey || cellIndex} className={`govuk-table__cell ${cell.classes || ''} ${cell.format ? `govuk-table__cell--${cell.format}` : ''}`} {...commonAttributes}>
                   {cell.html || cell.text}
                 </td>
               )

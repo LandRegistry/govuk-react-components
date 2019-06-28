@@ -12,7 +12,7 @@ function Accordion(props) {
   const HeadingLevel = props.headingLevel ? `h${props.headingLevel}` : 'h2'
 
   const innerHtml = props.items.map((item, index) => (
-    <div key={(item.heading.html || item.heading.text) + index} className={`govuk-accordion__section ${item.expanded ? 'govuk-accordion__section--expanded' : ''}`}>
+    <div key={item.reactListKey || index} className={`govuk-accordion__section ${item.expanded ? 'govuk-accordion__section--expanded' : ''}`}>
       <div className="govuk-accordion__section-header">
         <HeadingLevel className="govuk-accordion__section-heading">
           <span className="govuk-accordion__section-button" id={`${props.id}-heading-${index + 1}`}>

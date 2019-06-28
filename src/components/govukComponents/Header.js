@@ -33,7 +33,7 @@ function Header(props) {
               <ul id="navigation" className={`govuk-header__navigation${props.navigationClasses ? ` ${props.navigationClasses}` : ''}`} aria-label="Top Level Navigation">
                 {props.navigation.map((item, index) => (item.text && (item.href || item.to)
                   ? (
-                    <li key={(item.href || item.to) + index} className={`govuk-header__navigation-item${item.active ? ' govuk-header__navigation-item--active' : ''}`}>
+                    <li key={item.reactListKey || index} className={`govuk-header__navigation-item${item.active ? ' govuk-header__navigation-item--active' : ''}`}>
                       <Link classes={`govuk-header__link ${item.classes || ''}`} to={item.to} href={item.href} {...item.attributes}>
                         {item.text}
                       </Link>

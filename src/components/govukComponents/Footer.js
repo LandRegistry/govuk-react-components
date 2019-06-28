@@ -11,12 +11,12 @@ function Footer(props) {
       <>
         <div className="govuk-footer__navigation">
           {props.navigation.map((nav, navIndex) => (
-            <div className="govuk-footer__section" key={nav.title + navIndex}>
+            <div className="govuk-footer__section" key={nav.reactListKey || navIndex}>
               <h2 className="govuk-footer__heading govuk-heading-m">{ nav.title }</h2>
               {nav.items && (
               <ul className={`govuk-footer__list ${nav.columns ? `govuk-footer__list--columns-${nav.columns}` : ''}`}>
                 {nav.items.map((item, index) => (
-                  <React.Fragment key={(item.href || item.to) + index}>
+                  <React.Fragment key={item.reactListKey || index}>
                     { (item.href || item.to) && item.text && (
                       <li className="govuk-footer__list-item">
                         <Link classes={`govuk-footer__link ${item.classes || ''}`} to={item.to} href={item.href} {...item.attributes}>
@@ -44,7 +44,7 @@ function Footer(props) {
           <h2 className="govuk-visually-hidden">{ props.meta.visuallyHiddenTitle ? props.meta.visuallyHiddenTitle : 'Support links' }</h2>
           <ul className="govuk-footer__inline-list">
             {props.meta.items.map((item, index) => (
-              <li className="govuk-footer__inline-list-item" key={(item.href || item.to) + index}>
+              <li className="govuk-footer__inline-list-item" key={item.reactListKey || index}>
                 <Link classes={`govuk-footer__link ${item.classes || ''}`} to={item.to} href={item.href} {...item.attributes}>
                   {item.text}
                 </Link>
