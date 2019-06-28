@@ -26,11 +26,11 @@ Panel.defaultProps = {
 }
 
 Panel.propTypes = {
-  headingLevel: PropTypes.string,
-  html: PropTypes.string,
-  text: PropTypes.string,
-  classes: PropTypes.string,
   attributes: PropTypes.object,
+  classes: PropTypes.string,
+  headingLevel: PropTypes.number,
+  html: PropTypes.node,
+  text: PropTypes.node,
   titleHtml: PropTypes.string,
   titleText: PropTypes.string,
 }

@@ -38,7 +38,7 @@ Fieldset.propTypes = {
   classes: PropTypes.string,
   describedBy: PropTypes.string,
   attributes: PropTypes.object,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node,
 }
 
 export default Fieldset

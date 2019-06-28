@@ -20,9 +20,9 @@ InsetText.defaultProps = {
 InsetText.propTypes = {
   attributes: PropTypes.object,
   classes: PropTypes.string,
-  html: PropTypes.string,
+  html: PropTypes.node,
   id: PropTypes.string,
-  text: PropTypes.string,
+  text: PropTypes.node,
 }
 
 export default InsetText

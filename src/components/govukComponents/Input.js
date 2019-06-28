@@ -69,7 +69,7 @@ Input.propTypes = {
   formGroup: PropTypes.object,
   hint: PropTypes.object,
   id: PropTypes.string,
-  label: PropTypes.string,
+  label: PropTypes.object,
   name: PropTypes.string,
   pattern: PropTypes.string,
   type: PropTypes.string,

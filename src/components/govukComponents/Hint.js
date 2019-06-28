@@ -15,9 +15,9 @@ Hint.defaultProps = {
 
 Hint.propTypes = {
   classes: PropTypes.string,
-  html: PropTypes.string,
+  html: PropTypes.node,
   id: PropTypes.string,
-  text: PropTypes.string,
+  text: PropTypes.node,
 }
 
 export default Hint

@@ -23,14 +23,12 @@ function Link(props) {
 
 Link.defaultProps = {
   classes: '',
-  to: false,
-  href: false,
   forwardedRef: null,
   attributes: {},
 }
 
 Link.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   classes: PropTypes.string,
   attributes: PropTypes.object,
   to: PropTypes.string,

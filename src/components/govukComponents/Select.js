@@ -81,7 +81,7 @@ Select.propTypes = {
   hint: PropTypes.object,
   id: PropTypes.string,
   items: PropTypes.array,
-  label: PropTypes.string,
+  label: PropTypes.object,
   name: PropTypes.string,
 }
 

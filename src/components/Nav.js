@@ -27,7 +27,7 @@ Nav.propTypes = {
   navigation: PropTypes.arrayOf(PropTypes.shape({
     href: PropTypes.string,
     classes: PropTypes.string,
-    text: PropTypes.string,
+    text: PropTypes.node,
   })).isRequired,
 }
 

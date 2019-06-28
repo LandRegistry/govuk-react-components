@@ -23,9 +23,9 @@ PhaseBanner.defaultProps = {
 PhaseBanner.propTypes = {
   attributes: PropTypes.object,
   classes: PropTypes.string,
-  html: PropTypes.string,
+  html: PropTypes.node,
   tag: PropTypes.object,
-  text: PropTypes.string,
+  text: PropTypes.node,
 }
 
 export default PhaseBanner

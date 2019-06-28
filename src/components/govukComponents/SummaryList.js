@@ -30,8 +30,8 @@ ActionLink.propTypes = {
   attributes: PropTypes.object,
   classes: PropTypes.string,
   href: PropTypes.string,
-  html: PropTypes.string,
-  text: PropTypes.string,
+  html: PropTypes.node,
+  text: PropTypes.node,
   to: PropTypes.string,
   visuallyHiddenText: PropTypes.string,
 }

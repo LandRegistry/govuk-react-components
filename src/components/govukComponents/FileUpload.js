@@ -65,7 +65,7 @@ FileUpload.propTypes = {
   formGroup: PropTypes.object,
   hint: PropTypes.object,
   id: PropTypes.string,
-  label: PropTypes.string,
+  label: PropTypes.object,
   name: PropTypes.string,
   value: PropTypes.string,
 }

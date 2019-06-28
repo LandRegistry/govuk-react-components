@@ -24,12 +24,12 @@ Details.defaultProps = {
 Details.propTypes = {
   attributes: PropTypes.object,
   classes: PropTypes.string,
-  html: PropTypes.string,
+  html: PropTypes.node,
   id: PropTypes.string,
   open: PropTypes.bool,
   summaryHtml: PropTypes.string,
   summaryText: PropTypes.string,
-  text: PropTypes.string,
+  text: PropTypes.node,
 }
 
 export default Details

@@ -21,9 +21,9 @@ WarningText.defaultProps = {
 WarningText.propTypes = {
   attributes: PropTypes.object,
   classes: PropTypes.string,
-  html: PropTypes.string,
+  html: PropTypes.node,
   iconFallbackText: PropTypes.string.isRequired,
-  text: PropTypes.string,
+  text: PropTypes.node,
 }
 
 export default WarningText

@@ -23,11 +23,11 @@ Label.defaultProps = {
   classes: '',
 }
 
-Label.PropTypes = {
+Label.propTypes = {
   attributes: PropTypes.object,
-  html: PropTypes.string,
+  html: PropTypes.node,
   isPageHeading: PropTypes.bool,
-  text: PropTypes.string,
+  text: PropTypes.node,
 }
 
 export default Label

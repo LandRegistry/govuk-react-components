@@ -89,10 +89,10 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   element: PropTypes.string,
   href: PropTypes.string,
-  html: PropTypes.string,
+  html: PropTypes.node,
   name: PropTypes.string,
   preventDoubleClick: PropTypes.bool,
-  text: PropTypes.string,
+  text: PropTypes.node,
   to: PropTypes.string,
   type: PropTypes.string,
 }
