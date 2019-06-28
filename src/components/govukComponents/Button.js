@@ -10,8 +10,6 @@ function Button(props) {
   let button
 
   useEffect(() => {
-    // ReactDOM.findDOMNode necessary as this might otherwise be invoked directly with a
-    // react-router <Link> object.
     new ButtonJS(buttonRef.current).init()
   }, [])
 
