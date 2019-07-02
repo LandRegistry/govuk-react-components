@@ -8,7 +8,6 @@ function ActionLink(props) {
       {props.html || props.text}
       {props.visuallyHiddenText && (
       <span className="govuk-visually-hidden">
-        {' '}
         {props.visuallyHiddenText}
       </span>
       )}

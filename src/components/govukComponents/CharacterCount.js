@@ -34,11 +34,7 @@ function CharacterCount(props) {
         describedBy={characterCountInfoClass}
       />
       <span id={characterCountInfoClass} className="govuk-hint govuk-character-count__message" aria-live="polite">
-        You can enter up to
-        {' '}
-        {props.maxlength || props.maxwords}
-        {' '}
-        {props.maxwords ? 'words' : 'characters'}
+        You can enter up to {props.maxlength || props.maxwords} {props.maxwords ? 'words' : 'characters'}
       </span>
     </div>
   )
