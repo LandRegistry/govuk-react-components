@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, {useEffect} from 'react'
 import Breadcrumbs from '../components/govukComponents/Breadcrumbs'
 
 function BreadcrumbsDemo() {
@@ -22,7 +22,7 @@ function BreadcrumbsDemo() {
 
   return (
     <main id="main-content">
-      <Breadcrumbs attributes={{ title: 'breadcrumb' }} items={items} />
+      <Breadcrumbs attributes={{title: 'breadcrumb'}} items={items} />
     </main>
   )
 }

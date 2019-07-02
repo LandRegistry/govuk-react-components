@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, {useEffect} from 'react'
 import RadiosJS from 'govuk-frontend/components/radios/radios'
 import PropTypes from 'prop-types'
 import ErrorMessage from './ErrorMessage'

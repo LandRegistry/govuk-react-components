@@ -5,7 +5,7 @@ import Hint from './Hint'
 import ErrorMessage from './ErrorMessage'
 
 function Select(props) {
-  let { describedBy } = props
+  let {describedBy} = props
   let hint
   let errorMessage
 

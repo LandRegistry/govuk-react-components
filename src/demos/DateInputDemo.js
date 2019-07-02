@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, {useEffect} from 'react'
 import DateInput from '../components/govukComponents/DateInput'
 
 function DateInputDemo() {

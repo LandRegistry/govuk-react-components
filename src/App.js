@@ -23,9 +23,9 @@ function App() {
 
   return (
     <div className="app">
-      <Header serviceName="Application Processing" attributes={{ id: 'header' }} navigation={navigationItems} />
+      <Header serviceName="Application Processing" attributes={{id: 'header'}} navigation={navigationItems} />
       <Main />
-      <Footer meta={{ items: navigationItems }} />
+      <Footer meta={{items: navigationItems}} />
     </div>
   )
 }

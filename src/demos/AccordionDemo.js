@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, {useEffect} from 'react'
 import Accordion from '../components/govukComponents/Accordion'
 
 function AccordionDemo() {

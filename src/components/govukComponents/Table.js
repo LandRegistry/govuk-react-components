@@ -7,7 +7,7 @@ function Table(props) {
   if (props.caption) {
     caption = (
       <caption className={`govuk-table__caption ${props.captionClasses || ''}`}>
-        { props.caption }
+        {props.caption}
       </caption>
     )
   }

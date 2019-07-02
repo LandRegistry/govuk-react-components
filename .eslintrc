@@ -16,7 +16,10 @@
     "react/forbid-prop-types": "off",
     "react/require-default-props": "off",
     "jsx-a11y/no-redundant-roles": "off",
-    "prefer-destructuring": "off"
+    "prefer-destructuring": "off",
+    "object-curly-spacing": ["error", "never"],
+    "array-bracket-spacing": ["error", "never"],
+    "react/jsx-curly-spacing": ["error", {"when": "never", "children": true}]
   },
   "settings": {
     "react": {

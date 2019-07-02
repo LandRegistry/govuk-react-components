@@ -9,7 +9,7 @@ function ActionLink(props) {
       {props.visuallyHiddenText && (
       <span className="govuk-visually-hidden">
         {' '}
-        { props.visuallyHiddenText }
+        {props.visuallyHiddenText}
       </span>
       )}
     </>
@@ -73,10 +73,10 @@ function SummaryList(props) {
       {props.rows.map((row, index) => (
         <div key={row.reactListKey || index} className={`govuk-summary-list__row ${row.classes || ''}`}>
           <dt className={`govuk-summary-list__key ${row.key.classes || ''}`}>
-            { row.key.html || row.key.text }
+            {row.key.html || row.key.text}
           </dt>
           <dd className={`govuk-summary-list__value ${row.value.classes || ''}`}>
-            { row.value.html || row.value.text }
+            {row.value.html || row.value.text}
           </dd>
 
           {actions(row, anyRowHasActions)}

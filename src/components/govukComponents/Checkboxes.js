@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
 import CheckboxesJS from 'govuk-frontend/components/checkboxes/checkboxes'
 import ErrorMessage from './ErrorMessage'

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, {useEffect} from 'react'
 import Select from '../components/govukComponents/Select'
 
 function SelectDemo() {
@@ -35,7 +35,7 @@ function SelectDemo() {
         id="sort"
         name="sort"
         label={
-          { text: 'Sort by' }
+          {text: 'Sort by'}
         }
         items={items}
       />

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import Nav from './Nav'
 import AccordionDemo from '../demos/AccordionDemo'
 import BackLink from '../demos/BackLink'

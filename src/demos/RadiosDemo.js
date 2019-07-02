@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, {useEffect} from 'react'
 import Radios from '../components/govukComponents/Radios'
 import Input from '../components/govukComponents/Input'
 
@@ -39,9 +39,9 @@ function RadiosDemo() {
     },
   ]
 
-  const emailHtml = <Input id="contact-by-email" name="contact-by-email" type="email" classes="govuk-!-width-one-third" label={{ text: 'Email address' }} attributes={{ spellCheck: 'false' }} />
-  const phoneHtml = <Input id="contact-by-phone" name="contact-by-phone" type="telephone" classes="govuk-!-width-one-third" label={{ text: 'Phone number' }} attributes={{ spellCheck: 'false' }} />
-  const textHtml = <Input id="contacty-by-text" name="contact-by-text" type="telephone" classes="govuk-!-width-one-third" label={{ text: 'Mobile phone number' }} attributes={{ spellCheck: 'false' }} />
+  const emailHtml = <Input id="contact-by-email" name="contact-by-email" type="email" classes="govuk-!-width-one-third" label={{text: 'Email address'}} attributes={{spellCheck: 'false'}} />
+  const phoneHtml = <Input id="contact-by-phone" name="contact-by-phone" type="telephone" classes="govuk-!-width-one-third" label={{text: 'Phone number'}} attributes={{spellCheck: 'false'}} />
+  const textHtml = <Input id="contacty-by-text" name="contact-by-text" type="telephone" classes="govuk-!-width-one-third" label={{text: 'Mobile phone number'}} attributes={{spellCheck: 'false'}} />
 
   const itemsConditional = [
     {

@@ -5,7 +5,7 @@ import Hint from './Hint'
 import ErrorMessage from './ErrorMessage'
 
 function Textarea(props) {
-  let { describedBy } = props
+  let {describedBy} = props
   let hint
   let errorMessage
 
@@ -37,8 +37,8 @@ function Textarea(props) {
         {...props.label}
         for={props.id}
       />
-      { hint }
-      { errorMessage }
+      {hint}
+      {errorMessage}
       <textarea
         className={`govuk-textarea${props.errorMessage ? ' govuk-textarea--error' : ''} ${props.classes}`}
         id={props.id}
