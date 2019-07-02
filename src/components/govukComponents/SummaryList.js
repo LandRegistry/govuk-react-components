@@ -58,7 +58,7 @@ function actions(row, anyRowHasActions) {
 
   if (anyRowHasActions) {
     // Add dummy column to extend border
-    return <span className="govuk-summary-list__actions" />
+    return <span className="govuk-summary-list__actions"></span>
   }
 
   return null
