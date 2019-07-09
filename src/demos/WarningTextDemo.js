@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react'
 import WarningText from '../components/govukComponents/WarningText'
 
 function WarningTextDemo() {
-
   useEffect(() => {
     document.title = 'Warning text demo'
   })
@@ -10,7 +9,7 @@ function WarningTextDemo() {
   return (
     <main id="#content">
       <h1 className="govuk-heading-l">Warning text</h1>
-      <WarningText text="Skip to main content" />
+      <WarningText text="Skip to main content" iconFallbackText="Warning" />
     </main>
   )
 }

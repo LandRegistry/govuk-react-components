@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react'
+import {NavLink} from 'react-router-dom'
+import PropTypes from 'prop-types'
+
 
 function Nav(props) {
-
-  const links = props.navigation.map((link, key) =>
-    <li key={key}>
-      <NavLink className={`govuk-link ${link.classes ? ' ' + link.classes : ''}`} to={link.href} >
+  const links = props.navigation.map((link, key) => (
+    <li key={link.href || key}>
+      <NavLink className={`govuk-link ${link.classes || ''}`} to={link.href}>
         {link.text}
       </NavLink>
     </li>
-  )
+  ))
 
   return (
     <div className="app-pane__nav">
@@ -20,6 +21,14 @@ function Nav(props) {
       </nav>
     </div>
   )
+}
+
+Nav.propTypes = {
+  navigation: PropTypes.arrayOf(PropTypes.shape({
+    href: PropTypes.string,
+    classes: PropTypes.string,
+    text: PropTypes.node,
+  })).isRequired,
 }
 
 export default Nav

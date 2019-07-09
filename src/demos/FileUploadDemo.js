@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react'
 import FileUpload from '../components/govukComponents/FileUpload'
 
 function FileUploadDemo() {
-
   useEffect(() => {
     document.title = 'Tutorial checkbox demo'
   }, [])
@@ -10,7 +9,7 @@ function FileUploadDemo() {
   return (
     <main id="main-content">
       <h1 className="govuk-heading-l">File upload</h1>
-      <FileUpload label={{ text: 'Upload a file' }} formGroup={{ classes: 'example-class' }} />
+      <FileUpload label={{text: 'Upload a file'}} formGroup={{classes: 'example-class'}} />
     </main>
   )
 }

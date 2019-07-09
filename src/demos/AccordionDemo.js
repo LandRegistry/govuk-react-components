@@ -1,57 +1,69 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react'
 import Accordion from '../components/govukComponents/Accordion'
 
 function AccordionDemo() {
-
   useEffect(() => {
     document.title = 'Accordion demo'
   }, [])
 
-  var items = [{
+  const items = [{
     heading: {
-      text: 'Understanding agile project management'
+      text: 'Understanding agile project management',
     },
     content: {
-      html: <><a href="#" className="govuk-link">Agile and government services: an introduction</a><br />
-        <a href="#" className="govuk-link">Agile methods: an introduction</a><br />
-        <a href="#" className="govuk-link">Core principles of agile</a></>
+      html: <>
+        <a href="/" className="govuk-link">Agile and government services: an introduction</a>
+        <br />
+        <a href="/" className="govuk-link">Agile methods: an introduction</a>
+        <br />
+        <a href="/" className="govuk-link">Core principles of agile</a>
+      </>,
     },
     summary: {
-      text: 'Introductions, methods, core features.'
-    }
+      text: 'Introductions, methods, core features.',
+    },
   }, {
     heading: {
-      text: 'Working with agile methods'
+      text: 'Working with agile methods',
     },
     content: {
-      html: <><a href="#" className="govuk-link">Creating an agile working environment</a><br />
-        <a href="#" className="govuk-link">Agile tools and techniques</a><br />
-        <a href="#" className="govuk-link">Set up a team wall</a><br />
-        <a href="#" className="govuk-link">Writing user stories</a><br />
-        <a href="#" className="govuk-link">Planning in agile</a><br />
-        <a href="#" className="govuk-link">Deciding on priorities</a><br />
-        <a href="#" className="govuk-link">Developing a roadmap'</a><br /></>
+      html: <>
+        <a href="/" className="govuk-link">Creating an agile working environment</a>
+        <br />
+        <a href="/" className="govuk-link">Agile tools and techniques</a>
+        <br />
+        <a href="/" className="govuk-link">Set up a team wall</a>
+        <br />
+        <a href="/" className="govuk-link">Writing user stories</a>
+        <br />
+        <a href="/" className="govuk-link">Planning in agile</a>
+        <br />
+        <a href="/" className="govuk-link">Deciding on priorities</a>
+        <br />
+        <a href="/" className="govuk-link">Developing a roadmap</a>
+        <br />
+      </>,
     },
     summary: {
-      text: 'Worksapces, tools and techniques, user stories, planning'
-    }
+      text: 'Worksapces, tools and techniques, user stories, planning',
+    },
   }]
 
-  var items2 = [{
+  const items2 = [{
     heading: {
-      text: 'Writing well for the web'
+      text: 'Writing well for the web',
     },
     content: {
-      html: <a className="govuk-link" href="#">This is the content for Writing well for the web.</a>
-    }
+      html: <a className="govuk-link" href="/">This is the content for Writing well for the web.</a>,
+    },
   },
   {
     heading: {
-      text: 'sample'
+      text: 'sample',
     },
     content: {
-      text: 'Plain text content'
-    }
+      text: 'Plain text content',
+    },
   }]
 
   return (

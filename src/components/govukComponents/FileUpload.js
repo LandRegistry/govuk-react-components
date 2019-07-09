@@ -1,28 +1,34 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import ErrorMessage from './ErrorMessage'
 import Hint from './Hint'
 import Label from './Label'
 
 function FileUpload(props) {
-
-  var describedBy = props.describedBy
+  let {describedBy} = props
+  let hint
+  let errorMessage
 
   if (props.hint) {
-    const hintId = props.id + '-hint'
-    describedBy += ' ' + hintId
-    var hint = <Hint
-      id={hintId}
-      {...props.hint}
-    />
+    const hintId = `${props.id}-hint`
+    describedBy += ` ${hintId}`
+    hint = (
+      <Hint
+        id={hintId}
+        {...props.hint}
+      />
+    )
   }
 
   if (props.errorMessage) {
-    const errorId = props.id ? props.id + '-error' : '';
-    describedBy += ' ' + errorId
-    var errorMessage = <ErrorMessage
-      id={errorId}
-      {...props.errorMessage}
-    />
+    const errorId = props.id ? `${props.id}-error` : ''
+    describedBy += ` ${errorId}`
+    errorMessage = (
+      <ErrorMessage
+        id={errorId}
+        {...props.errorMessage}
+      />
+    )
   }
   return (
 
@@ -39,7 +45,7 @@ function FileUpload(props) {
         name={props.name}
         type="file"
         defaultValue={props.value}
-        aria-describedby={describedBy ? describedBy : null}
+        aria-describedby={describedBy || null}
         {...props.attributes}
       />
     </div>
@@ -48,7 +54,20 @@ function FileUpload(props) {
 
 FileUpload.defaultProps = {
   describedBy: '',
-  classes: ''
+  classes: '',
+}
+
+FileUpload.propTypes = {
+  attributes: PropTypes.object,
+  classes: PropTypes.string,
+  describedBy: PropTypes.string,
+  errorMessage: PropTypes.object,
+  formGroup: PropTypes.object,
+  hint: PropTypes.object,
+  id: PropTypes.string,
+  label: PropTypes.object,
+  name: PropTypes.string,
+  value: PropTypes.string,
 }
 
 export default FileUpload

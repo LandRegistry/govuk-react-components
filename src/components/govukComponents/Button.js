@@ -1,18 +1,17 @@
-import React, { useEffect } from 'react'
-import ReactDOM from 'react-dom';
-import Link from '../utils/Link.js'
+import React, {useEffect} from 'react'
+import PropTypes from 'prop-types'
 import ButtonJS from 'govuk-frontend/components/button/button'
+import Link from '../utils/Link'
 
 function Button(props) {
-
-  const buttonRef = React.createRef();
+  const buttonRef = React.createRef()
+  let element = ''
+  let buttonAttributes = {name: props.name, type: props.type}
+  let button
 
   useEffect(() => {
-    // ReactDOM.findDOMNode necessary as this might otherwise be invoked directly with a react-router <Link> object.
-    new ButtonJS(ReactDOM.findDOMNode(buttonRef.current)).init()
+    new ButtonJS(buttonRef.current).init()
   }, [])
-
-  var element = '';
 
   if (props.element) {
     element = props.element
@@ -23,12 +22,11 @@ function Button(props) {
   }
 
   const commonAttributes = {
-    className: 'govuk-button ' + props.classes + (props.disabled ? ' govuk-button--disabled' : ''),
+    className: `govuk-button ${props.classes}${props.disabled ? ' govuk-button--disabled' : ''}`,
     ...props.attributes,
-    ref: buttonRef
+    ref: buttonRef,
   }
 
-  var buttonAttributes = { name: props.name, type: props.type }
 
   if (props.preventDoubleClick) {
     buttonAttributes['data-prevent-double-click'] = props.preventDoubleClick
@@ -38,32 +36,39 @@ function Button(props) {
     buttonAttributes = {
       ...buttonAttributes,
       'aria-disabled': true,
-      'disabled': 'disabled'
+      disabled: 'disabled',
     }
   }
 
-  var button
   if (element === 'a') {
-
     const linkAttributes = {
       ...commonAttributes,
       classes: commonAttributes.className,
       attributes: {
         role: 'button',
-        draggable: 'false'
+        draggable: 'false',
       },
       href: props.href,
-      to: props.to
+      to: props.to,
     }
 
-    button = <Link {...linkAttributes}>
-      {props.html ? props.html : props.text}
-    </Link>
-
+    button = (
+      <Link {...linkAttributes}>
+        {props.html || props.text}
+      </Link>
+    )
   } else if (element === 'button') {
-    button = <button {...buttonAttributes} {...commonAttributes}>
-      {props.html ? props.html : props.text}
-    </button >
+    button = (
+      // Disabling linting of button type, because the button _does_ have an explicit type
+      // It is defined in the defaultProps of the component, which gets added
+      // to the buttonAttributes. eslint fails to detect this, and so we need to
+      // disable the linting rule
+      //
+      // eslint-disable-next-line react/button-has-type
+      <button {...buttonAttributes} {...commonAttributes}>
+        {props.html || props.text}
+      </button>
+    )
   } else if (element === 'input') {
     button = <input value={props.text} {...buttonAttributes} {...commonAttributes} />
   }
@@ -73,7 +78,20 @@ function Button(props) {
 
 Button.defaultProps = {
   type: 'submit',
-  classes: ''
+  classes: '',
+}
+
+Button.propTypes = {
+  attributes: PropTypes.object,
+  disabled: PropTypes.bool,
+  element: PropTypes.string,
+  href: PropTypes.string,
+  html: PropTypes.node,
+  name: PropTypes.string,
+  preventDoubleClick: PropTypes.bool,
+  text: PropTypes.node,
+  to: PropTypes.string,
+  type: PropTypes.string,
 }
 
 export default Button

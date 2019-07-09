@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react'
 import PhaseBanner from '../components/govukComponents/PhaseBanner'
 
 function PhaseBannerDemo() {
-
   useEffect(() => {
     document.title = 'Phase banner demo'
   }, [])

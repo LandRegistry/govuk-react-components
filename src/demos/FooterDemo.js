@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react';
-import Footer from '../components/govukComponents/Footer'
+import React, {useEffect} from 'react'
 
 function FooterDemo() {
-
   useEffect(() => {
     document.title = 'Footer demo'
   }, [])

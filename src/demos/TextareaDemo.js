@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react'
+import React, {useEffect} from 'react'
 import Textarea from '../components/govukComponents/Textarea'
 
 function TextareaDemo() {
-
   useEffect(() => {
     document.title = 'Teaxtarea demo'
   }, [])
@@ -14,42 +13,43 @@ function TextareaDemo() {
         id="plaintextarea"
         classes="classes"
         label={{
-          text: "Textarea with label",
+          text: 'Textarea with label',
           attributes: {
-            id: "LabelCheck",
-            title: "Label Check"
-          }
+            id: 'LabelCheck',
+            title: 'Label Check',
+          },
         }}
         formGroup={{
-          classes: "custom-class"
-        }} />
+          classes: 'custom-class',
+        }}
+      />
       <Textarea
         id="textareaWithHint"
         classes="classes"
         label={{
-          text: "Textarea with hint"
+          text: 'Textarea with hint',
         }}
         hint={{
-          text: "This hint"
+          text: 'This hint',
         }}
         formGroup={{
-          classes: "custom-class"
+          classes: 'custom-class',
         }}
       />
       <Textarea
         id="textareaWithError"
         classes="classes"
         label={{
-          text: "Textarea with error message"
+          text: 'Textarea with error message',
         }}
         hint={{
-          text: "This hint"
+          text: 'This hint',
         }}
         formGroup={{
-          classes: "custom-class"
+          classes: 'custom-class',
         }}
         errorMessage={{
-          text: "Error message"
+          text: 'Error message',
         }}
       />
     </main>

@@ -4,3 +4,6 @@ directories:
   - "tests/.cache"
 node_js:
   - "lts/*"
+script:
+  - npm test
+  - npm run lint

@@ -1,115 +1,114 @@
-import React from 'react';
-import Nav from './Nav';
-import AccordionDemo from '../demos/AccordionDemo';
-import BackLink from '../demos/BackLink';
-import BreadcrumbsDemo from '../demos/BreadcrumbsDemo';
-import ButtonDemo from '../demos/ButtonDemo';
-import CharacterCountDemo from '../demos/CharacterCountDemo';
-import CheckboxesDemo from '../demos/CheckboxesDemo';
-import DateInputDemo from '../demos/DateInputDemo';
-import DetailsDemo from '../demos/DetailsDemo';
-import ErrorSummaryDemo from '../demos/ErrorSummaryDemo';
-import FileUploadDemo from '../demos/FileUploadDemo';
-import FooterDemo from '../demos/FooterDemo';
-import HintDemo from '../demos/HintDemo';
-import InputDemo from '../demos/InputDemo';
-import InsetTextDemo from '../demos/InsetTextDemo';
-import LabelDemo from '../demos/LabelDemo';
-import PanelDemo from '../demos/PanelDemo';
-import PhaseBannerDemo from '../demos/PhaseBannerDemo';
-import RadiosDemo from '../demos/RadiosDemo';
-import SelectDemo from '../demos/SelectDemo';
-import SkipLinkDemo from '../demos/SkipLinkDemo';
-import SummaryListDemo from '../demos/SummaryListDemo';
-import TableDemo from '../demos/TableDemo';
-import TabsDemo from '../demos/TabsDemo';
-import TagDemo from '../demos/TagDemo';
-import TextareaDemo from '../demos/TextareaDemo';
-import WarningTextDemo from '../demos/WarningTextDemo';
+import React from 'react'
+import {Route, Switch} from 'react-router-dom'
+import Nav from './Nav'
+import AccordionDemo from '../demos/AccordionDemo'
+import BackLink from '../demos/BackLink'
+import BreadcrumbsDemo from '../demos/BreadcrumbsDemo'
+import ButtonDemo from '../demos/ButtonDemo'
+import CharacterCountDemo from '../demos/CharacterCountDemo'
+import CheckboxesDemo from '../demos/CheckboxesDemo'
+import DateInputDemo from '../demos/DateInputDemo'
+import DetailsDemo from '../demos/DetailsDemo'
+import ErrorSummaryDemo from '../demos/ErrorSummaryDemo'
+import FileUploadDemo from '../demos/FileUploadDemo'
+import FooterDemo from '../demos/FooterDemo'
+import HintDemo from '../demos/HintDemo'
+import InputDemo from '../demos/InputDemo'
+import InsetTextDemo from '../demos/InsetTextDemo'
+import LabelDemo from '../demos/LabelDemo'
+import PanelDemo from '../demos/PanelDemo'
+import PhaseBannerDemo from '../demos/PhaseBannerDemo'
+import RadiosDemo from '../demos/RadiosDemo'
+import SelectDemo from '../demos/SelectDemo'
+import SkipLinkDemo from '../demos/SkipLinkDemo'
+import SummaryListDemo from '../demos/SummaryListDemo'
+import TableDemo from '../demos/TableDemo'
+import TabsDemo from '../demos/TabsDemo'
+import TagDemo from '../demos/TagDemo'
+import TextareaDemo from '../demos/TextareaDemo'
+import WarningTextDemo from '../demos/WarningTextDemo'
 
-import { Route, Switch } from "react-router-dom";
 
 function Main() {
-
   const navigation = [
     {
-      text: "Accordion",
-      href: "/accordion"
+      text: 'Accordion',
+      href: '/accordion',
     }, {
-      text: "Back link",
-      href: "/back-link"
+      text: 'Back link',
+      href: '/back-link',
     }, {
-      text: "Breadcrumbs",
-      href: "/breadcrumbs"
+      text: 'Breadcrumbs',
+      href: '/breadcrumbs',
     }, {
-      text: "Button",
-      href: "/button"
+      text: 'Button',
+      href: '/button',
     }, {
-      text: "Character count",
-      href: "/character-count"
+      text: 'Character count',
+      href: '/character-count',
     }, {
-      text: "Checkboxes",
-      href: "/checkboxes"
+      text: 'Checkboxes',
+      href: '/checkboxes',
     }, {
-      text: "DateInput",
-      href: "/date-input"
+      text: 'DateInput',
+      href: '/date-input',
     }, {
-      text: "Details",
-      href: "/details"
+      text: 'Details',
+      href: '/details',
     }, {
-      text: "ErrorSummary",
-      href: "/error-summary"
+      text: 'ErrorSummary',
+      href: '/error-summary',
     }, {
-      text: "FileUpload",
-      href: "/file-upload"
+      text: 'FileUpload',
+      href: '/file-upload',
     }, {
-      text: "Footer",
-      href: "/footer"
+      text: 'Footer',
+      href: '/footer',
     }, {
-      text: "Hint",
-      href: "/hint"
+      text: 'Hint',
+      href: '/hint',
     }, {
-      text: "Input",
-      href: "/input"
+      text: 'Input',
+      href: '/input',
     }, {
-      text: "InsetText",
-      href: "/inset-text"
+      text: 'InsetText',
+      href: '/inset-text',
     }, {
-      text: "Label",
-      href: "/label"
+      text: 'Label',
+      href: '/label',
     }, {
-      text: "Panel",
-      href: "/panel"
+      text: 'Panel',
+      href: '/panel',
     }, {
-      text: "PhaseBanner",
-      href: "/phase-banner"
+      text: 'PhaseBanner',
+      href: '/phase-banner',
     }, {
-      text: "Radios",
-      href: "/radios"
+      text: 'Radios',
+      href: '/radios',
     }, {
-      text: "Select",
-      href: "/select"
+      text: 'Select',
+      href: '/select',
     }, {
-      text: "Skip link",
-      href: "/skip-link"
+      text: 'Skip link',
+      href: '/skip-link',
     }, {
-      text: "SummaryList",
-      href: "/summary-list"
+      text: 'SummaryList',
+      href: '/summary-list',
     }, {
-      text: "Textarea",
-      href: "/textarea"
+      text: 'Textarea',
+      href: '/textarea',
     }, {
-      text: "Table",
-      href: "/table"
+      text: 'Table',
+      href: '/table',
     }, {
-      text: "Tabs",
-      href: "/tabs"
+      text: 'Tabs',
+      href: '/tabs',
     }, {
-      text: "Tag",
-      href: "/tag"
+      text: 'Tag',
+      href: '/tag',
     }, {
-      text: "Warning text",
-      href: "/warning-text"
+      text: 'Warning text',
+      href: '/warning-text',
     }]
 
   return (
@@ -155,4 +154,4 @@ function Main() {
   )
 }
 
-export default Main;
+export default Main

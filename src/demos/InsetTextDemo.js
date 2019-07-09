@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React, {useEffect} from 'react'
 import InsetText from '../components/govukComponents/InsetText'
 
 function InsetTextDemo() {
-
   useEffect(() => {
     document.title = 'Inset text demo'
   })

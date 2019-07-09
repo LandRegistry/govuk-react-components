@@ -1,21 +1,20 @@
-import React, { useEffect } from 'react'
+import React, {useEffect} from 'react'
 import ErrorSummary from '../components/govukComponents/ErrorSummary'
 
 function ErrorSummaryDemo() {
-
   useEffect(() => {
     document.title = 'Error summary demo'
   }, [])
 
-  var errorList = [
+  const errorList = [
     {
-      text: "The date your passport was issued must be in the past",
-      href: "#passport-issued-error"
+      text: 'The date your passport was issued must be in the past',
+      href: '#passport-issued-error',
     },
     {
-      text: "Enter a postcode, like AA1 1AA",
-      href: "#postcode-error"
-    }
+      text: 'Enter a postcode, like AA1 1AA',
+      href: '#postcode-error',
+    },
   ]
 
   return (
