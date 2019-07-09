@@ -14,7 +14,7 @@ function BackLink(props) {
 
 BackLink.defaultProps = {
   href: '/',
-  text: <>Back</>,
+  text: 'Back',
   classes: '',
 }
 

@@ -8,6 +8,8 @@ This repository contains govuk-frontend compatible React components. It takes a 
 
 If these decisions don't sound like your cup of tea, it may be worth giving https://github.com/govuk-react/govuk-react a look as it takes the opposite stance on some of the above points.
 
+**NOTE: DOESN'T CURRENTLY WORK WITH CREATE-REACT-APP**
+
 ## Assumptions
 
 These components assume you:
