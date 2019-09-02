@@ -14,19 +14,19 @@ function Footer(props) {
             <div className="govuk-footer__section" key={nav.reactListKey || navIndex}>
               <h2 className="govuk-footer__heading govuk-heading-m">{nav.title}</h2>
               {nav.items && (
-              <ul className={`govuk-footer__list ${nav.columns ? `govuk-footer__list--columns-${nav.columns}` : ''}`}>
-                {nav.items.map((item, index) => (
-                  <React.Fragment key={item.reactListKey || index}>
-                    {(item.href || item.to) && item.text && (
-                      <li className="govuk-footer__list-item">
-                        <Link classes={`govuk-footer__link ${item.classes || ''}`} to={item.to} href={item.href} {...item.attributes}>
-                          {item.text}
-                        </Link>
-                      </li>
-                    )}
-                  </React.Fragment>
-                ))}
-              </ul>
+                <ul className={`govuk-footer__list ${nav.columns ? `govuk-footer__list--columns-${nav.columns}` : ''}`}>
+                  {nav.items.map((item, index) => (
+                    <React.Fragment key={item.reactListKey || index}>
+                      {(item.href || item.to) && item.text && (
+                        <li className="govuk-footer__list-item">
+                          <Link classes={`govuk-footer__link ${item.classes || ''}`} to={item.to} href={item.href} {...item.attributes}>
+                            {item.text}
+                          </Link>
+                        </li>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </ul>
               )}
             </div>
           ))}
@@ -40,27 +40,27 @@ function Footer(props) {
     meta = (
       <>
         {props.meta.items && (
-        <>
-          <h2 className="govuk-visually-hidden">{props.meta.visuallyHiddenTitle ? props.meta.visuallyHiddenTitle : 'Support links'}</h2>
-          <ul className="govuk-footer__inline-list">
-            {props.meta.items.map((item, index) => (
-              <li className="govuk-footer__inline-list-item" key={item.reactListKey || index}>
-                <Link classes={`govuk-footer__link ${item.classes || ''}`} to={item.to} href={item.href} {...item.attributes}>
-                  {item.text}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </>
+          <>
+            <h2 className="govuk-visually-hidden">{props.meta.visuallyHiddenTitle ? props.meta.visuallyHiddenTitle : 'Support links'}</h2>
+            <ul className="govuk-footer__inline-list">
+              {props.meta.items.map((item, index) => (
+                <li className="govuk-footer__inline-list-item" key={item.reactListKey || index}>
+                  <Link classes={`govuk-footer__link ${item.classes || ''}`} to={item.to} href={item.href} {...item.attributes}>
+                    {item.text}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </>
         )}
 
         {(props.meta.text || props.meta.html)
-        && (
-        <div className="govuk-footer__meta-custom">
-          {props.meta.html || props.meta.text}
-        </div>
-        )
-      }
+          && (
+            <div className="govuk-footer__meta-custom">
+              {props.meta.html || props.meta.text}
+            </div>
+          )
+        }
       </>
     )
   }
@@ -90,15 +90,14 @@ function Footer(props) {
               />
             </svg>
             <span className="govuk-footer__licence-description">
-            All content is available under the
-              <a
+              All content is available under the <a
                 className="govuk-footer__link"
                 href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
                 rel="license"
               >
-Open Government Licence v3.0
+                Open Government Licence v3.0
               </a>
-, except where otherwise stated
+              , except where otherwise stated
             </span>
           </div>
           <div className="govuk-footer__meta-item">
@@ -106,7 +105,7 @@ Open Government Licence v3.0
               className="govuk-footer__link govuk-footer__copyright-logo"
               href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
             >
-© Crown copyright
+              © Crown copyright
             </a>
           </div>
         </div>

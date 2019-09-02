@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import RadiosJS from 'govuk-frontend/components/radios/radios'
+import RadiosJS from 'govuk-frontend/govuk/components/radios/radios'
 import PropTypes from 'prop-types'
 import ErrorMessage from './ErrorMessage'
 import Fieldset from './Fieldset'

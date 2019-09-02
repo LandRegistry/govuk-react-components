@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import TabsJS from 'govuk-frontend/components/tabs/tabs'
+import TabsJS from 'govuk-frontend/govuk/components/tabs/tabs'
 import PropTypes from 'prop-types'
 
 function Tabs(props) {

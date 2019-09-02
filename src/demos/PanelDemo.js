@@ -17,11 +17,11 @@ function PanelDemo() {
         titleText="Skip to main content"
         html={(
           <>
-Your reference number
+            Your reference number
             <br />
             <strong>HDJ2123F</strong>
           </>
-)}
+        )}
       />
     </main>
   )
