@@ -39,14 +39,7 @@ js-tests:
 js-lint:
   stage: check
   script:
-    - npm run lint-js
-  tags:
-    - docker/node:8-alpine
-
-scss:
-  stage: check
-  script:
-    - npm run lint-scss
+    - npm run lint
   tags:
     - docker/node:8-alpine
 
