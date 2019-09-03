@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
 import HeaderJS from 'govuk-frontend/components/header/header'
 import logo from 'govuk-frontend/assets/images/govuk-logotype-crown.png'
-import Link from '../utils/Link'
+import Link from './utils/Link'
 
 function Header(props) {
   const headerRef = React.createRef()
