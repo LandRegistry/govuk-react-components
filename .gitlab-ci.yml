@@ -1,7 +1,4 @@
-image: hmlandregistry/dev_base_nodejs:1-10
-
-before_script:
-  - source scl_source enable rh-nodejs10
+image: node:8-alpine
 
 ######## PIPELINE ########
 # Here we define the full pipeline - a list of stages that get executed in order.
@@ -15,7 +12,6 @@ stages:
 node_modules:
   stage: install
   script:
-    - yum install zlib -y # Temporary fix to get npm install to work
     - npm -v
     - node -v
     - npm ci
@@ -23,7 +19,7 @@ node_modules:
   after_script:
     - npm ls
   tags:
-    - docker/hmlandregistry/*
+    - docker/node:8-alpine
   artifacts:
     # Have to use artifacts instead of cache, since cache is only based on a "best effort"
     # to cache items, and cannot be relied upon.
@@ -36,21 +32,21 @@ js-tests:
   script:
     - npm test
   tags:
-    - docker/hmlandregistry/*
+    - docker/node:8-alpine
 
 js-lint:
   stage: check
   script:
     - npm run lint-js
   tags:
-    - docker/hmlandregistry/*
+    - docker/node:8-alpine
 
 scss:
   stage: check
   script:
     - npm run lint-scss
   tags:
-    - docker/hmlandregistry/*
+    - docker/node:8-alpine
 
 check-tag:
   stage: check
@@ -60,7 +56,7 @@ check-tag:
     - >
       grep "\"version\": \"${CI_COMMIT_REF_NAME}\"" package.json && echo "Tag matches package.json" || (echo "Specified tag in Git does not match that defined in package.json. Aborting..." && exit 1)
   tags:
-    - docker/hmlandregistry/*
+    - docker/node:8-alpine
 
 publish_node:
   stage: publish
@@ -81,4 +77,4 @@ publish_node:
     # Publish the package
     - npm publish node_dist
   tags:
-    - docker/hmlandregistry/*
+    - docker/node:8-alpine
