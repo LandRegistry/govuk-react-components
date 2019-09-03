@@ -14,9 +14,9 @@ function Tabs(props) {
   const idPrefix = props.idPrefix ? props.idPrefix : false
 
   const tabContent = props.items.map((item, index) => (
-    <li key={item.id} className="govuk-tabs__list-item">
+    <li key={item.id} className={`govuk-tabs__list-item${index === 0 ? ' govuk-tabs__list-item--selected' : ''}`}>
       <a
-        className={`govuk-tabs__tab${index === 0 ? ' govuk-tabs__tab--selected' : ''}`}
+        className={'govuk-tabs__tab'}
         href={`#${item.id ? item.id : `${idPrefix}-${index}`}`}
         {...props.attributes}
       >
@@ -47,7 +47,7 @@ function Tabs(props) {
       id={props.id}
       className={`govuk-tabs ${props.classes}`}
       {...props.attributes}
-      data-module="tabs"
+      data-module="govuk-tabs"
       ref={tabsRef}
     >
       <h2 className="govuk-tabs__title">

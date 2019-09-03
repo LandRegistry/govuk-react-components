@@ -33,7 +33,7 @@ function Accordion(props) {
   ))
   return (
 
-    <div className={`govuk-accordion ${props.classes}`} data-module="accordion" id={props.id} {...props.attributes} ref={accordionRef}>
+    <div className={`govuk-accordion ${props.classes}`} data-module="govuk-accordion" id={props.id} {...props.attributes} ref={accordionRef}>
       {innerHtml}
     </div>
 

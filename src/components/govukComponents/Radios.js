@@ -44,10 +44,11 @@ function Radios(props) {
         className={`govuk-radios ${props.classes}${isConditional ? ' govuk-radios--conditional' : ''}`}
         {...props.attributes}
         ref={radioRef}
-        data-module={isConditional ? 'radios' : null}
+        data-module={isConditional ? 'govuk-radios' : null}
       >
         {props.items.map((item, index) => {
-          const id = item.id ? item.id : `${idPrefix}-${index + 1}`
+          const idSuffix = `-${index + 1}`
+          const id = item.id ? item.id : `${idPrefix}${index === 0 ? '' : idSuffix}`
           const name = item.name ? item.name : props.name
           const key = item.reactListKey || index
           const conditionalId = item.conditional ? `conditional-${id}` : null

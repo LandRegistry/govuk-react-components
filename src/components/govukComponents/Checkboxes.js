@@ -44,10 +44,11 @@ function Checkboxes(props) {
         className={`govuk-checkboxes ${props.classes}`}
         {...props.attributes}
         ref={checkboxRef}
-        data-module={isConditional ? 'checkboxes' : null}
+        data-module={isConditional ? 'govuk-checkboxes' : null}
       >
         {props.items.map((item, index) => {
-          const id = item.id ? item.id : `${idPrefix}-${index + 1}`
+          const idSuffix = `-${index + 1}`
+          const id = item.id ? item.id : `${idPrefix}${index === 0 ? '' : idSuffix}`
           const name = item.name ? item.name : props.name
           const conditionalId = item.conditional ? `conditional-${id}` : null
           const itemHintId = `${id}-item-hint`

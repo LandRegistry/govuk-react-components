@@ -39,9 +39,10 @@ function Footer(props) {
   if (props.meta) {
     meta = (
       <>
+        <h2 className="govuk-visually-hidden">{props.meta.visuallyHiddenTitle ? props.meta.visuallyHiddenTitle : 'Support links'}</h2>
+
         {props.meta.items && (
           <>
-            <h2 className="govuk-visually-hidden">{props.meta.visuallyHiddenTitle ? props.meta.visuallyHiddenTitle : 'Support links'}</h2>
             <ul className="govuk-footer__inline-list">
               {props.meta.items.map((item, index) => (
                 <li className="govuk-footer__inline-list-item" key={item.reactListKey || index}>

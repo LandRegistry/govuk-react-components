@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 function Details(props) {
   return (
-    <details id={props.id} className={`govuk-details ${props.classes}`} {...props.attributes} open={props.open}>
+    <details id={props.id} className={`govuk-details ${props.classes}`} {...props.attributes} open={props.open} data-module="govuk-details">
       <summary className="govuk-details__summary">
         <span className="govuk-details__summary-text">
           {props.summaryHtml || props.summaryText}
