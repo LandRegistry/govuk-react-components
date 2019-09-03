@@ -58,8 +58,6 @@ publish_node:
   only:
     - tags
   script:
-    - shopt -s globstar
-
     # Put together a distributable package containing a subset of the files
     - mkdir node_dist
     - cp -r src/components/govukComponents node_dist
