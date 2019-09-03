@@ -15,7 +15,7 @@ stages:
 node_modules:
   stage: install
   script:
-    - yum update zlib -y # Temporary fix to get npm install to work
+    - yum install zlib -y # Temporary fix to get npm install to work
     - npm -v
     - node -v
     - npm ci
