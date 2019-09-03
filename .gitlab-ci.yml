@@ -14,7 +14,6 @@ stages:
 # Now we define the jobs that go into the various stages of the pipeline.
 node_modules:
   stage: install
-  <<: *npm
   script:
     - npm -v
     - node -v
@@ -33,7 +32,6 @@ node_modules:
 
 js-tests:
   stage: check
-  <<: *npm
   script:
     - npm test
   tags:
@@ -41,7 +39,6 @@ js-tests:
 
 js-lint:
   stage: check
-  <<: *npm
   script:
     - npm run lint-js
   tags:
@@ -49,7 +46,6 @@ js-lint:
 
 scss:
   stage: check
-  <<: *npm
   script:
     - npm run lint-scss
   tags:
@@ -67,7 +63,6 @@ check-tag:
 
 publish_node:
   stage: publish
-  <<: *npm
   only:
     - tags
   script:
