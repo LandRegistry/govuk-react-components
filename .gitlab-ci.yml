@@ -1,4 +1,6 @@
 image: node:8-alpine
+# Using alpine instead of the HMLR image to temporarily work around zlib problems with centos: https://github.com/nodejs/node/issues/22839
+
 
 ######## PIPELINE ########
 # Here we define the full pipeline - a list of stages that get executed in order.
