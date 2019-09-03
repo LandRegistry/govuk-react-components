@@ -27,15 +27,15 @@ function Button(props) {
   }
 
   let iconHtml
-  if(props.isStartButton) {
+  if (props.isStartButton) {
     iconHtml = <svg className="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
-      <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"/>
+      <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
     </svg>
   }
 
   const commonAttributes = {
     className: `govuk-button ${props.classes}${props.disabled ? ' govuk-button--disabled' : ''} ${props.isStartButton ? 'govuk-button--start' : ''}`,
-    ref: buttonRef
+    ref: buttonRef,
   }
 
   if (props.preventDoubleClick) {

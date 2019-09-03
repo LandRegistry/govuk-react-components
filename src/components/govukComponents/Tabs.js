@@ -16,7 +16,7 @@ function Tabs(props) {
   const tabContent = props.items.map((item, index) => (
     <li key={item.id} className={`govuk-tabs__list-item${index === 0 ? ' govuk-tabs__list-item--selected' : ''}`}>
       <a
-        className={'govuk-tabs__tab'}
+        className="govuk-tabs__tab"
         href={`#${item.id ? item.id : `${idPrefix}-${index}`}`}
         {...props.attributes}
       >
