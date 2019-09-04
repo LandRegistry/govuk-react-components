@@ -227,9 +227,11 @@ function cleanHtml(dirtyHtml) {
 }
 
 function getExamples(version, name) {
+  // Collect examples from govuk-frontend on github
   const cachePath = `tests/.cache/govuk-frontend@v${version}/src/govuk/components/${name}/${name}.yaml`
+  let govExamples
   if (fs.existsSync(cachePath)) {
-    return yaml.safeLoad(fs.readFileSync(cachePath, { encoding: 'utf8' }))
+    govExamples = yaml.safeLoad(fs.readFileSync(cachePath, { encoding: 'utf8' }))
   } else {
     // console.info(`Cached examples not found for govuk-frontend@${version}/${name} - Downloading...`)
     const response = request('GET', `https://raw.githubusercontent.com/alphagov/govuk-frontend/v${version}/src/govuk/components/${name}/${name}.yaml`)
@@ -238,6 +240,20 @@ function getExamples(version, name) {
     mkdirp.sync(path.dirname(cachePath))
     fs.writeFileSync(cachePath, data)
 
-    return yaml.safeLoad(data)
+    govExamples = yaml.safeLoad(data)
   }
+
+  // Merge in any local examples
+
+  const localExampleFilename = `tests/extra-cases/${name}.yaml`
+  if (fs.existsSync(localExampleFilename)) {
+    const localExamples = yaml.safeLoad(fs.readFileSync(localExampleFilename, { encoding: 'utf8' }))
+
+    return {
+      examples: govExamples.examples.concat(localExamples.examples)
+    }
+  } else {
+    return govExamples
+  }
+
 }
