@@ -3,7 +3,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path')
 
 module.exports = {
-    entry: './src/index.js',
+    entry: [
+      './src/index.js',
+      './src/assets/scss/main.scss',
+    ],
     module: {
         rules: [
             {
@@ -42,8 +45,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './public/index.html',
-            filename: './index.html',
-            favicon: './public/favicon.ico'
+            filename: './index.html'
         }),
         new ExtractTextPlugin('style.css')
     ]
