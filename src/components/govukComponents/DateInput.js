@@ -94,7 +94,7 @@ function DateInput(props) {
         <Fieldset
           describedBy={describedBy}
           classes={props.fieldset.classes}
-          role='group'
+          role="group"
           attributes={props.fieldset.attributes}
           legend={props.fieldset.legend}
         >

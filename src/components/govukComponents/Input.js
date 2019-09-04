@@ -75,6 +75,7 @@ Input.propTypes = {
   pattern: PropTypes.string,
   type: PropTypes.string,
   value: PropTypes.string,
+  inputmode: PropTypes.string,
 }
 
 export default Input
