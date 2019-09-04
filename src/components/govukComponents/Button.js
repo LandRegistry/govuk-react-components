@@ -84,6 +84,9 @@ function Button(props) {
       </button>
     )
   } else if (element === 'input') {
+    if (!props.type) {
+      buttonAttributes.type = 'submit'
+    }
     button = <input value={props.text} {...buttonAttributes} {...commonAttributes} />
   }
 
@@ -91,7 +94,6 @@ function Button(props) {
 }
 
 Button.defaultProps = {
-  type: 'submit',
   classes: '',
 }
 
