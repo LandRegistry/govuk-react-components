@@ -1,0 +1,6 @@
+examples:
+- name: with role specified
+  data:
+    legend:
+      text: What is your address?
+    role: foo
