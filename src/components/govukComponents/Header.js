@@ -71,7 +71,8 @@ function Header(props) {
                 />
                 <image src={logo} className="govuk-header__logotype-crown-fallback-image" xlinkHref="" height="32" width="36" />
               </svg>
-              {' '}<span className="govuk-header__logotype-text">GOV.UK</span>
+              {' '}
+              <span className="govuk-header__logotype-text">GOV.UK</span>
             </span>
             {productName}
           </Link>
