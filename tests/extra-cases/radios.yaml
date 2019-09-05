@@ -1,0 +1,13 @@
+examples:
+  - name: attributes on individual items
+    data:
+      idPrefix: example
+      name: example
+      items:
+        - value: yes
+          text: Yes
+          attributes:
+            data-foo: bar
+        - value: no
+          text: No
+          checked: true
