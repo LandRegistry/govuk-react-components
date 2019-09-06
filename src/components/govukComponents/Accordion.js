@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
-import AccordionJS from 'govuk-frontend/components/accordion/accordion'
+import AccordionJS from 'govuk-frontend/govuk/components/accordion/accordion'
 
 function Accordion(props) {
   const accordionRef = React.createRef()
@@ -33,7 +33,7 @@ function Accordion(props) {
   ))
   return (
 
-    <div className={`govuk-accordion ${props.classes}`} data-module="accordion" id={props.id} {...props.attributes} ref={accordionRef}>
+    <div className={`govuk-accordion ${props.classes}`} data-module="govuk-accordion" id={props.id} {...props.attributes} ref={accordionRef}>
       {innerHtml}
     </div>
 

@@ -48,6 +48,7 @@ function Input(props) {
         aria-describedby={describedBy || null}
         autoComplete={props.autocomplete}
         pattern={props.pattern}
+        inputMode={props.inputmode}
         {...props.attributes}
       />
     </div>
@@ -74,6 +75,7 @@ Input.propTypes = {
   pattern: PropTypes.string,
   type: PropTypes.string,
   value: PropTypes.string,
+  inputmode: PropTypes.string,
 }
 
 export default Input

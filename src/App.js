@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="app">
-      <Header serviceName="Application Processing" attributes={{id: 'header'}} navigation={navigationItems} />
+      <Header serviceName="GOV.UK React Components" attributes={{id: 'header'}} navigation={navigationItems} />
       <Main />
       <Footer meta={{items: navigationItems}} />
     </div>

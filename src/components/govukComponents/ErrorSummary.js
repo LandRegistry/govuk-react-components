@@ -17,7 +17,7 @@ function ErrorSummary(props) {
       role="alert"
       tabIndex="-1"
       {...props.attributes}
-      data-module="error-summary"
+      data-module="govuk-error-summary"
     >
       <h2 className="govuk-error-summary__title" id="error-summary-title">
         {props.titleHtml || props.titleText}

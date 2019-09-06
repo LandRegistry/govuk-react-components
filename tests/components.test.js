@@ -173,7 +173,8 @@ const withRouter = function (WrappedComponent) {
 
 const htmlDiffer = new HtmlDiffer({
   ignoreAttributes: [
-    'disabled'  // Because React sets disabled as an empty attribute but the nunjucks does not
+    'disabled',  // Because React sets disabled as an empty attribute but the nunjucks does not
+    'src'        // Because paths to images aren't something that need to be the same between react and nunjucks
   ],
   ignoreSelfClosingSlash: true
 });
@@ -195,7 +196,7 @@ components.forEach(component => {
 
       describe(`${example.name}`, () => {
         it('React output matches Nunjucks output', () => {
-          const expected = cleanHtml(nunjucks.render(path.join(govukFrontendPath, 'components', component.name, 'template.njk'), {
+          const expected = cleanHtml(nunjucks.render(path.join(govukFrontendPath, 'govuk/components', component.name, 'template.njk'), {
             params: example.data
           }))
 
@@ -226,24 +227,33 @@ function cleanHtml(dirtyHtml) {
 }
 
 function getExamples(version, name) {
-  // Delete this hardcoded version once this:
-  // https://github.com/alphagov/govuk-frontend/pull/1313
-  // has been released. Currently pointing at master but really needs to point
-  // at specific version
-  // Don't forget to put a v prefix back in the url when switching back to version numbers
-  version = '8d3e41fb2fafb1d16704fdb2389515b44c4cc470'
-
-  const cachePath = `tests/.cache/govuk-frontend@${version}/src/components/${name}/${name}.yaml`
+  // Collect examples from govuk-frontend on github
+  const cachePath = `tests/.cache/govuk-frontend@v${version}/src/govuk/components/${name}/${name}.yaml`
+  let govExamples
   if (fs.existsSync(cachePath)) {
-    return yaml.safeLoad(fs.readFileSync(cachePath, { encoding: 'utf8' }))
+    govExamples = yaml.safeLoad(fs.readFileSync(cachePath, { encoding: 'utf8' }))
   } else {
     // console.info(`Cached examples not found for govuk-frontend@${version}/${name} - Downloading...`)
-    const response = request('GET', `https://raw.githubusercontent.com/alphagov/govuk-frontend/${version}/src/components/${name}/${name}.yaml`)
+    const response = request('GET', `https://raw.githubusercontent.com/alphagov/govuk-frontend/v${version}/src/govuk/components/${name}/${name}.yaml`)
     const data = response.getBody('utf8')
 
     mkdirp.sync(path.dirname(cachePath))
     fs.writeFileSync(cachePath, data)
 
-    return yaml.safeLoad(data)
+    govExamples = yaml.safeLoad(data)
   }
+
+  // Merge in any local examples
+
+  const localExampleFilename = `tests/extra-cases/${name}.yaml`
+  if (fs.existsSync(localExampleFilename)) {
+    const localExamples = yaml.safeLoad(fs.readFileSync(localExampleFilename, { encoding: 'utf8' }))
+
+    return {
+      examples: govExamples.examples.concat(localExamples.examples)
+    }
+  } else {
+    return govExamples
+  }
+
 }

@@ -1,0 +1,8 @@
+examples:
+  - name: testing input mode
+    data:
+      label:
+        text: Email
+      id: input-example
+      name: test-name
+      inputmode: email

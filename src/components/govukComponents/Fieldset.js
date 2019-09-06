@@ -20,6 +20,7 @@ function Fieldset(props) {
     <fieldset
       className={`govuk-fieldset ${props.classes}`}
       aria-describedby={props.describedBy ? props.describedBy : null}
+      role={props.role}
       {...props.attributes}
     >
       {legend}
@@ -37,6 +38,7 @@ Fieldset.propTypes = {
   legend: PropTypes.object,
   classes: PropTypes.string,
   describedBy: PropTypes.string,
+  role: PropTypes.string,
   attributes: PropTypes.object,
   children: PropTypes.node,
 }

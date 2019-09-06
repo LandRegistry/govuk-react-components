@@ -1,12 +1,17 @@
 import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
-import ButtonJS from 'govuk-frontend/components/button/button'
+import ButtonJS from 'govuk-frontend/govuk/components/button/button'
 import Link from './utils/Link'
 
 function Button(props) {
   const buttonRef = React.createRef()
   let element = ''
-  let buttonAttributes = {name: props.name, type: props.type}
+  let buttonAttributes = {
+    name: props.name,
+    type: props.type,
+    ...props.attributes,
+    'data-module': 'govuk-button',
+  }
   let button
 
   useEffect(() => {
@@ -21,12 +26,17 @@ function Button(props) {
     element = 'button'
   }
 
-  const commonAttributes = {
-    className: `govuk-button ${props.classes}${props.disabled ? ' govuk-button--disabled' : ''}`,
-    ...props.attributes,
-    ref: buttonRef,
+  let iconHtml
+  if (props.isStartButton) {
+    iconHtml = <svg className="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+      <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+    </svg>
   }
 
+  const commonAttributes = {
+    className: `govuk-button ${props.classes}${props.disabled ? ' govuk-button--disabled' : ''} ${props.isStartButton ? 'govuk-button--start' : ''}`,
+    ref: buttonRef,
+  }
 
   if (props.preventDoubleClick) {
     buttonAttributes['data-prevent-double-click'] = props.preventDoubleClick
@@ -47,6 +57,8 @@ function Button(props) {
       attributes: {
         role: 'button',
         draggable: 'false',
+        ...props.attributes,
+        'data-module': 'govuk-button',
       },
       href: props.href,
       to: props.to,
@@ -55,6 +67,7 @@ function Button(props) {
     button = (
       <Link {...linkAttributes}>
         {props.html || props.text}
+        {iconHtml}
       </Link>
     )
   } else if (element === 'button') {
@@ -67,9 +80,13 @@ function Button(props) {
       // eslint-disable-next-line react/button-has-type
       <button {...buttonAttributes} {...commonAttributes}>
         {props.html || props.text}
+        {iconHtml}
       </button>
     )
   } else if (element === 'input') {
+    if (!props.type) {
+      buttonAttributes.type = 'submit'
+    }
     button = <input value={props.text} {...buttonAttributes} {...commonAttributes} />
   }
 
@@ -77,7 +94,6 @@ function Button(props) {
 }
 
 Button.defaultProps = {
-  type: 'submit',
   classes: '',
 }
 

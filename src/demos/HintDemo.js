@@ -12,12 +12,10 @@ function HintDemo() {
       <Hint text="this is my hint text" />
       <Hint html={(
         <>
-This is
-          <strong>now</strong>
-          {' '}
-working
+          Hint text
+          <strong> with HTML</strong>
         </>
-)}
+      )}
       />
     </main>
   )

@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import PropTypes from 'prop-types'
-import CharacterCountJS from 'govuk-frontend/components/character-count/character-count'
+import CharacterCountJS from 'govuk-frontend/govuk/components/character-count/character-count'
 import Textarea from './Textarea'
 
 function CharacterCount(props) {
@@ -15,7 +15,7 @@ function CharacterCount(props) {
 
     <div
       className="govuk-character-count"
-      data-module="character-count"
+      data-module="govuk-character-count"
       data-maxlength={props.maxlength}
       data-threshold={props.threshold}
       data-maxwords={props.maxwords}
@@ -26,7 +26,7 @@ function CharacterCount(props) {
         name={props.name}
         rows={props.rows}
         value={props.value}
-        classes={`js-character-count ${props.classes}${props.errorMessage ? ' govuk-textarea--error' : ''}`}
+        classes={`govuk-js-character-count ${props.classes}${props.errorMessage ? ' govuk-textarea--error' : ''}`}
         label={props.label}
         hint={props.hint}
         errorMessage={props.errorMessage}
