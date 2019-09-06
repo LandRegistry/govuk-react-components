@@ -60,8 +60,7 @@ function Footer(props) {
             <div className="govuk-footer__meta-custom">
               {props.meta.html || props.meta.text}
             </div>
-          )
-        }
+          )}
       </>
     )
   }

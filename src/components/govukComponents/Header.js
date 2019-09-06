@@ -39,8 +39,7 @@ function Header(props) {
                       </Link>
                     </li>
                   )
-                  : null))
-                }
+                  : null))}
               </ul>
             </nav>
           </>

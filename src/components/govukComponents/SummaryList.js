@@ -50,8 +50,7 @@ function actions(row, anyRowHasActions) {
             <ul className="govuk-summary-list__actions-list">
               {actionLinks.map(actionLink => <li key={actionLink.key} className="govuk-summary-list__actions-list-item">{actionLink}</li>)}
             </ul>
-          )
-      }
+          )}
       </dd>
     )
   }
