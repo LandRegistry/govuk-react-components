@@ -33,8 +33,7 @@ function ErrorSummary(props) {
                   : <>{error.html || error.text}</>
               }
             </li>
-          ))
-          }
+          ))}
         </ul>
       </div>
     </div>
