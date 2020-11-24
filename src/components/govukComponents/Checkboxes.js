@@ -41,7 +41,7 @@ function Checkboxes(props) {
       {errorMessage}
 
       <div
-        className={`govuk-checkboxes ${props.classes}`}
+        className={`govuk-checkboxes${props.classes ? " " + props.classes : ''}`}
         {...props.attributes}
         ref={checkboxRef}
         data-module={isConditional ? 'govuk-checkboxes' : null}
@@ -76,6 +76,7 @@ function Checkboxes(props) {
                   data-aria-controls={conditionalId}
                   aria-describedby={itemDescribedBy || null}
                   disabled={item.disabled}
+                  {...item.attributes}
                 />
                 <Label text={item.text} classes="govuk-checkboxes__label" for={id} />
                 {item.hint ? <Hint classes="govuk-checkboxes__hint" {...item.hint} id={itemHintId} /> : ''}
