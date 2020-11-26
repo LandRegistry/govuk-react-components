@@ -10,14 +10,23 @@ function CheckboxesDemo() {
   const items = [{
     value: 'carcasses',
     text: 'Waste from animal carcasses',
+    attributes: {
+      "data-testid": "checkboxes-demo-1"
+    },
   },
   {
     value: 'mines',
     text: 'Waste from mines or quarries',
+    attributes: {
+      "data-testid": "checkboxes-demo-2"
+    },
   },
   {
     value: 'farm',
     text: 'Farm or agricultural waste',
+    attributes: {
+      "data-testid": "checkboxes-demo-3"
+    },
   }]
 
   const items2 = [

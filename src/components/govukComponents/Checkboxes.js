@@ -41,7 +41,7 @@ function Checkboxes(props) {
       {errorMessage}
 
       <div
-        className={`govuk-checkboxes${props.classes ? " " + props.classes : ''}`}
+        className={`govuk-checkboxes${props.classes ? ' ' + props.classes : ''}`}
         {...props.attributes}
         ref={checkboxRef}
         data-module={isConditional ? 'govuk-checkboxes' : null}
