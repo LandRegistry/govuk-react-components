@@ -28,6 +28,7 @@ function Checkboxes(props) {
   // Find out if we have any conditional items
   const isConditional = !!props.items.find(item => item.conditional)
   const hasFieldset = !!props.fieldset
+  const classes = ` ${props.classes}`
 
   if (props.errorMessage) {
     const errorId = `${idPrefix}-error`
@@ -41,7 +42,7 @@ function Checkboxes(props) {
       {errorMessage}
 
       <div
-        className={`govuk-checkboxes${props.classes ? ' ' + props.classes : ''}`}
+        className={`govuk-checkboxes${props.classes ? classes : ''}`}
         {...props.attributes}
         ref={checkboxRef}
         data-module={isConditional ? 'govuk-checkboxes' : null}
