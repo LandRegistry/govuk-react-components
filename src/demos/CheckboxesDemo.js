@@ -10,14 +10,23 @@ function CheckboxesDemo() {
   const items = [{
     value: 'carcasses',
     text: 'Waste from animal carcasses',
+    attributes: {
+      'data-testid': 'checkboxes-demo-1',
+    },
   },
   {
     value: 'mines',
     text: 'Waste from mines or quarries',
+    attributes: {
+      'data-testid': 'checkboxes-demo-2',
+    },
   },
   {
     value: 'farm',
     text: 'Farm or agricultural waste',
+    attributes: {
+      'data-testid': 'checkboxes-demo-3',
+    },
   }]
 
   const items2 = [
@@ -71,7 +80,7 @@ function CheckboxesDemo() {
   return (
     <main id="main-content">
       <h1 className="govuk-heading-l">Checkboxes</h1>
-      <Checkboxes hint={{text: 'Select all that apply.'}} items={items} name="waste" />
+      <Checkboxes classes="demo-class" hint={{text: 'Select all that apply.'}} items={items} name="waste" />
       <Checkboxes hint={{text: 'Select all that apply.'}} items={items} fieldset={{legend: {isPageHeading: true, text: 'Which types of waste do you transport?', classes: 'govuk-fieldset__legend--l'}}} name="waste2" />
       <Checkboxes hint={{text: 'Select all options that are relevant to you.'}} items={itemsConditional} fieldset={{legend: {isPageHeading: true, text: 'How would you like to be contacted?', classes: 'govuk-fieldset__legend--l'}}} name="waste2" />
       <Checkboxes hint={{text: 'If you have dual nationality, select all options that are relevant to you.'}} items={items2} errorMessage={{text: 'Select at least one of the options below'}} name="nationality" fieldset={{legend: {isPageHeading: true, text: 'What is your nationality?', classes: 'govuk-fieldset__legend--l'}}} />
