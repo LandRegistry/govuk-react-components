@@ -3,7 +3,7 @@ directories:
   - "$HOME/.npm"
   - "tests/.cache"
 node_js:
-  - "lts/*"
+  - 12
 script:
   - npm test
   - npm run lint
