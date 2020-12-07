@@ -41,9 +41,37 @@ The test suite renders the examples from the govuk-frontend repository through t
 
 Releases are pushed to internally hosted versions of PyPi and npm on the Nexus repository manager. The process is as follows:
 
-- Get master to the desired state wish to release
-- Ensure package.json contains the version number for the tag you are about to release
-- Set up an additional upstream remote to the version on GitLab (In the common group). Don't replace the main GitHub remote - you want to end up with two remotes.
-- Push the code to Gitlab (Something along the lines of `git push gitlab` assuming you called the remote that)
-- Go to GitLab and tag the branch. This will cause the pipeline to run and push the npm and PyPi packages to Nexus
-- These can then be used in your applications as normal, assuming you have pointed npm and PyPi at Nexus (See `pip.conf` and `.npmrc` files in flask-skeleton-ui for examples of how to do this)
+- Merge changes into `master` to get to the code in that branch to the desired state to release
+- Figure out the new version number the release will have (3.1.2 in this example)
+- Ensure `package.json` and `package-lock.json` are updated the version number for the release e.g.
+```
+{
+  "name": "govuk-react-components",
+  "version": "3.1.2",
+  ...
+```
+
+- Set up an additional upstream remote to GitLab `GOV.UK React Components` in the `Common` group. For example using  `gitlab-govuk-react-components` as your reference to that remote repository
+```
+$ git remote add gitlab-govuk-react-components <ssh url for GOV.UK React Components in gitlab>
+```  
+
+- By using `git remote` you should see two remotes available now
+```
+$ git remote
+origin
+gitlab-govuk-react-components
+```
+- Push the code to gitlab remote repository using the reference `gitlab-govuk-react-components` 
+```
+    $ git push gitlab-govuk-react-components
+``` 
+- Go to the GitLab repo (`GOV.UK React Components` in the `Common` group). 
+  - You should see the last commit from `GitHub` has now been pushed to the `GitLab` repo on the `master` branch
+  - Tag the `master` branch you just pushed to:
+    - n.b. you may need to be a developer or maintainer in the project to create a new tag
+    - Go to `Repository`->`Tags`->`New tag` 
+      - Set the `Tag name` to the version number of gov uk react components, (i.e. the version number you set in package.json)
+      - Set `Create from` to `master`
+    - This will cause the pipeline to run and push the npm and PyPi packages to Nexus
+  - These can then be used in your applications as normal, assuming you have pointed npm and PyPi at Nexus (See `pip.conf` and `.npmrc` files in flask-skeleton-ui for examples of how to do this)
