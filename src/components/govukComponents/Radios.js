@@ -126,7 +126,7 @@ Radios.propTypes = {
   hint: PropTypes.object,
   idPrefix: PropTypes.string,
   items: PropTypes.array,
-  name: PropTypes.string
+  name: PropTypes.string,
 }
 
 export default Radios
