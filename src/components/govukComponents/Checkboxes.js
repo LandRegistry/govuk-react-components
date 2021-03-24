@@ -73,11 +73,11 @@ function Checkboxes(props) {
                   name={name}
                   type="checkbox"
                   value={item.value}
-                  defaultChecked={item.checked}
+                  checked={item.checked}
                   data-aria-controls={conditionalId}
                   aria-describedby={itemDescribedBy || null}
                   disabled={item.disabled}
-                  {...item.attributes}
+                  {...item}
                 />
                 <Label text={item.text} classes="govuk-checkboxes__label" for={id} />
                 {item.hint ? <Hint classes="govuk-checkboxes__hint" {...item.hint} id={itemHintId} /> : ''}
