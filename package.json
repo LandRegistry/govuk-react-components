@@ -38,10 +38,10 @@
     "react-router-dom": "5"
   },
   "devDependencies": {
-    "@babel/core": "7.5.5",
-    "@babel/preset-env": "7.5.5",
-    "@babel/preset-react": "7.0.0",
-    "@markedjs/html-differ": "3.0.0",
+    "@babel/core": "7.11.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@markedjs/html-differ": "^3.0.0",
     "@starptech/prettyhtml": "0.10.0",
     "babel-loader": "8.0.6",
     "babel-eslint": "10.0.3",
