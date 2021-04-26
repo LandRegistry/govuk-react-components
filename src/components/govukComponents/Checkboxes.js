@@ -79,7 +79,7 @@ function Checkboxes(props) {
                   disabled={item.disabled}
                   {...item.attributes}
                 />
-                <Label text={item.text} classes="govuk-checkboxes__label" for={id} />
+                <Label text={item.text || item.html} classes="govuk-checkboxes__label" for={id} />
                 {item.hint ? <Hint classes="govuk-checkboxes__hint" {...item.hint} id={itemHintId} /> : ''}
               </div>
 
