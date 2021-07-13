@@ -1,6 +1,6 @@
 {
   "name": "govuk-react-components",
-  "version": "3.1.0-3",
+  "version": "3.1.0-4",
   "description": "GOV.UK React Components",
   "peerDependencies": {
     "govuk-frontend": "3.1.0"
