@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 
 function Hint(props) {
   return (
-    <span id={props.id} className={`govuk-hint ${props.classes}`}>
+    <div id={props.id} className={`govuk-hint ${props.classes}`}>
       {props.html || props.text}
-    </span>
+    </div>
   )
 }
 
